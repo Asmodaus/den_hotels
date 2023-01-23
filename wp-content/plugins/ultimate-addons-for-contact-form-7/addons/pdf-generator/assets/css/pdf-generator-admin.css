@@ -1,0 +1,27 @@
+.ultimate-placeholder-wrapper.pdf-generator-wrap {
+	overflow: hidden;
+}
+
+.uacf7pdf-onecolumns {
+	width: 100%;
+	margin-right: 2%;
+	float: left;
+}
+
+.uacf7pdf-twocolumns {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+}
+
+.uacf7pdf-threecolumns {
+	width: 32%;
+	margin-right: 1%;
+	float: left;
+}
+
+.uacf7pdf-fourcolumns {
+	width: 24%;
+	margin-right: 1%;
+	float: left;
+}

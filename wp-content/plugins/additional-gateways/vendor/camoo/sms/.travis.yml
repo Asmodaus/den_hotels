@@ -1,0 +1,19 @@
+language: php
+
+php:
+  - 7.3
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'CREATE DATABASE cm_test;'
+  - composer update
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash);

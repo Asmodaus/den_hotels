@@ -1,0 +1,1 @@
+!function(){"use strict";var e=window.wp.blocks,c=EssentialBlocksLocalize.enabled_blocks;Object.values(c).filter((function(e){return"false"==e.visibility})).forEach((function(c){var l="essential-blocks/".concat(c.value.replace(/_/g,"-"));((0,e.getBlockType)(l)||"undefined"!=(0,e.getBlockType)(l))&&(0,e.unregisterBlockType)(l)}))}();

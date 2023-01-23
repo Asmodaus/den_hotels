@@ -1,0 +1,3079 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: WPMobile.App\n"
+"POT-Creation-Date: 2020-04-08 14:12+0200\n"
+"PO-Revision-Date: 2021-01-26 15:54+0100\n"
+"Last-Translator: Admin Alex\n"
+"Language-Team: 繁體中文\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wpappninja.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: zh_TW\n"
+"X-Loco-Version: 2.5.0; wp-5.6\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/admin/import.php:326 inc/functions/shortcodes.php:1160
+#: inc/functions/shortcodes.php:1174
+msgid "My home"
+msgstr "主頁"
+
+#: inc/admin/import.php:331 inc/functions/shortcodes.php:829
+msgid "Share"
+msgstr "分享"
+
+#: inc/admin/import.php:336
+msgid "QRCode reader"
+msgstr "QRCode閱讀器"
+
+#: inc/admin/import.php:341 inc/admin/import.php:448 inc/admin/import.php:542
+#: inc/admin/ui/options.php:2941 inc/admin/ui/options.php:2987
+msgid "Push config"
+msgstr "推送設定"
+
+#: inc/admin/import.php:346 inc/admin/import.php:439 inc/admin/import.php:535
+#: inc/admin/ui/options.php:2934 inc/admin/ui/options.php:2980
+msgid "Notification history"
+msgstr "通知歷史記錄"
+
+#: inc/admin/import.php:351 inc/functions/sdk2019.php:34
+#: inc/functions/shortcodes.php:299 inc/stats/render.php:34
+msgid "Login"
+msgstr "登入"
+
+#: inc/admin/import.php:356 inc/admin/import.php:421 inc/admin/import.php:430
+#: inc/admin/import.php:528 inc/admin/ui/auto.php:214 inc/admin/ui/auto.php:222
+#: inc/admin/ui/options.php:2927 inc/admin/ui/options.php:2973
+#: inc/api/json.php:159 inc/api/json.php:361 inc/functions/sdk2019.php:30
+#: inc/stats/render.php:30 inc/stats/render.php:62
+msgid "Recent posts"
+msgstr "最近的帖子"
+
+#: inc/admin/import.php:479
+msgid "Contact"
+msgstr "聯繫"
+
+#: inc/admin/menu.php:46 inc/admin/ui/home.php:218 inc/admin/ui/menu.php:354
+msgid "Preview"
+msgstr "預覧"
+
+#: inc/admin/menu.php:49 inc/admin/menu.php:51 inc/admin/plugins.php:12
+#: inc/admin/ui/home.php:333 inc/admin/ui/menu.php:358
+msgid "Configuration"
+msgstr "設定"
+
+#: inc/admin/menu.php:53 inc/admin/ui/pwa.php:136 inc/admin/ui/submenu.php:71
+#: inc/common/admin-bar.php:67
+msgid "Design"
+msgstr "設計"
+
+#: inc/admin/menu.php:54 inc/admin/ui/home.php:334 inc/admin/ui/menu.php:361
+#: inc/common/admin-bar.php:75
+msgid "Statistics"
+msgstr "統計"
+
+#: inc/admin/menu.php:55 inc/common/admin-bar.php:85
+msgid "Notifications"
+msgstr "通知事項"
+
+#: inc/admin/menu.php:58 inc/admin/menu.php:61 inc/admin/ui/home.php:338
+#: inc/admin/ui/menu.php:365 inc/common/admin-bar.php:93
+msgid "QR Code"
+msgstr "二維碼"
+
+#: inc/admin/menu.php:59 inc/admin/menu.php:62 inc/common/admin-bar.php:101
+msgid "Adserver"
+msgstr "廣告服務器"
+
+#: inc/admin/menu.php:59 inc/admin/menu.php:62 inc/admin/ui/home.php:339
+#: inc/admin/ui/menu.php:366
+msgid "Advertising"
+msgstr "廣告"
+
+#: inc/admin/menu.php:65 inc/admin/ui/home.php:345
+msgid "Promote"
+msgstr "促進"
+
+#: inc/admin/menu.php:66 inc/admin/ui/home.php:346
+msgid "Publication"
+msgstr "出版物"
+
+#: inc/admin/menu.php:67 inc/admin/ui/home.php:353 inc/common/admin-bar.php:129
+msgid "Settings"
+msgstr "設定值"
+
+#: inc/admin/menu.php:68
+msgid "iOS Certificate"
+msgstr "iOS證書"
+
+#: inc/admin/menu.php:69
+msgid "Update"
+msgstr "更新資料"
+
+#: inc/admin/menu.php:70 inc/admin/ui/home.php:342
+msgid "Progressive Web App"
+msgstr "漸進式Web應用"
+
+#: inc/admin/menu.php:71 inc/admin/ui/submenu.php:69 inc/admin/ui/theme.php:223
+msgid "Theme"
+msgstr "主題"
+
+#: inc/admin/metabox.php:24
+msgid "Send a push notification"
+msgstr "發送推送通知"
+
+#: inc/admin/metabox.php:58
+msgid "Action required"
+msgstr "需要採取的行動"
+
+#: inc/admin/metabox.php:59
+msgid "You must add an API KEY"
+msgstr "您必須添加API KEY"
+
+#: inc/admin/metabox.php:84
+msgid "at"
+msgstr "在"
+
+#: inc/admin/metabox.php:88
+msgid "Sended"
+msgstr "已寄出"
+
+#: inc/admin/metabox.php:88
+msgid "Scheduled"
+msgstr "預定的"
+
+#: inc/admin/metabox.php:122
+msgid "This post is already published. Notification off."
+msgstr "該帖子已經發布。通知已關閉。"
+
+#: inc/admin/metabox.php:126
+msgid "Set a notification?"
+msgstr "設定通知？"
+
+#: inc/admin/metabox.php:129 inc/admin/ui/push.php:637
+msgid "Send date"
+msgstr "發送日期"
+
+#: inc/admin/metabox.php:134
+msgid "On post publish"
+msgstr "發布後"
+
+#: inc/admin/metabox.php:135
+msgid "Set a date"
+msgstr "設定日期"
+
+#: inc/admin/metabox.php:143 inc/admin/ui/push.php:536
+msgid "Categorie"
+msgstr "類別"
+
+#: inc/admin/metabox.php:146 inc/admin/ui/push.php:542
+#: inc/admin/ui/stats.php:224
+msgid "All"
+msgstr "所有"
+
+#: inc/admin/metabox.php:163 inc/stats/display.php:539
+msgid "Lang"
+msgstr "語言"
+
+#: inc/admin/metabox.php:181
+msgid "Set as default"
+msgstr "設為預設"
+
+#: inc/admin/sdkupdate.php:42
+msgid ""
+"<h4 style=\"font-size:18px;margin-top:0\">🚀 New WPMobile.App SDK available</"
+"h4>&bull; 3x faster<br/>&bull; Embed the last Apple & Google framework<br/"
+">&bull; GDPR ready (no more 3rd library)"
+msgstr ""
+"<h4 style=\"font-size:18px;margin-top:0\">🚀提供新的WPMobile.App SDK</h4> •快3"
+"倍<br/>•嵌入最新的Apple和Google框架<br/>•GDPR就緒（不再有第3個庫）"
+
+#: inc/admin/sdkupdate.php:45 inc/admin/sdkupdate.php:86
+msgid "This action cant be undone. Are you sure?"
+msgstr "此操作無法取消。你確定嗎？"
+
+#: inc/admin/sdkupdate.php:45
+msgid "Enable the new SDK"
+msgstr "啟用新的SDK"
+
+#: inc/admin/sdkupdate.php:48
+msgid "Dismiss 1 month"
+msgstr "消除顯示1個月"
+
+#: inc/admin/sdkupdate.php:84
+#, php-format
+msgid ""
+"<h4 style=\"font-size:18px;margin-top:0\">⚠ Features deprecated in the new "
+"SDK</h4>From February 28 you can continue to use <b>%s</b> but you will not "
+"be able to update the application."
+msgstr ""
+"<h4 style=\"font-size:18px;margin-top:0\">⚠新SDK中已棄用的功能</h4>從2月28日"
+"起，您可以繼續使用<b>%s </b>，但不會能夠更新應用程序。"
+
+#: inc/admin/sdkupdate.php:86
+msgid "Disable deprecated features"
+msgstr "禁用不推薦使用的功能"
+
+#: inc/admin/talkus.php:16
+msgid "Enable the light app mode (beta)"
+msgstr "啟用燈光應用程序模式（測試版）"
+
+#: inc/admin/talkus.php:37
+msgid "You love WPMobile.App?"
+msgstr "您喜歡WPMobile.App嗎？"
+
+#: inc/admin/talkus.php:38
+msgid "Spread the word"
+msgstr "傳播這個詞"
+
+#: inc/admin/ui/adserver.php:87 inc/admin/ui/pwa.php:102
+msgid "Learn how to send a notification when you publish"
+msgstr "了解發佈時如何發送通知"
+
+#: inc/admin/ui/adserver.php:91 inc/admin/ui/push.php:258
+#: inc/admin/ui/pwa.php:106
+msgid "Progressive Web App is a free feature"
+msgstr "漸進式Web App是一項免費功能"
+
+#: inc/admin/ui/adserver.php:95 inc/admin/ui/push.php:262
+#: inc/admin/ui/pwa.php:110
+msgid "Learn how to turn on advertising on the app"
+msgstr "了解如何在應用上打開廣告"
+
+#: inc/admin/ui/adserver.php:102 inc/admin/ui/push.php:269
+#: inc/admin/ui/pwa.php:117 inc/admin/ui/submenu.php:56
+msgid "+ more"
+msgstr "還有更多"
+
+#: inc/admin/ui/adserver.php:107
+msgid "You can't use or modify the adserver without a PREMIUM pack"
+msgstr "沒有PREMIUM包，您將無法使用或修改廣告服務器"
+
+#: inc/admin/ui/adserver.php:107 inc/admin/ui/home.php:230
+#: inc/admin/ui/menu.php:311 inc/admin/ui/stats.php:132
+#: inc/functions/check.php:264
+msgid "UPDATE MY PLAN"
+msgstr "更新我的計劃"
+
+#: inc/admin/ui/adserver.php:111
+msgid "New ad"
+msgstr "新廣告"
+
+#: inc/admin/ui/adserver.php:112 inc/admin/ui/promote.php:43
+#: inc/admin/ui/push.php:285
+msgid "settings"
+msgstr "設定"
+
+#: inc/admin/ui/adserver.php:116
+msgid "AdBuddiz"
+msgstr "AdBuddiz"
+
+#: inc/admin/ui/adserver.php:118
+msgid "AdMob"
+msgstr "AdMob"
+
+#: inc/admin/ui/adserver.php:120 inc/admin/ui/adserver.php:206
+msgid "HTML Code"
+msgstr "HTML代碼"
+
+#: inc/admin/ui/adserver.php:129 inc/admin/ui/adserver.php:241
+#: inc/admin/ui/push.php:456 inc/admin/ui/stats.php:180
+#: inc/admin/ui/stats.php:195
+msgid "Close"
+msgstr "關"
+
+#: inc/admin/ui/adserver.php:135
+msgid "Add an ad before and after the content"
+msgstr "在內容前後添加廣告"
+
+#: inc/admin/ui/adserver.php:138 inc/admin/ui/auto.php:397
+#: inc/admin/ui/auto.php:411 inc/admin/ui/auto.php:494
+#: inc/admin/ui/auto.php:527 inc/admin/ui/auto.php:540
+#: inc/admin/ui/auto.php:714 inc/admin/ui/auto.php:725
+#: inc/admin/ui/auto.php:737 inc/admin/ui/auto.php:821
+#: inc/admin/ui/auto.php:833 inc/admin/ui/auto.php:845
+#: inc/admin/ui/auto.php:854 inc/admin/ui/auto.php:861
+#: inc/admin/ui/auto.php:873 inc/admin/ui/auto.php:880
+#: inc/admin/ui/auto.php:886 inc/admin/ui/auto.php:899
+#: inc/admin/ui/auto.php:919 inc/admin/ui/auto.php:1001
+#: inc/admin/ui/auto.php:1117 inc/admin/ui/auto.php:1185
+#: inc/admin/ui/auto.php:1201 inc/admin/ui/auto.php:1261
+#: inc/admin/ui/auto.php:1275 inc/admin/ui/auto.php:1289
+#: inc/admin/ui/auto.php:1344 inc/admin/ui/auto.php:1385
+#: inc/admin/ui/auto.php:1399 inc/admin/ui/auto.php:1450
+#: inc/admin/ui/auto.php:1567 inc/admin/ui/auto.php:1586
+#: inc/admin/ui/auto.php:1600 inc/admin/ui/auto.php:1614
+#: inc/admin/ui/auto.php:1628 inc/admin/ui/auto.php:1642
+#: inc/admin/ui/auto.php:1656 inc/admin/ui/auto.php:1725
+#: inc/admin/ui/auto.php:1841 inc/admin/ui/auto.php:1855
+#: inc/admin/ui/auto.php:1869 inc/admin/ui/auto.php:1883
+#: inc/admin/ui/auto.php:1970 inc/admin/ui/auto.php:2000
+#: inc/admin/ui/auto.php:2011 inc/admin/ui/cert.php:107
+#: inc/admin/ui/cert.php:132 inc/admin/ui/cert.php:144
+#: inc/admin/ui/cert.php:156 inc/admin/ui/cert.php:168
+#: inc/admin/ui/cert.php:180 inc/admin/ui/cert.php:390
+#: inc/admin/ui/options.php:503 inc/admin/ui/options.php:538
+#: inc/admin/ui/options.php:1085 inc/admin/ui/options.php:1517
+#: inc/admin/ui/options.php:1521 inc/admin/ui/options.php:1525
+#: inc/admin/ui/options.php:1529 inc/admin/ui/options.php:1533
+#: inc/admin/ui/options.php:1545 inc/admin/ui/options.php:1550
+#: inc/admin/ui/options.php:1555 inc/admin/ui/options.php:1639
+#: inc/admin/ui/options.php:1644 inc/admin/ui/options.php:1649
+#: inc/admin/ui/options.php:1660 inc/admin/ui/options.php:1678
+#: inc/admin/ui/options.php:1682 inc/admin/ui/options.php:1693
+#: inc/admin/ui/options.php:1697 inc/admin/ui/options.php:1701
+#: inc/admin/ui/options.php:2411 inc/admin/ui/options.php:2586
+#: inc/admin/ui/promote.php:161
+msgid "Yes"
+msgstr "是"
+
+#: inc/admin/ui/adserver.php:138 inc/admin/ui/auto.php:397
+#: inc/admin/ui/auto.php:411 inc/admin/ui/auto.php:494
+#: inc/admin/ui/auto.php:527 inc/admin/ui/auto.php:540
+#: inc/admin/ui/auto.php:714 inc/admin/ui/auto.php:725
+#: inc/admin/ui/auto.php:737 inc/admin/ui/auto.php:821
+#: inc/admin/ui/auto.php:833 inc/admin/ui/auto.php:845
+#: inc/admin/ui/auto.php:854 inc/admin/ui/auto.php:861
+#: inc/admin/ui/auto.php:873 inc/admin/ui/auto.php:880
+#: inc/admin/ui/auto.php:886 inc/admin/ui/auto.php:899
+#: inc/admin/ui/auto.php:919 inc/admin/ui/auto.php:1001
+#: inc/admin/ui/auto.php:1117 inc/admin/ui/auto.php:1185
+#: inc/admin/ui/auto.php:1201 inc/admin/ui/auto.php:1261
+#: inc/admin/ui/auto.php:1275 inc/admin/ui/auto.php:1289
+#: inc/admin/ui/auto.php:1344 inc/admin/ui/auto.php:1385
+#: inc/admin/ui/auto.php:1399 inc/admin/ui/auto.php:1450
+#: inc/admin/ui/auto.php:1567 inc/admin/ui/auto.php:1586
+#: inc/admin/ui/auto.php:1600 inc/admin/ui/auto.php:1614
+#: inc/admin/ui/auto.php:1628 inc/admin/ui/auto.php:1642
+#: inc/admin/ui/auto.php:1656 inc/admin/ui/auto.php:1725
+#: inc/admin/ui/auto.php:1841 inc/admin/ui/auto.php:1855
+#: inc/admin/ui/auto.php:1869 inc/admin/ui/auto.php:1883
+#: inc/admin/ui/auto.php:1970 inc/admin/ui/auto.php:2000
+#: inc/admin/ui/auto.php:2011 inc/admin/ui/cert.php:107
+#: inc/admin/ui/cert.php:132 inc/admin/ui/cert.php:144
+#: inc/admin/ui/cert.php:156 inc/admin/ui/cert.php:168
+#: inc/admin/ui/cert.php:180 inc/admin/ui/cert.php:390
+#: inc/admin/ui/options.php:503 inc/admin/ui/options.php:538
+#: inc/admin/ui/options.php:1085 inc/admin/ui/options.php:1517
+#: inc/admin/ui/options.php:1521 inc/admin/ui/options.php:1525
+#: inc/admin/ui/options.php:1529 inc/admin/ui/options.php:1533
+#: inc/admin/ui/options.php:1545 inc/admin/ui/options.php:1550
+#: inc/admin/ui/options.php:1555 inc/admin/ui/options.php:1639
+#: inc/admin/ui/options.php:1644 inc/admin/ui/options.php:1649
+#: inc/admin/ui/options.php:1660 inc/admin/ui/options.php:1678
+#: inc/admin/ui/options.php:1682 inc/admin/ui/options.php:1693
+#: inc/admin/ui/options.php:1697 inc/admin/ui/options.php:1701
+#: inc/admin/ui/options.php:2586 inc/admin/ui/promote.php:161
+msgid "No"
+msgstr "沒有"
+
+#: inc/admin/ui/adserver.php:148 inc/admin/ui/adserver.php:162
+#: inc/admin/ui/options.php:1188 inc/admin/ui/options.php:1203
+#, php-format
+msgid "Follow %sthe guide%s to create a new ad block"
+msgstr "按照%s指南%s製作新的廣告塊"
+
+#: inc/admin/ui/adserver.php:151 inc/admin/ui/adserver.php:165
+#: inc/admin/ui/options.php:1191 inc/admin/ui/options.php:1206
+msgid "Splash screen"
+msgstr "開機畫面"
+
+#: inc/admin/ui/adserver.php:174 inc/admin/ui/options.php:1215
+msgid "Floating bar"
+msgstr "浮條"
+
+#: inc/admin/ui/adserver.php:183 inc/admin/ui/options.php:1224
+msgid "300x250 before post"
+msgstr "發布前300x250"
+
+#: inc/admin/ui/adserver.php:192 inc/admin/ui/options.php:1233
+msgid "300x250 after post"
+msgstr "發布後300x250"
+
+#: inc/admin/ui/adserver.php:208 inc/admin/ui/options.php:1107
+msgid ""
+"Useful to add your html banners or communicate an event.<br/><b>Note that "
+"you can not use CSS or Javascript. Only HTML tags (img, a, b, i, p, ...).</b>"
+msgstr ""
+"添加HTML標語或傳達事件很有用。<br/> <b>請注意，您不能使用CSS或Javascript。僅"
+"HTML標記（img，a，b，i，p，...）。</b>"
+
+#: inc/admin/ui/adserver.php:212 inc/admin/ui/options.php:1109
+msgid "Before the post"
+msgstr "發布之前"
+
+#: inc/admin/ui/adserver.php:218 inc/admin/ui/options.php:1119
+msgid "After the post"
+msgstr "發布後"
+
+#: inc/admin/ui/adserver.php:233 inc/admin/ui/adserver.php:326
+msgid "Submit"
+msgstr "提交"
+
+#: inc/admin/ui/adserver.php:280
+msgid "HTML ad"
+msgstr "HTML廣告"
+
+#: inc/admin/ui/adserver.php:283
+msgid "Color of the title"
+msgstr "標題顏色"
+
+#: inc/admin/ui/adserver.php:288
+msgid "The ad"
+msgstr "廣告"
+
+#: inc/admin/ui/adserver.php:289 inc/admin/ui/auto.php:933
+#: inc/admin/ui/auto.php:1523 inc/admin/ui/auto.php:1790
+#: inc/admin/ui/cert.php:242 inc/admin/ui/cert.php:398
+#: inc/admin/ui/options.php:581 inc/admin/ui/options.php:867
+#: inc/admin/ui/options.php:918 inc/admin/ui/options.php:1331
+#: inc/admin/ui/options.php:1593 inc/admin/ui/options.php:1656
+#: inc/admin/ui/options.php:2206 inc/admin/ui/options.php:2371
+#: inc/admin/ui/options.php:2639 inc/admin/ui/push.php:520
+msgid "Title"
+msgstr "標題"
+
+#: inc/admin/ui/adserver.php:292
+msgid "Text"
+msgstr "文本"
+
+#: inc/admin/ui/adserver.php:295 inc/admin/ui/push.php:528
+msgid "Link"
+msgstr "鏈接"
+
+#: inc/admin/ui/adserver.php:298 inc/admin/ui/publish.php:378
+#: inc/admin/ui/pwa.php:154
+msgid "Logo"
+msgstr "商標"
+
+#: inc/admin/ui/adserver.php:302 inc/admin/ui/publish.php:420
+#: inc/admin/ui/push.php:525
+msgid "Choose an image"
+msgstr "選擇一張圖片"
+
+#: inc/admin/ui/adserver.php:306 inc/admin/ui/push.php:614
+msgid "Language"
+msgstr "語言"
+
+#: inc/admin/ui/adserver.php:313 inc/admin/ui/push.php:649
+msgid "Schedule"
+msgstr "時間表"
+
+#: inc/admin/ui/adserver.php:314
+msgid "Start date"
+msgstr "開始日期"
+
+#: inc/admin/ui/adserver.php:319
+msgid "End date"
+msgstr "結束日期"
+
+#: inc/admin/ui/adserver.php:335
+msgid "ads"
+msgstr "廣告"
+
+#: inc/admin/ui/adserver.php:335
+msgid "displays"
+msgstr "顯示"
+
+#: inc/admin/ui/adserver.php:335
+msgid "clicks"
+msgstr "點擊次數"
+
+#: inc/admin/ui/adserver.php:359
+msgid "LIVE"
+msgstr "生活"
+
+#: inc/admin/ui/adserver.php:361
+msgid "PLANNED"
+msgstr "計劃"
+
+#: inc/admin/ui/adserver.php:363
+msgid "ENDED"
+msgstr "已結束"
+
+#: inc/admin/ui/adserver.php:366
+msgid "Displays:"
+msgstr "顯示："
+
+#: inc/admin/ui/adserver.php:366
+msgid "Clicks:"
+msgstr "點擊次數："
+
+#: inc/admin/ui/adserver.php:368
+msgid "Lang:"
+msgstr "郎："
+
+#: inc/admin/ui/adserver.php:370
+msgid "Start date:"
+msgstr "開始日期："
+
+#: inc/admin/ui/adserver.php:371
+msgid "End date:"
+msgstr "結束日期："
+
+#: inc/admin/ui/adserver.php:373 inc/admin/ui/cert.php:362
+#: inc/admin/ui/options.php:389 inc/admin/ui/options.php:395
+#: inc/admin/ui/options.php:408 inc/admin/ui/options.php:1932
+#: inc/admin/ui/options.php:1967 inc/admin/ui/options.php:2162
+#: inc/admin/ui/options.php:2194 inc/admin/ui/publish.php:297
+#: inc/admin/ui/publish.php:299 inc/admin/ui/push.php:517
+#: inc/admin/ui/stats.php:143
+msgid "Edit"
+msgstr "編輯"
+
+#: inc/admin/ui/adserver.php:375 inc/admin/ui/options.php:2253
+#: inc/admin/ui/push.php:390 inc/admin/ui/push.php:424
+#: inc/admin/ui/push.php:652 inc/admin/ui/push.php:663
+#: inc/admin/ui/qrcode.php:120
+msgid "Delete"
+msgstr "刪除"
+
+#: inc/admin/ui/auto.php:281
+msgid "Some options require the WPMobile.App theme"
+msgstr "一些選項需要WPMobile.App主題"
+
+#: inc/admin/ui/auto.php:385 inc/admin/ui/auto.php:1173
+#: inc/admin/ui/auto.php:1829
+msgid "Links management"
+msgstr "鏈接管理"
+
+#: inc/admin/ui/auto.php:392 inc/admin/ui/auto.php:1180
+#: inc/admin/ui/auto.php:1836 inc/admin/ui/options.php:1544
+msgid "Open all links in the internal browser"
+msgstr "在內部瀏覽器中打開所有鏈接"
+
+#: inc/admin/ui/auto.php:406 inc/admin/ui/auto.php:1196
+#: inc/admin/ui/auto.php:1850
+msgid "Open all pdf link with the Drive reader"
+msgstr "使用雲端硬盤閱讀器打開所有pdf鏈接"
+
+#: inc/admin/ui/auto.php:419 inc/admin/ui/auto.php:593
+#: inc/admin/ui/auto.php:747 inc/admin/ui/auto.php:750
+#: inc/admin/ui/auto.php:1893 inc/functions/colors.php:298
+#: inc/functions/colors.php:300 inc/functions/colors.php:302
+#: inc/functions/colors.php:304
+msgid "Extra"
+msgstr "額外"
+
+#: inc/admin/ui/auto.php:424 inc/admin/ui/auto.php:756
+#: inc/admin/ui/auto.php:1900 inc/admin/ui/options.php:1806
+msgid "Administrator"
+msgstr "管理員"
+
+#: inc/admin/ui/auto.php:425 inc/admin/ui/auto.php:757
+#: inc/admin/ui/auto.php:1901 inc/admin/ui/options.php:1807
+msgid "Editor"
+msgstr "編輯"
+
+#: inc/admin/ui/auto.php:426 inc/admin/ui/auto.php:758
+#: inc/admin/ui/auto.php:931 inc/admin/ui/auto.php:1521
+#: inc/admin/ui/auto.php:1788 inc/admin/ui/auto.php:1902
+#: inc/admin/ui/options.php:1591 inc/admin/ui/options.php:1808
+#: inc/admin/ui/options.php:2637
+msgid "Author"
+msgstr "作者"
+
+#: inc/admin/ui/auto.php:427 inc/admin/ui/auto.php:759
+#: inc/admin/ui/auto.php:1903 inc/admin/ui/options.php:1809
+msgid "Subscriber"
+msgstr "訂戶"
+
+#: inc/admin/ui/auto.php:432 inc/admin/ui/auto.php:764
+#: inc/admin/ui/auto.php:1908
+msgid "Minimal role to send notification"
+msgstr "發送通知的角色最少"
+
+#: inc/admin/ui/auto.php:452 inc/admin/ui/auto.php:781
+#: inc/admin/ui/auto.php:1928
+msgid "Minimal role to view statistics"
+msgstr "查看統計信息的角色最少"
+
+#: inc/admin/ui/auto.php:470 inc/admin/ui/auto.php:799
+#: inc/admin/ui/auto.php:1946
+msgid "Minimal role to view qrcode"
+msgstr "最少的角色來查看二維碼"
+
+#: inc/admin/ui/auto.php:490 inc/admin/ui/auto.php:817
+#: inc/admin/ui/auto.php:1966
+msgid "Show the download banner on the website"
+msgstr "在網站上顯示下載橫幅"
+
+#: inc/admin/ui/auto.php:503 inc/admin/ui/auto.php:680
+#: inc/admin/ui/auto.php:687 inc/admin/ui/auto.php:1977
+msgid "Cache and speed"
+msgstr "緩存和速度"
+
+#: inc/admin/ui/auto.php:510 inc/admin/ui/auto.php:1984
+msgid "Cache everything"
+msgstr "緩存一切"
+
+#: inc/admin/ui/auto.php:512 inc/admin/ui/auto.php:1986
+msgid "Cache only for offline"
+msgstr "僅離線緩存"
+
+#: inc/admin/ui/auto.php:523 inc/admin/ui/auto.php:710
+#: inc/admin/ui/auto.php:1996
+msgid "Enable fastclick"
+msgstr "啟用快速點擊"
+
+#: inc/admin/ui/auto.php:536 inc/admin/ui/auto.php:721
+#: inc/admin/ui/auto.php:2007
+msgid "Improve the compatibility with cache plugin"
+msgstr "改善與緩存插件的兼容性"
+
+#: inc/admin/ui/auto.php:598
+msgid "Action on login"
+msgstr "登入操作"
+
+#: inc/admin/ui/auto.php:603
+msgid "Redirect to after login"
+msgstr "登入後重定向到"
+
+#: inc/admin/ui/auto.php:623
+msgid "User Homepage"
+msgstr "用戶主頁"
+
+#: inc/admin/ui/auto.php:628
+msgid "Home type"
+msgstr "家庭類型"
+
+#: inc/admin/ui/auto.php:632
+msgid "List with all posts"
+msgstr "列出所有帖子"
+
+#: inc/admin/ui/auto.php:632
+msgid "Show 3 posts by category"
+msgstr "按類別顯示3個帖子"
+
+#: inc/admin/ui/auto.php:641
+msgid "Category available to users"
+msgstr "用戶可用的類別"
+
+#: inc/admin/ui/auto.php:694
+msgid "Agressive (not for ecommerce and social app)"
+msgstr "進取型（不適用於電子商務和社交應用程式）"
+
+#: inc/admin/ui/auto.php:696
+msgid "Classic cache mode"
+msgstr "經典緩存模式"
+
+#: inc/admin/ui/auto.php:703
+msgid "Disable all cache"
+msgstr "禁用所有緩存"
+
+#: inc/admin/ui/auto.php:733
+msgid "Always refresh the app content"
+msgstr "一律更新應用內容"
+
+#: inc/admin/ui/auto.php:747 inc/functions/colors.php:259
+#: inc/functions/colors.php:261
+msgid "Background"
+msgstr "背景"
+
+#: inc/admin/ui/auto.php:829
+msgid "Never turn off the screen"
+msgstr "切勿關閉屏幕"
+
+#: inc/admin/ui/auto.php:842
+msgid "Use the website theme (not recommanded)"
+msgstr "使用網站主題（不推薦）"
+
+#: inc/admin/ui/auto.php:848 inc/admin/ui/auto.php:1575
+#: inc/admin/ui/cert.php:424 inc/admin/ui/options.php:1335
+#: inc/admin/ui/pwa.php:186 inc/common/admin-bar.php:59
+#: inc/functions/colors.php:204 inc/functions/colors.php:205
+#: inc/functions/colors.php:207 inc/functions/colors.php:208
+#: inc/functions/colors.php:210 inc/functions/colors.php:211
+#: inc/functions/colors.php:213 inc/functions/colors.php:214
+#: inc/functions/colors.php:284 inc/functions/colors.php:285
+#: inc/functions/colors.php:289 inc/functions/colors.php:291
+#: inc/functions/colors.php:293 inc/stats/display.php:111
+#: inc/stats/display.php:351
+msgid "Content"
+msgstr "內容"
+
+#: inc/admin/ui/auto.php:851
+msgid "Animate page load"
+msgstr "動畫頁面加載"
+
+#: inc/admin/ui/auto.php:858
+msgid "Animate page load on WordPress Themes"
+msgstr "WordPress主題上的頁面加載動畫"
+
+#: inc/admin/ui/auto.php:870
+msgid "Lazy load images"
+msgstr "延遲加載圖像"
+
+#: inc/admin/ui/auto.php:877
+msgid "Infinite scroll pages"
+msgstr "無限滾動頁面"
+
+#: inc/admin/ui/auto.php:883
+msgid "Pull to refresh"
+msgstr "下拉更新"
+
+#: inc/admin/ui/auto.php:892 inc/admin/ui/options.php:1985
+#: inc/functions/colors.php:197 inc/functions/colors.php:198
+#: inc/functions/colors.php:270 inc/functions/colors.php:272
+#: inc/functions/colors.php:274 inc/functions/colors.php:275
+#: inc/functions/colors.php:276 inc/functions/colors.php:277
+#: inc/functions/colors.php:278 inc/functions/colors.php:280
+#: inc/functions/colors.php:281
+msgid "Menu"
+msgstr "選單"
+
+#: inc/admin/ui/auto.php:896
+msgid "Slide to open the menu"
+msgstr "滑動以打開選單"
+
+#: inc/admin/ui/auto.php:913 inc/functions/colors.php:218
+#: inc/functions/colors.php:219 inc/functions/colors.php:221
+#: inc/functions/colors.php:295
+msgid "List"
+msgstr "清單"
+
+#: inc/admin/ui/auto.php:916
+msgid "Show the title of the list"
+msgstr "顯示列表標題"
+
+#: inc/admin/ui/auto.php:922
+msgid "Order list by"
+msgstr "訂單清單"
+
+#: inc/admin/ui/auto.php:927 inc/admin/ui/auto.php:1517
+#: inc/admin/ui/auto.php:1782 inc/admin/ui/options.php:1587
+#: inc/admin/ui/options.php:2631
+msgid "Date"
+msgstr "日期"
+
+#: inc/admin/ui/auto.php:929 inc/admin/ui/auto.php:1519
+#: inc/admin/ui/auto.php:1786 inc/admin/ui/options.php:1589
+#: inc/admin/ui/options.php:2635
+msgid "Comment count"
+msgstr "評論數"
+
+#: inc/admin/ui/auto.php:935 inc/admin/ui/auto.php:1525
+#: inc/admin/ui/auto.php:1792 inc/admin/ui/options.php:1595
+#: inc/admin/ui/options.php:2641
+msgid "Last modified date"
+msgstr "最後修改日期"
+
+#: inc/admin/ui/auto.php:937 inc/admin/ui/auto.php:1527
+#: inc/admin/ui/auto.php:1794 inc/admin/ui/options.php:1597
+#: inc/admin/ui/options.php:2643
+msgid "Random"
+msgstr "隨機"
+
+#: inc/admin/ui/auto.php:940 inc/admin/ui/auto.php:1530
+#: inc/admin/ui/auto.php:1797 inc/admin/ui/options.php:1600
+#: inc/admin/ui/options.php:2646
+msgid "No order"
+msgstr "沒有訂單"
+
+#: inc/admin/ui/auto.php:945
+msgid "Sort rule"
+msgstr "排序規則"
+
+#: inc/admin/ui/auto.php:950 inc/admin/ui/auto.php:1549
+#: inc/admin/ui/auto.php:1814 inc/admin/ui/options.php:1613
+#: inc/admin/ui/options.php:2658
+msgid "Ascending order from lowest to highest values"
+msgstr "從最低到最高的升序"
+
+#: inc/admin/ui/auto.php:952 inc/admin/ui/auto.php:1551
+#: inc/admin/ui/auto.php:1816 inc/admin/ui/options.php:1615
+#: inc/admin/ui/options.php:2660
+msgid "Descending order from highest to lowest values"
+msgstr "從最高到最低的降序"
+
+#: inc/admin/ui/auto.php:962
+msgid "Item number"
+msgstr "項目編號"
+
+#: inc/admin/ui/auto.php:984 inc/admin/ui/auto.php:1433
+#: inc/admin/ui/options.php:2572
+msgid "Hide posts older than X days"
+msgstr "隱藏早於X天的帖子"
+
+#: inc/admin/ui/auto.php:988 inc/admin/ui/auto.php:1437
+#: inc/admin/ui/options.php:2575
+msgid "Days"
+msgstr "天"
+
+#: inc/admin/ui/auto.php:997 inc/admin/ui/auto.php:1446
+#: inc/admin/ui/options.php:2582
+msgid "Show password protected posts"
+msgstr "顯示受密碼保護的帖子"
+
+#: inc/admin/ui/auto.php:1011 inc/admin/ui/auto.php:1459
+msgid "Exclude by direct tag name"
+msgstr "按直接標籤名稱排除"
+
+#: inc/admin/ui/auto.php:1024 inc/admin/ui/auto.php:1472
+msgid "Exclude by tags"
+msgstr "按標籤排除"
+
+#: inc/admin/ui/auto.php:1069
+msgid "Hide"
+msgstr "隱藏"
+
+#: inc/admin/ui/auto.php:1069 inc/admin/ui/options.php:2585
+msgid "Show"
+msgstr "節目"
+
+#: inc/admin/ui/auto.php:1091 inc/admin/ui/auto.php:1318
+#: inc/admin/ui/options.php:1629
+msgid "Image"
+msgstr "圖片"
+
+#: inc/admin/ui/auto.php:1098 inc/admin/ui/auto.php:1325
+#: inc/admin/ui/options.php:1633
+msgid "Default image url (optional)"
+msgstr "預設圖片網址（可選）"
+
+#: inc/admin/ui/auto.php:1112 inc/admin/ui/auto.php:1339
+msgid "Use any image on the post as featured"
+msgstr "使用帖子中的任何圖片作為精選"
+
+#: inc/admin/ui/auto.php:1125 inc/admin/ui/auto.php:1666
+msgid "Similars posts"
+msgstr "類似職位"
+
+#: inc/admin/ui/auto.php:1131 inc/admin/ui/auto.php:1672
+#: inc/admin/ui/options.php:1713
+msgid "Number"
+msgstr "數目"
+
+#: inc/admin/ui/auto.php:1152 inc/admin/ui/auto.php:1693
+#: inc/admin/ui/options.php:1724
+msgid "Selection rule"
+msgstr "選擇規則"
+
+#: inc/admin/ui/auto.php:1248
+msgid "Features"
+msgstr "功能"
+
+#: inc/admin/ui/auto.php:1256 inc/admin/ui/options.php:1520
+msgid "Subscribe system"
+msgstr "訂閱系統"
+
+#: inc/admin/ui/auto.php:1270 inc/admin/ui/options.php:1524
+msgid "Favorite system"
+msgstr "收藏夾的系統"
+
+#: inc/admin/ui/auto.php:1284 inc/admin/ui/options.php:1528
+msgid "Sharing system"
+msgstr "分享系統"
+
+#: inc/admin/ui/auto.php:1357 inc/admin/ui/options.php:1667
+msgid "Date and time"
+msgstr "日期和時間"
+
+#: inc/admin/ui/auto.php:1363 inc/admin/ui/options.php:1670
+msgid "Date type"
+msgstr "日期類型"
+
+#: inc/admin/ui/auto.php:1370 inc/admin/ui/options.php:1673
+msgid "5 days ago"
+msgstr "5天前"
+
+#: inc/admin/ui/auto.php:1380
+msgid "Show date on list and post"
+msgstr "在清單上顯示日期並發布"
+
+#: inc/admin/ui/auto.php:1394
+msgid "Show hour"
+msgstr "顯示時間"
+
+#: inc/admin/ui/auto.php:1407
+msgid "Lists"
+msgstr "清單"
+
+#: inc/admin/ui/auto.php:1414
+msgid "Item size"
+msgstr "物品尺寸"
+
+#: inc/admin/ui/auto.php:1421 inc/admin/ui/options.php:1574
+msgid "Big cards"
+msgstr "大牌"
+
+#: inc/admin/ui/auto.php:1422 inc/admin/ui/options.php:1575
+msgid "Small cards"
+msgstr "小卡片"
+
+#: inc/admin/ui/auto.php:1509 inc/admin/ui/auto.php:1776
+#: inc/admin/ui/options.php:1582 inc/admin/ui/options.php:2627
+msgid "Order by"
+msgstr "排序依據"
+
+#: inc/admin/ui/auto.php:1541 inc/admin/ui/auto.php:1808
+#: inc/admin/ui/options.php:1608 inc/admin/ui/options.php:2654
+msgid "Order"
+msgstr "訂購"
+
+#: inc/admin/ui/auto.php:1562
+msgid "Show image on lists"
+msgstr "在清單上顯示圖片"
+
+#: inc/admin/ui/auto.php:1581
+msgid "Show image on pages"
+msgstr "在頁面上顯示圖像"
+
+#: inc/admin/ui/auto.php:1595
+msgid "Show the title before content"
+msgstr "在內容前顯示標題"
+
+#: inc/admin/ui/auto.php:1609 inc/admin/ui/options.php:1692
+msgid "Show author name and avatar before post"
+msgstr "發布前顯示作者姓名和頭像"
+
+#: inc/admin/ui/auto.php:1623 inc/admin/ui/options.php:1696
+msgid "Show date before post"
+msgstr "發布前顯示日期"
+
+#: inc/admin/ui/auto.php:1637 inc/admin/ui/options.php:1700
+msgid "Show author bio after post"
+msgstr "發布後顯示作者簡介"
+
+#: inc/admin/ui/auto.php:1651 inc/admin/ui/options.php:1516
+msgid "Comments"
+msgstr "評論"
+
+#: inc/admin/ui/auto.php:1713 inc/admin/ui/auto.php:1720
+#: inc/admin/ui/options.php:1532
+msgid "Search engine"
+msgstr "搜尋引擎"
+
+#: inc/admin/ui/auto.php:1736
+msgid "Exclude by category"
+msgstr "按類別排除"
+
+#: inc/admin/ui/auto.php:1759
+msgid "Show more category"
+msgstr "顯示更多類別"
+
+#: inc/admin/ui/auto.php:1784 inc/admin/ui/options.php:2633
+msgid "Relevance"
+msgstr "關聯"
+
+#: inc/admin/ui/auto.php:1864
+msgid "Open all links on the same screen (not recommended)"
+msgstr "在同一屏幕上打開所有鏈接（不建議）"
+
+#: inc/admin/ui/auto.php:1878 inc/admin/ui/options.php:1554
+msgid "Open in browser menu option (Android only)"
+msgstr "在瀏覽器選單中打開選項（僅適用於Android）"
+
+#: inc/admin/ui/cert.php:75 inc/admin/ui/options.php:604
+msgid "General"
+msgstr "一般"
+
+#: inc/admin/ui/cert.php:79
+msgid "Comma separated category"
+msgstr "逗號分隔類別"
+
+#: inc/admin/ui/cert.php:91
+msgid "Action on notification click"
+msgstr "通知點擊動作"
+
+#: inc/admin/ui/cert.php:95
+msgid "Open the linked page"
+msgstr "打開鏈接的頁面"
+
+#: inc/admin/ui/cert.php:95
+msgid "Display the notification message"
+msgstr "顯示通知消息"
+
+#: inc/admin/ui/cert.php:103
+msgid "Show the box to send push on page editor"
+msgstr "顯示框以發送推入頁面編輯器"
+
+#: inc/admin/ui/cert.php:122
+msgid "Automatic push"
+msgstr "自動推送"
+
+#: inc/admin/ui/cert.php:128
+msgid "When a post is published"
+msgstr "發表文章時"
+
+#: inc/admin/ui/cert.php:140
+msgid "When a post is published or edited or updated"
+msgstr "發布，編輯或更新帖子時"
+
+#: inc/admin/ui/cert.php:152
+msgid "When a WooCommerce order status change"
+msgstr "當WooCommerce訂單狀態更改時"
+
+#: inc/admin/ui/cert.php:164
+msgid "When a BuddyPress notification is sent"
+msgstr "發送BuddyPress通知時"
+
+#: inc/admin/ui/cert.php:176
+msgid "When a mail is sent to an user"
+msgstr "郵件發送給用戶時"
+
+#: inc/admin/ui/cert.php:195 inc/admin/ui/options.php:1090
+msgid "iOS"
+msgstr "的iOS"
+
+#: inc/admin/ui/cert.php:201
+msgid "You need to buy and publish your app before the iOS configuration."
+msgstr "您需要在iOS設定之前購買和發布您的應用。"
+
+#: inc/admin/ui/cert.php:206
+msgid "Certificate"
+msgstr "證書"
+
+#: inc/admin/ui/cert.php:206
+msgid "download here"
+msgstr "在這裡下載"
+
+#: inc/admin/ui/cert.php:217
+msgid "Valid until"
+msgstr "有效期至"
+
+#: inc/admin/ui/cert.php:222
+msgid "Expired"
+msgstr "已過期"
+
+#: inc/admin/ui/cert.php:225 inc/admin/ui/cert.php:284
+msgid "Missing"
+msgstr "失踪"
+
+#: inc/admin/ui/cert.php:238
+msgid "Content of the push"
+msgstr "推送內容"
+
+#: inc/admin/ui/cert.php:242
+msgid "Title + Text"
+msgstr "標題+文字"
+
+#: inc/admin/ui/cert.php:252 inc/admin/ui/options.php:1090
+msgid "Android"
+msgstr "安卓"
+
+#: inc/admin/ui/cert.php:261
+msgid ""
+"Follow <a href=\"https://support.wpmobile.app/article/265-get-the-google-"
+"services-json-file-and-api-key?lang=en\" target=\"_blank\">this guide</a> to "
+"get the google-services.json file and API Key"
+msgstr ""
+"請按照<a href=\"https://support.wpmobile.app/article/265-get-the-google-"
+"services-json-file-and-api-key?lang=en\" target=\"_blank\">本指南</a>獲取"
+"google-services.json文件和API密鑰"
+
+#: inc/admin/ui/cert.php:261
+msgid "Your package name is"
+msgstr "您的包裹名稱是"
+
+#: inc/admin/ui/cert.php:264
+msgid ""
+"Follow <a href=\"https://support.wpmobile.app/article/248-how-to-get-an-api-"
+"key-for-android-notifications?lang=en\" target=\"_blank\">this guide</a> to "
+"get the Google API Key"
+msgstr ""
+"請按照<a href=\"https://support.wpmobile.app/article/248-how-to-get-an-api-"
+"key-for-android-notifications?lang=en\" target=\"_blank\">本指南</a>獲取"
+"Google API密鑰"
+
+#: inc/admin/ui/cert.php:276
+msgid "google-services.json file"
+msgstr "google-services.json文件"
+
+#: inc/admin/ui/cert.php:283
+msgid "Uploaded"
+msgstr "已上傳"
+
+#: inc/admin/ui/cert.php:297 inc/admin/ui/options.php:523
+msgid "Server API Key"
+msgstr "服務器API密鑰"
+
+#: inc/admin/ui/cert.php:321 inc/admin/ui/options.php:527
+msgid "Sender ID"
+msgstr "發件人ID"
+
+#: inc/admin/ui/cert.php:339
+msgid "Notification icon"
+msgstr "通知圖標"
+
+#: inc/admin/ui/cert.php:382
+msgid "Welcome notification"
+msgstr "歡迎通知"
+
+#: inc/admin/ui/cert.php:386 inc/admin/ui/options.php:502
+#: inc/admin/ui/options.php:537
+msgid "Send a welcome notification"
+msgstr "發送歡迎通知"
+
+#: inc/admin/ui/cert.php:411 inc/admin/ui/options.php:585
+msgid "Sub title"
+msgstr "副標題"
+
+#: inc/admin/ui/home.php:14 inc/admin/ui/home.php:169
+msgid "Done! App auto configured"
+msgstr "做完了！應用自動設定"
+
+#: inc/admin/ui/home.php:100 inc/admin/ui/submenu.php:67
+msgid "Name and logo"
+msgstr "名稱和徽標"
+
+#: inc/admin/ui/home.php:101 inc/admin/ui/submenu.php:68
+msgid "Homepage and menu"
+msgstr "主頁和選單"
+
+#: inc/admin/ui/home.php:102
+msgid "Theme and colors"
+msgstr "主題和顏色"
+
+#: inc/admin/ui/home.php:103
+msgid "Block design"
+msgstr "方塊設計"
+
+#: inc/admin/ui/home.php:104
+msgid "CSS and JavaScript"
+msgstr "CSS和JavaScript"
+
+#: inc/admin/ui/home.php:105
+msgid "Translation"
+msgstr "翻譯"
+
+#: inc/admin/ui/home.php:106
+msgid "Options"
+msgstr "選件"
+
+#: inc/admin/ui/home.php:203
+msgid "unlimited"
+msgstr "無限"
+
+#: inc/admin/ui/home.php:222 inc/admin/ui/menu.php:249
+msgid "Create my app"
+msgstr "創建我的應用"
+
+#: inc/admin/ui/home.php:230 inc/functions/check.php:264
+msgid "Downloads:"
+msgstr "資料下載："
+
+#: inc/admin/ui/home.php:253 inc/admin/ui/home.php:297
+msgid "downloads"
+msgstr "資料下載"
+
+#: inc/admin/ui/home.php:264 inc/admin/ui/home.php:310
+msgid "Update and files"
+msgstr "更新和文件"
+
+#: inc/admin/ui/home.php:269 inc/admin/ui/home.php:318
+msgid "BUY"
+msgstr "購買"
+
+#: inc/admin/ui/home.php:277
+msgid "Build the app"
+msgstr "編譯應用"
+
+#: inc/admin/ui/home.php:323 inc/admin/ui/menu.php:325
+msgid "UPDATE"
+msgstr "更新"
+
+#: inc/admin/ui/home.php:336 inc/admin/ui/menu.php:362
+#: inc/admin/ui/options.php:322 inc/admin/ui/options.php:495
+#: inc/stats/display.php:107
+msgid "Push notifications"
+msgstr "推送通知"
+
+#: inc/admin/ui/menu.php:231
+msgid "Your application is almost ready!"
+msgstr "您的應用程序即將準備就緒！"
+
+#: inc/admin/ui/menu.php:233
+msgid "Name of the application"
+msgstr "申請名稱"
+
+#: inc/admin/ui/menu.php:234
+msgid "SHORTER IS BETTER"
+msgstr "更短更好"
+
+#: inc/admin/ui/menu.php:237
+msgid "Logo for the app launcher"
+msgstr "應用啟動器的徽標"
+
+#: inc/admin/ui/menu.php:238
+msgid "BEST SIZE: 1024x1024"
+msgstr "最佳尺寸：1024x1024"
+
+#: inc/admin/ui/menu.php:242
+msgid "Select a logo"
+msgstr "選擇徽標"
+
+#: inc/admin/ui/menu.php:245 inc/admin/ui/pwa.php:174
+msgid "Main color"
+msgstr "主色"
+
+#: inc/admin/ui/menu.php:302
+msgid "Push notifications are not yet fully configured"
+msgstr "推送通知尚未完全設定"
+
+#: inc/admin/ui/menu.php:302 inc/admin/ui/options.php:1922
+msgid "CONFIGURE"
+msgstr "設定"
+
+#: inc/admin/ui/menu.php:311
+msgid ""
+"On December 15, 2016 notifications and statistics will no longer be "
+"available with the free package"
+msgstr "自2016年12月15日起，免費軟件包將不再提供通知和統計信息"
+
+#: inc/admin/ui/menu.php:325
+msgid "Your app need to be updated on stores"
+msgstr "您的應用需要在商店中更新"
+
+#: inc/admin/ui/menu.php:353
+msgid "Dashboard"
+msgstr "儀表板"
+
+#: inc/admin/ui/options.php:148
+msgid "Please review the form"
+msgstr "請檢查表格"
+
+#: inc/admin/ui/options.php:195
+msgid "Important notice"
+msgstr "重要通知"
+
+#: inc/admin/ui/options.php:196
+msgid ""
+"To optimize performance, the application uses a cache system. Changes made "
+"from WordPress can take up to 1 hour to be available on apps."
+msgstr ""
+"為了優化性能，該應用程序使用緩存系統。從WordPress進行的更改最多可能需要1個小"
+"時才能在應用程序上可用。"
+
+#: inc/admin/ui/options.php:197
+msgid "GOT IT"
+msgstr "得到它了"
+
+#: inc/admin/ui/options.php:241
+msgid "Language(s) of the app"
+msgstr "應用程式的語言"
+
+#: inc/admin/ui/options.php:243
+msgid "Colors of the app"
+msgstr "應用程序的顏色"
+
+#: inc/admin/ui/options.php:257 inc/admin/ui/options.php:258
+msgid "Home page and menu"
+msgstr "主頁和選單"
+
+#: inc/admin/ui/options.php:283 inc/admin/ui/options.php:333
+msgid "Smart banner"
+msgstr "智能橫幅"
+
+#: inc/admin/ui/options.php:285 inc/admin/ui/options.php:1350
+msgid "Main content"
+msgstr "主要內容"
+
+#: inc/admin/ui/options.php:300 inc/admin/ui/options.php:1271
+msgid "Rating popup"
+msgstr "評分彈出"
+
+#: inc/admin/ui/options.php:302 inc/admin/ui/options.php:1509
+msgid "App interface"
+msgstr "應用界面"
+
+#: inc/admin/ui/options.php:304
+msgid "Content to show"
+msgstr "顯示內容"
+
+#: inc/admin/ui/options.php:320
+msgid "About page"
+msgstr "關於頁面"
+
+#: inc/admin/ui/options.php:325
+msgid "Plugins"
+msgstr "外掛程式"
+
+#: inc/admin/ui/options.php:336 inc/admin/ui/options.php:340
+#: inc/admin/ui/options.php:1155
+msgid "DEBUG"
+msgstr "除錯和測試"
+
+#: inc/admin/ui/options.php:338
+msgid "I'm a web developer"
+msgstr "我是網頁開發人員"
+
+#: inc/admin/ui/options.php:341
+msgid "HTML injection"
+msgstr "HTML注入"
+
+#: inc/admin/ui/options.php:342 inc/admin/ui/options.php:1257
+msgid "Regex modifications"
+msgstr "正則表達式修改"
+
+#: inc/admin/ui/options.php:347
+msgid "Access right of the plugin"
+msgstr "插件的訪問權限"
+
+#: inc/admin/ui/options.php:354
+msgid "All changes are instantly reflected on the app"
+msgstr "所有更改都會立即反映在應用程序上"
+
+#: inc/admin/ui/options.php:365
+msgid "UPDATE NOW ON STORES FOR"
+msgstr "現在更新商店"
+
+#: inc/admin/ui/options.php:367
+msgid "PUBLISH ON STORES FOR"
+msgstr "在商店上發布"
+
+#: inc/admin/ui/options.php:369 inc/admin/ui/publish.php:303
+msgid "Your app"
+msgstr "您的應用程式"
+
+#: inc/admin/ui/options.php:378 inc/admin/ui/options.php:1891
+#: inc/admin/ui/options.php:1901 inc/admin/ui/options.php:2403
+#: inc/admin/ui/publish.php:312 inc/admin/ui/pwa.php:191
+msgid "Homepage"
+msgstr "主頁"
+
+#: inc/admin/ui/options.php:379 inc/admin/ui/publish.php:313
+msgid "Support"
+msgstr "支持"
+
+#: inc/admin/ui/options.php:380 inc/admin/ui/publish.php:314
+msgid "Privacy policy"
+msgstr "隱私政策"
+
+#: inc/admin/ui/options.php:384 inc/admin/ui/publish.php:318
+msgid "Category:"
+msgstr "類別："
+
+#: inc/admin/ui/options.php:384 inc/admin/ui/publish.php:318
+msgid "Keywords:"
+msgstr "關鍵字："
+
+#: inc/admin/ui/options.php:391 inc/admin/ui/options.php:445
+msgid "Custom theme"
+msgstr "自訂主題"
+
+#: inc/admin/ui/options.php:398 inc/admin/ui/publish.php:330
+msgid "Contact info"
+msgstr "聯絡資料"
+
+#: inc/admin/ui/options.php:428
+msgid "Your App"
+msgstr "您的應用程式"
+
+#: inc/admin/ui/options.php:429
+msgid "App title"
+msgstr "應用標題"
+
+#: inc/admin/ui/options.php:431
+msgid "Blog url"
+msgstr "博客網址"
+
+#: inc/admin/ui/options.php:436
+msgid "App logo"
+msgstr "應用徽標"
+
+#: inc/admin/ui/options.php:439 inc/admin/ui/publish.php:385
+#: inc/admin/ui/pwa.php:164
+msgid "Choose a logo"
+msgstr "選擇徽標"
+
+#: inc/admin/ui/options.php:441
+msgid "Background color for iOS logo (if transparency on logo)"
+msgstr "iOS Logo的背景顏色（如果徽標透明）"
+
+#: inc/admin/ui/options.php:446 inc/admin/ui/options.php:1789
+#: inc/admin/ui/theme.php:403
+msgid "Primary color"
+msgstr "首選色"
+
+#: inc/admin/ui/options.php:448 inc/admin/ui/options.php:1791
+#: inc/admin/ui/theme.php:414
+msgid "Secondary color"
+msgstr "次要色"
+
+#: inc/admin/ui/options.php:498 inc/admin/ui/options.php:533
+msgid "Welcome"
+msgstr "歡迎"
+
+#: inc/admin/ui/options.php:499 inc/admin/ui/options.php:534
+msgid "You can send a welcome notification on the first app launch."
+msgstr "您可以在首次啟動應用程序時發送歡迎通知。"
+
+#: inc/admin/ui/options.php:499
+msgid "Go on the language section to configure it."
+msgstr "進入語言部分進行設定。"
+
+#: inc/admin/ui/options.php:511
+#, php-format
+msgid ""
+"You must upload a certificate to enable iOS notifications.<br/>You'll "
+"receive it by mail when the app is under publication on the App Store.<br/>"
+"%sI got the certificate, go to the upload page%s"
+msgstr ""
+"您必須上傳證書才能啟用iOS通知。<br/>當應用在App Store上發佈時，您會通過郵件收"
+"到該證書。<br/>%s我獲得了證書，請轉到上傳頁面%s"
+
+#: inc/admin/ui/options.php:520
+msgid ""
+"Follow the <b><a href=\"https://wpmobile.app/en/send-push-notifications/\" "
+"target=\"_blank\">quick guide</a></b> to get the Google API Key"
+msgstr ""
+"按照<b><a href=\"https://wpmobile.app/en/send-push-notifications/\" target="
+"\"_blank\">快速指南</a></b>獲取Google API密鑰"
+
+#: inc/admin/ui/options.php:605
+msgid "Muted categories do not trigger notifications"
+msgstr "類別靜音不會觸發通知"
+
+#: inc/admin/ui/options.php:608
+msgid "Muted category"
+msgstr "靜音類別"
+
+#: inc/admin/ui/options.php:665
+msgid "You can enter here your legal terms."
+msgstr "您可以在此處輸入您的法律條款。"
+
+#: inc/admin/ui/options.php:688 inc/stats/display.php:135
+msgid "Languages"
+msgstr "語言能力"
+
+#: inc/admin/ui/options.php:696
+msgid "Auto detected users languages"
+msgstr "自動檢測到的用戶語言"
+
+#: inc/admin/ui/options.php:717
+msgid "Remove a language"
+msgstr "刪除語言"
+
+#: inc/admin/ui/options.php:736
+msgid "Add a language"
+msgstr "添加語言"
+
+#: inc/admin/ui/options.php:768
+msgid "Translation system"
+msgstr "翻譯系統"
+
+#: inc/admin/ui/options.php:772
+msgid "No translation"
+msgstr "沒有翻譯"
+
+#: inc/admin/ui/options.php:773
+msgid "Manual"
+msgstr "手冊"
+
+#: inc/admin/ui/options.php:776
+msgid "Automatic (with Weglot)"
+msgstr "自動（用Weglot）"
+
+#: inc/admin/ui/options.php:791
+msgid "Weglot"
+msgstr "韋格洛特"
+
+#: inc/admin/ui/options.php:796 inc/admin/ui/options.php:799
+msgid "API Key"
+msgstr "API密鑰"
+
+#: inc/admin/ui/options.php:806
+msgid "Original language (2 letters code)"
+msgstr "原始語言（2個字母代碼）"
+
+#: inc/admin/ui/options.php:877 inc/admin/ui/options.php:959
+msgid "Url"
+msgstr "網址"
+
+#: inc/admin/ui/options.php:1002
+msgid "Smart Banner"
+msgstr "智能橫幅"
+
+#: inc/admin/ui/options.php:1004 inc/admin/ui/promote.php:79
+msgid ""
+"Display a banner on top of your site pointing on the store for your mobile "
+"visitors."
+msgstr "在您的網站頂部顯示橫幅，指向移動訪問者的商店。"
+
+#: inc/admin/ui/options.php:1074 inc/admin/ui/promote.php:148
+#: inc/functions/banner.php:126
+msgid "FREE"
+msgstr "自由"
+
+#: inc/admin/ui/options.php:1075 inc/admin/ui/promote.php:149
+#: inc/functions/banner.php:47
+msgid "In App Store"
+msgstr "在App Store中"
+
+#: inc/admin/ui/options.php:1078 inc/admin/ui/promote.php:152
+#: inc/functions/banner.php:130
+msgid "VIEW"
+msgstr "檢示"
+
+#: inc/admin/ui/options.php:1084 inc/admin/ui/promote.php:160
+msgid "Show the smart banner"
+msgstr "顯示智能橫幅"
+
+#: inc/admin/ui/options.php:1089
+msgid "Display the smart banner on"
+msgstr "在以下位置顯示智能橫幅"
+
+#: inc/admin/ui/options.php:1090
+msgid "Android and iOS"
+msgstr "Android和iOS"
+
+#: inc/admin/ui/options.php:1099
+msgid "App indexing (SEO)"
+msgstr "應用索引（SEO）"
+
+#: inc/admin/ui/options.php:1101
+#, php-format
+msgid "Follow %sthe guide%s for activate the app indexing api"
+msgstr "跟隨%stheguide%s激活應用程序索引API"
+
+#: inc/admin/ui/options.php:1106
+msgid "Inject HTML"
+msgstr "注入HTML"
+
+#: inc/admin/ui/options.php:1157
+msgid "Cron"
+msgstr "克朗"
+
+#: inc/admin/ui/options.php:1166
+msgid "Package"
+msgstr "包"
+
+#: inc/admin/ui/options.php:1169
+msgid "Package name"
+msgstr "包裹名字"
+
+#: inc/admin/ui/options.php:1169 inc/admin/ui/options.php:1178
+msgid "Get it"
+msgstr "得到它"
+
+#: inc/admin/ui/options.php:1177
+msgid "App Store ID"
+msgstr "應用程式商店編號"
+
+#: inc/admin/ui/options.php:1243 inc/admin/ui/stats.php:147
+#: inc/admin/ui/stats.php:183
+msgid "Google Analytics"
+msgstr "谷歌分析"
+
+#: inc/admin/ui/options.php:1245
+#, php-format
+msgid "Follow %sthe guide%s to get a Google Analytics UA id"
+msgstr "按照%s指南%s獲取Google Analytics（分析）UA ID"
+
+#: inc/admin/ui/options.php:1248
+msgid "Identifiant"
+msgstr "識別的"
+
+#: inc/admin/ui/options.php:1258
+msgid ""
+"<b>'Expert' function, use only if you know what you are doing.</b><br/>If "
+"you have any doubt, please contact us on the chat (bottom right) to see what "
+"we can do ;)<br/><br/>You can via a regular expression delete some portions "
+"of your articles. Useful for example to remove tags or shortcodes that are "
+"not automatically deleted or element that is not useful in the application."
+msgstr ""
+"<b>“專家”功能，僅在知道自己在做什麼時使用。</ b> <br/>如果有任何疑問，請在聊"
+"天室（右下方）與我們聯繫以查看我們可以做什麼；） <br/> <br/>您可以通過正則表"
+"達式刪除文章的某些部分。例如，用於刪除未自動刪除的標籤或短代碼或在應用程序中"
+"不可用的元素，該命令很有用。"
+
+#: inc/admin/ui/options.php:1260
+msgid "Add your regex rules (line break separated)"
+msgstr "添加您的正則表達式規則（以換行符分隔）"
+
+#: inc/admin/ui/options.php:1261
+msgid "Example: /&lt;strong&gt;.*&lt;\\/strong&gt;/i"
+msgstr "例如：/&lt;strong&gt;。* &lt;\\/strong&gt;/i"
+
+#: inc/admin/ui/options.php:1273
+msgid "The rating popup allow the users to go on the store and leave a review."
+msgstr "評級彈出窗口允許用戶去商店並留下評論。"
+
+#: inc/admin/ui/options.php:1276
+msgid "Trigger rule"
+msgstr "觸發規則"
+
+#: inc/admin/ui/options.php:1280
+msgid "After reading X posts (0 = deactivate)"
+msgstr "閱讀X個帖子後（0 =停用）"
+
+#: inc/admin/ui/options.php:1354
+msgid "Additionnal CSS for the Android night mode"
+msgstr "適用於Android夜間模式的附加CSS"
+
+#: inc/admin/ui/options.php:1365
+msgid "Display type"
+msgstr "顯示類型"
+
+#: inc/admin/ui/options.php:1368
+msgid "WPMobile.App (best)"
+msgstr "WPMobile.App（最佳）"
+
+#: inc/admin/ui/options.php:1369 inc/admin/ui/options.php:1488
+msgid "Simple (text only)"
+msgstr "簡單（僅文本）"
+
+#: inc/admin/ui/options.php:1370 inc/admin/ui/options.php:1489
+msgid "Website theme (not app friendly)"
+msgstr "網站主題（不適合應用）"
+
+#: inc/admin/ui/options.php:1374 inc/admin/ui/options.php:1493
+msgid "Optimal"
+msgstr "最佳"
+
+#: inc/admin/ui/options.php:1414
+msgid "Only on some page?"
+msgstr "僅在某些頁面上？"
+
+#: inc/admin/ui/options.php:1429
+msgid "Custom CSS (only on app)"
+msgstr "自定義CSS（僅適用於應用）"
+
+#: inc/admin/ui/options.php:1430 inc/admin/ui/options.php:1443
+msgid "You can use CSS to customize the content"
+msgstr "您可以使用CSS定制內容"
+
+#: inc/admin/ui/options.php:1442
+msgid "Custom CSS (only on website)"
+msgstr "自定義CSS（僅在網站上）"
+
+#: inc/admin/ui/options.php:1456
+msgid "Custom rules"
+msgstr "自定義規則"
+
+#: inc/admin/ui/options.php:1457
+msgid "You can use a different mode for some pages"
+msgstr "您可以對某些頁面使用其他模式"
+
+#: inc/admin/ui/options.php:1461
+msgid "Page url"
+msgstr "頁面網址"
+
+#: inc/admin/ui/options.php:1499
+msgid "Remove"
+msgstr "去掉"
+
+#: inc/admin/ui/options.php:1512
+msgid "Special features"
+msgstr "特殊功能"
+
+#: inc/admin/ui/options.php:1513
+msgid ""
+"&bull; <b>Comments</b>: show the comments and a form to publish on posts<br/"
+">&bull; <b>Subscribe system</b>: add an item on the menu pointing to "
+"subscribed category and a button on each post to (un)subscribe<br/>&bull; "
+"<b>Favorite system</b>: add an item on the menu to list all favorited posts "
+"and a button on each post to favorite<br/>&bull; <b>Share bubble</b>: show a "
+"button on each post to share it on social networks"
+msgstr ""
+"&bull;<b>評論</b>：顯示評論和在帖子上發布的表格<br/>•<b>訂閱系統</b>：在選單"
+"上添加一個指向訂閱類別的項目，並在每個帖子上添加一個按鈕以（取消）訂閱<br/"
+">•<b>收藏夾系統</b>：在選單上添加一個項目以列出所有收藏夾帖子，並在每個收藏夾"
+"上添加一個按鈕<br/>•<b>分享泡泡</b>：在每個帖子上顯示一個按鈕，即可在社交網絡"
+"上分享"
+
+#: inc/admin/ui/options.php:1540
+msgid "Links"
+msgstr "鏈接"
+
+#: inc/admin/ui/options.php:1549
+msgid "Open all links on the same screen (faster)"
+msgstr "在同一屏幕上打開所有鏈接（更快）"
+
+#: inc/admin/ui/options.php:1566
+msgid "Posts listing"
+msgstr "帖子列表"
+
+#: inc/admin/ui/options.php:1567
+msgid ""
+"<b>Small cards</b> Little image on left and title on right of the image<br/"
+"><b>Big cards</b> Big image and title below"
+msgstr "<b>小卡片</ b>圖片左側和標題右側<br/> <b>大卡片</b>下方大型圖片和標題"
+
+#: inc/admin/ui/options.php:1570
+msgid "Default view"
+msgstr "預設檢示"
+
+#: inc/admin/ui/options.php:1630
+msgid ""
+"If a post is published without image, you can define here a default image."
+msgstr "如果發布的帖子沒有圖像，則可以在此處定義預設圖像。"
+
+#: inc/admin/ui/options.php:1638
+msgid "Use any image on the post as featured?"
+msgstr "使用帖子中的任何圖片？"
+
+#: inc/admin/ui/options.php:1643
+msgid "Hide image on lists?"
+msgstr "隱藏列表中的圖片？"
+
+#: inc/admin/ui/options.php:1648
+msgid "Hide image on pages?"
+msgstr "隱藏頁面上的圖像？"
+
+#: inc/admin/ui/options.php:1659
+msgid "Show the title before content?"
+msgstr "在內容前顯示標題？"
+
+#: inc/admin/ui/options.php:1677
+msgid "Show date on list/post?"
+msgstr "在列表/帖子上顯示日期？"
+
+#: inc/admin/ui/options.php:1681
+msgid "Show hour?"
+msgstr "顯示時間？"
+
+#: inc/admin/ui/options.php:1689
+msgid "Posts content"
+msgstr "帖子內容"
+
+#: inc/admin/ui/options.php:1707
+msgid "Similar posts"
+msgstr "類似職位"
+
+#: inc/admin/ui/options.php:1708
+msgid "You can show similar posts after an article to engage your users."
+msgstr "您可以在文章之後顯示類似的帖子，以吸引用戶。"
+
+#: inc/admin/ui/options.php:1739 inc/admin/ui/options.php:1780
+msgid "Theme of the app"
+msgstr "應用程序的主題"
+
+#: inc/admin/ui/options.php:1740 inc/admin/ui/options.php:1781
+msgid ""
+"You can change the theme of your app when you want, it will be modified in "
+"real time on all devices."
+msgstr "您可以根據需要更改應用程序的主題，它將在所有設備上實時修改。"
+
+#: inc/admin/ui/options.php:1798
+msgid "Access right"
+msgstr "訪問權"
+
+#: inc/admin/ui/options.php:1799
+msgid ""
+"You change the level of right needed to access the statistics, notifications "
+"and settings panel."
+msgstr "您可以更改訪問統計信息，通知和設定面板所需的權限級別。"
+
+#: inc/admin/ui/options.php:1802
+msgid "Level"
+msgstr "水平"
+
+#: inc/admin/ui/options.php:1838 inc/admin/ui/options.php:1999
+msgid "Build the app menu with your theme"
+msgstr "用您的主題構建應用程序選單"
+
+#: inc/admin/ui/options.php:1855
+msgid "Language to enable"
+msgstr "啟用語言"
+
+#: inc/admin/ui/options.php:1897
+msgid "SELECT HOMEPAGE"
+msgstr "選擇首頁"
+
+#: inc/admin/ui/options.php:1902
+msgid "The homepage is the main screen of your application."
+msgstr "主頁是應用程序的主屏幕。"
+
+#: inc/admin/ui/options.php:1921
+msgid "User homepage"
+msgstr "用戶主頁"
+
+#: inc/admin/ui/options.php:1980
+msgid "Latest posts"
+msgstr "最新的帖子"
+
+#: inc/admin/ui/options.php:2006
+msgid "Menu builder"
+msgstr "選單構建器"
+
+#: inc/admin/ui/options.php:2068
+msgid "+ ADD AN ITEM TO THE MENU"
+msgstr "+將項目添加到選單"
+
+#: inc/admin/ui/options.php:2070
+msgid "Reset"
+msgstr "重啟"
+
+#: inc/admin/ui/options.php:2126 inc/admin/ui/options.php:2226
+msgid "Not logged in"
+msgstr "未登入"
+
+#: inc/admin/ui/options.php:2128 inc/admin/ui/options.php:2231
+msgid "Logged in"
+msgstr "登入"
+
+#: inc/admin/ui/options.php:2131
+msgid "Restricted to"
+msgstr "受限於"
+
+#: inc/admin/ui/options.php:2136 inc/admin/ui/options.php:2215
+msgid "Left menu"
+msgstr "左選單"
+
+#: inc/admin/ui/options.php:2138 inc/admin/ui/options.php:2215
+msgid "Toolbar menu"
+msgstr "工具欄選單"
+
+#: inc/admin/ui/options.php:2140 inc/admin/ui/options.php:2215
+msgid "Floating Action Bar"
+msgstr "浮動動作欄"
+
+#: inc/admin/ui/options.php:2145
+msgid "Group end"
+msgstr "小組結束"
+
+#: inc/admin/ui/options.php:2146
+msgid "Group start"
+msgstr "小組開始"
+
+#: inc/admin/ui/options.php:2199
+msgid "URL"
+msgstr "網址"
+
+#: inc/admin/ui/options.php:2215
+msgid "Location"
+msgstr "位置"
+
+#: inc/admin/ui/options.php:2220
+msgid "Assigned to a role (optional)"
+msgstr "分配給角色（可選）"
+
+#: inc/admin/ui/options.php:2252
+msgid "OK"
+msgstr "好"
+
+#: inc/admin/ui/options.php:2260
+msgid "Empty"
+msgstr "空的"
+
+#: inc/admin/ui/options.php:2364
+msgid "Menu title (ios only)"
+msgstr "選單標題（僅適用於iOS）"
+
+#: inc/admin/ui/options.php:2396
+msgid "Import"
+msgstr "進口"
+
+#: inc/admin/ui/options.php:2424
+msgid "WordPress menu"
+msgstr "WordPress選單"
+
+#: inc/admin/ui/options.php:2461
+msgid "Posts visibles in the app"
+msgstr "在應用中發布可見內容"
+
+#: inc/admin/ui/options.php:2463 inc/admin/ui/options.php:2467
+msgid "Content type"
+msgstr "內容類型"
+
+#: inc/admin/ui/options.php:2464
+msgid "Leave only `post` if you do not know what you are doing"
+msgstr "如果您不知道自己在做什麼，只留下`post`"
+
+#: inc/admin/ui/options.php:2492 inc/admin/ui/options.php:2496
+msgid "Category type"
+msgstr "類別類型"
+
+#: inc/admin/ui/options.php:2493
+msgid "Leave only `category` if you do not know what you are doing"
+msgstr "如果您不知道自己在做什麼，只留下“類別”"
+
+#: inc/admin/ui/options.php:2520
+msgid "Posts"
+msgstr "帖子"
+
+#: inc/admin/ui/options.php:2537
+msgid "Exclude some posts by tags"
+msgstr "按標籤排除一些帖子"
+
+#: inc/admin/ui/options.php:2541
+msgid "Direct tag name"
+msgstr "直接標籤名稱"
+
+#: inc/admin/ui/options.php:2548
+msgid "Tags"
+msgstr "標籤"
+
+#: inc/admin/ui/options.php:2592
+msgid "Search restriction"
+msgstr "搜尋限制"
+
+#: inc/admin/ui/options.php:2593
+msgid "You can restrict the search engine to only some category of the blog."
+msgstr "您可以將搜尋引擎限制為僅博客的某些類別。"
+
+#: inc/admin/ui/options.php:2596
+msgid "Number of category to show"
+msgstr "顯示的類別數"
+
+#: inc/admin/ui/options.php:2607
+msgid "By category"
+msgstr "按類別"
+
+#: inc/admin/ui/options.php:2912
+msgid "Start a group"
+msgstr "發起一個小組"
+
+#: inc/admin/ui/options.php:2920
+msgid "End a group"
+msgstr "結束小組"
+
+#: inc/admin/ui/options.php:2948 inc/functions/sdk2019.php:26
+#: inc/stats/render.php:26
+msgid "Custom homepage"
+msgstr "自定義首頁"
+
+#: inc/admin/ui/options.php:2955
+msgid "Login page"
+msgstr "登入頁面"
+
+#: inc/admin/ui/options.php:2962
+msgid "Share box"
+msgstr "分享框"
+
+#: inc/admin/ui/preview.php:165
+msgid "Chromebook"
+msgstr "Chromebook"
+
+#: inc/admin/ui/preview.php:166
+msgid "Tablet"
+msgstr "片劑"
+
+#: inc/admin/ui/preview.php:167
+msgid "Smartphone"
+msgstr "手機"
+
+#: inc/admin/ui/preview.php:168
+msgid "Orientation"
+msgstr "方向"
+
+#: inc/admin/ui/preview.php:181
+msgid "Open in a new tab"
+msgstr "在新標籤頁中打開"
+
+#: inc/admin/ui/preview.php:189
+msgid "Splashscreen"
+msgstr "開機畫面"
+
+#: inc/admin/ui/preview.php:190
+msgid "App"
+msgstr "應用程式"
+
+#: inc/admin/ui/preview.php:244 inc/admin/ui/theme.php:564
+msgid "You have to test on a real device"
+msgstr "您必須在真實設備上進行測試"
+
+#: inc/admin/ui/promote.php:40
+msgid "Your app is not yet live on stores, you can't promote it"
+msgstr "您的應用尚未在商店中發布，您無法推廣"
+
+#: inc/admin/ui/publish.php:92
+msgid ""
+"To apply the name - logo - splashscreen change, you have to update the app "
+"on stores."
+msgstr "要應用名稱-徽標-初始屏幕更改，您必須在商店中更新該應用。"
+
+#: inc/admin/ui/publish.php:168
+msgid "Fast configuration"
+msgstr "快速設定"
+
+#: inc/admin/ui/publish.php:184
+msgid "Expert mode"
+msgstr "專業級"
+
+#: inc/admin/ui/publish.php:287 inc/functions/shortcodes.php:1416
+msgid "Hello!"
+msgstr "你好！"
+
+#: inc/admin/ui/publish.php:289
+msgid "Automatically create my menu"
+msgstr "自動創建我的選單"
+
+#: inc/admin/ui/publish.php:324
+msgid "Your app theme"
+msgstr "您的應用主題"
+
+#: inc/admin/ui/publish.php:350
+msgid "Buy an update"
+msgstr "購買更新"
+
+#: inc/admin/ui/publish.php:350
+msgid "Delete and unpublish"
+msgstr "刪除和取消發布"
+
+#: inc/admin/ui/publish.php:356
+msgid ""
+"Any change on this page <u>after the first publication</u> will be billed "
+"49€.<br/><b>Take your time and make sure everything is ok.</b>"
+msgstr ""
+"在第一次發布後<u>在此頁面上進行的任何更改</ u>都將收取49歐元的費用。<br/> <b>"
+"花點時間，確保一切正常。</ b>"
+
+#: inc/admin/ui/publish.php:357
+msgid "App design"
+msgstr "應用設計"
+
+#: inc/admin/ui/publish.php:361 inc/admin/ui/pwa.php:141
+#: themes/wpappninja-full/comments.php:55 themes/wpappninja/comments.php:52
+msgid "Name"
+msgstr "名稱"
+
+#: inc/admin/ui/publish.php:378
+msgid "Optimal size: 512x512 pixels"
+msgstr "最佳尺寸：512x512像素"
+
+#: inc/admin/ui/publish.php:400
+msgid "Logo background color"
+msgstr "徽標背景色"
+
+#: inc/admin/ui/publish.php:414
+msgid "Launchscreen"
+msgstr "啟動畫面"
+
+#: inc/admin/ui/publish.php:414
+msgid "Optimal size: 600x900 pixels"
+msgstr "最佳尺寸：600x900像素"
+
+#: inc/admin/ui/publish.php:435
+msgid "Show the splashscreen for maximum"
+msgstr "顯示初始屏幕以獲取最大"
+
+#: inc/admin/ui/push.php:119 inc/admin/ui/push.php:153
+msgid "Upload successful"
+msgstr "上傳成功"
+
+#: inc/admin/ui/push.php:273
+msgid "You can't send notification until the app is published"
+msgstr "在應用發布之前，您無法發送通知"
+
+#: inc/admin/ui/push.php:285
+msgid "+ New notification"
+msgstr "+新通知"
+
+#: inc/admin/ui/push.php:387
+msgid "deleted - not sended"
+msgstr "刪除-未發送"
+
+#: inc/admin/ui/push.php:405 inc/functions/shortcodes.php:957
+#, php-format
+msgid "%s ago"
+msgstr "%s前"
+
+#: inc/admin/ui/push.php:406
+#, php-format
+msgid "in %s"
+msgstr "在%s中"
+
+#: inc/admin/ui/push.php:433
+msgid "Previous"
+msgstr "以前"
+
+#: inc/admin/ui/push.php:439 inc/functions/shortcodes.php:1701
+msgid "Next"
+msgstr "下一個"
+
+#: inc/admin/ui/push.php:442
+msgid "Delete history"
+msgstr "刪除記錄"
+
+#: inc/admin/ui/push.php:531
+msgid "Add link"
+msgstr "添加鏈接"
+
+#: inc/admin/ui/push.php:541 inc/admin/ui/push.php:554
+#: inc/admin/ui/push.php:580
+msgid "subscriber"
+msgid_plural "subscribers"
+msgstr[0] "訂戶"
+
+#: inc/admin/ui/push.php:580
+msgid "All users"
+msgstr "全部用戶"
+
+#: inc/admin/ui/push.php:596 inc/stats/display.php:115
+msgid "Users"
+msgstr "用戶數"
+
+#: inc/admin/ui/pwa.php:123
+msgid "Progressive Web App: DISABLED"
+msgstr "漸進式Web應用程序：已禁用"
+
+#: inc/admin/ui/pwa.php:125
+msgid "Progressive Web App: ENABLED"
+msgstr "漸進式Web應用程序：已啟用"
+
+#: inc/admin/ui/pwa.php:195
+msgid "Select page"
+msgstr "選擇頁面"
+
+#: inc/admin/ui/pwa.php:204
+msgid "Pages to preload and cache"
+msgstr "要預加載和緩存的頁面"
+
+#: inc/admin/ui/pwa.php:205
+msgid "One per line"
+msgstr "每行一個"
+
+#: inc/admin/ui/qrcode.php:40
+msgid "New QR Code"
+msgstr "新的QR碼"
+
+#: inc/admin/ui/qrcode.php:43
+msgid "In-app QR Code scanner: DISABLED"
+msgstr "應用內QR碼掃描儀：已禁用"
+
+#: inc/admin/ui/qrcode.php:45
+msgid "In-app QR Code scanner: ENABLED"
+msgstr "應用內QR碼掃描儀：已啟用"
+
+#: inc/admin/ui/stats.php:132
+msgid "You can't have statistics with the free plan"
+msgstr "免費計劃無法提供統計信息"
+
+#: inc/admin/ui/stats.php:143
+msgid "days"
+msgstr "天"
+
+#: inc/admin/ui/stats.php:143
+msgid "results"
+msgstr "結果"
+
+#: inc/admin/ui/stats.php:199
+msgid "How many days?"
+msgstr "多少天?"
+
+#: inc/admin/ui/stats.php:203
+msgid "day"
+msgid_plural "days"
+msgstr[0] "天"
+
+#: inc/admin/ui/stats.php:207
+msgid "How many maximum results?"
+msgstr "最大結果數是多少？"
+
+#: inc/admin/ui/stats.php:211
+msgid "result"
+msgid_plural "results"
+msgstr[0] "結果"
+
+#: inc/admin/ui/stats.php:215
+msgid "On all platform?"
+msgstr "在所有平台上？"
+
+#: inc/admin/ui/stats.php:222
+msgid "All languages included?"
+msgstr "包括所有語言嗎？"
+
+#: inc/admin/ui/stats.php:231
+msgid "Block disposition"
+msgstr "塊設定"
+
+#: inc/admin/ui/stats.php:261
+msgid "Delete everything older than 365 days"
+msgstr "刪除所有超過365天的內容"
+
+#: inc/admin/ui/stats.php:262
+msgid "Delete everything older than 90 days"
+msgstr "刪除所有超過90天的內容"
+
+#: inc/admin/ui/stats.php:263
+msgid "Delete everything older than 30 days"
+msgstr "刪除30天之前的所有內容"
+
+#: inc/admin/ui/stats.php:264
+msgid "Delete everything"
+msgstr "刪除所有內容"
+
+#: inc/admin/ui/stats.php:267
+msgid "Delete stats (CANT BE UNDONE)"
+msgstr "刪除統計信息（無法取消）"
+
+#: inc/admin/ui/submenu.php:9
+msgid "The logo is an important step for the publication"
+msgstr "徽標是發布的重要一步"
+
+#: inc/admin/ui/submenu.php:13
+msgid "You can do a lot of things with the menu"
+msgstr "您可以通過選單執行很多操作"
+
+#: inc/admin/ui/submenu.php:17
+msgid "You can customize your theme for the app"
+msgstr "您可以為應用程序自定義主題"
+
+#: inc/admin/ui/submenu.php:23
+msgid ""
+"Your application should not just display your site as in a web browser, "
+"<b>It's better to use the WPMobile.App theme.</b>"
+msgstr ""
+"您的應用程序不應僅在Web瀏覽器中顯示您的網站，<b>最好使用WPMobile.App主題。</ "
+"b>"
+
+#: inc/admin/ui/submenu.php:28
+msgid "Learn how to play with the app elements"
+msgstr "了解如何使用應用程序元素"
+
+#: inc/admin/ui/submenu.php:32
+msgid "You can modify with CSS each elements of the app"
+msgstr "您可以使用CSS修改應用程序的每個元素"
+
+#: inc/admin/ui/submenu.php:36
+msgid "2 ways to translate your app"
+msgstr "兩種翻譯應用程序的方法"
+
+#: inc/admin/ui/submenu.php:70
+msgid "Style and Javascript"
+msgstr "樣式和Javascript"
+
+#: inc/admin/ui/submenu.php:72
+msgid "Translate"
+msgstr "翻譯"
+
+#: inc/admin/ui/submenu.php:73
+msgid "Others"
+msgstr "其他"
+
+#: inc/admin/ui/submenu.php:76
+msgid "Automatic configuration"
+msgstr "自動設定"
+
+#: inc/admin/ui/submenu.php:83
+msgid "< Back"
+msgstr "<返回"
+
+#: inc/admin/ui/submenu.php:90
+msgid "If you continue, you will lose all previous settings"
+msgstr "如果繼續，您將遺失所有以前的設定"
+
+#: inc/admin/ui/theme.php:228
+msgid "App theme"
+msgstr "應用主題"
+
+#: inc/admin/ui/theme.php:296
+msgid "WPMobile.App themes"
+msgstr "WPMobile.App主題"
+
+#: inc/admin/ui/theme.php:298 inc/admin/ui/theme.php:302
+msgid "Native mobile interface"
+msgstr "本機移動界面"
+
+#: inc/admin/ui/theme.php:305
+msgid "Super light"
+msgstr "超輕"
+
+#: inc/admin/ui/theme.php:312
+msgid "WordPress themes"
+msgstr "WordPress主題"
+
+#. Author of the plugin/theme
+#: inc/admin/ui/theme.php:335
+msgid "WPMobile.App"
+msgstr "WPMobile.App"
+
+#: inc/admin/ui/theme.php:339 inc/admin/ui/theme.php:379
+msgid "Hybrid"
+msgstr "雜種"
+
+#: inc/admin/ui/theme.php:344
+msgid "Light (only text and image)"
+msgstr "淺色（僅文字和圖片）"
+
+#: inc/admin/ui/theme.php:351
+msgid "WordPress Theme"
+msgstr "WordPress主題"
+
+#: inc/admin/ui/theme.php:362
+msgid "WordPress Theme (without UI)"
+msgstr "WordPress主題（無UI）"
+
+#: inc/admin/ui/theme.php:378
+msgid "Old"
+msgstr "舊"
+
+#: inc/admin/ui/theme.php:395
+msgid "Colors"
+msgstr "色彩"
+
+#: inc/admin/ui/theme.php:464
+msgid "On the app"
+msgstr "在應用程式上"
+
+#: inc/admin/ui/theme.php:469 inc/admin/ui/theme.php:497
+msgid "Custom CSS"
+msgstr "自定義CSS"
+
+#: inc/admin/ui/theme.php:481
+msgid "Custom JS [jQuery, framework7.io]"
+msgstr "自定義JS [jQuery，framework7.io]"
+
+#: inc/admin/ui/theme.php:490
+msgid "On website"
+msgstr "在網站上"
+
+#: inc/admin/ui/theme.php:507
+msgid "Custom JS [jQuery]"
+msgstr "自定義JS [jQuery]"
+
+#: inc/admin/ui/theme.php:536
+msgid "You can test on a real device"
+msgstr "您可以在真實設備上進行測試"
+
+#: inc/admin/upgrader.php:81
+#, php-format
+msgid ""
+"<b>WPMobile.App</b> We've made major improvements on the content render <a "
+"target=\"_blank\" style=\"%s\" href=\"%s\">Test now my enhanced app</a>"
+msgstr ""
+"<b>WPMobile.App</b>我們對內容渲染進行了重大改進，<a target=\"_blank\" style="
+"\"%s\" href=\"%s\">現在測試我的增強型應用</a>"
+
+#: inc/admin/upgrader.php:81
+#, php-format
+msgid "<a href=\"%s\">dismiss</a>"
+msgstr "<a href=\"%s\">消除顯示</a>"
+
+#: inc/admin/upgrader.php:132
+msgid "News"
+msgstr "新聞"
+
+#: inc/admin/upgrader.php:132
+msgid "Offers"
+msgstr "優惠"
+
+#: inc/api/json.php:306 inc/api/json.php:363
+msgid "You like this app?"
+msgstr "你喜歡這個程序嗎？"
+
+#: inc/api/json.php:307 inc/api/json.php:364
+msgid "Take 5 seconds to rate it on the Play Store"
+msgstr "花5秒鐘在Play商店中對其評分"
+
+#: inc/api/json.php:711 inc/api/read_enhanced.php:84
+msgid "Read"
+msgstr "閱讀"
+
+#: inc/api/push.php:662 inc/api/push.php:789
+msgid "Order updates"
+msgstr "訂單更新"
+
+#: inc/api/push.php:764
+msgctxt "Order status"
+msgid "Pending payment"
+msgstr "待付款"
+
+#: inc/api/push.php:765
+msgctxt "Order status"
+msgid "Processing"
+msgstr "處理中"
+
+#: inc/api/push.php:766
+msgctxt "Order status"
+msgid "On hold"
+msgstr "等候接聽"
+
+#: inc/api/push.php:767
+msgctxt "Order status"
+msgid "Completed"
+msgstr "已完成"
+
+#: inc/api/push.php:768
+msgctxt "Order status"
+msgid "Cancelled"
+msgstr "取消"
+
+#: inc/api/push.php:769
+msgctxt "Order status"
+msgid "Refunded"
+msgstr "已退款"
+
+#: inc/api/push.php:770
+msgctxt "Order status"
+msgid "Failed"
+msgstr "失敗的"
+
+#: inc/api/push.php:783
+#, php-format
+msgid "Order status changed from %s to %s"
+msgstr "訂單狀態從%s更改為%s"
+
+#: inc/api/read_enhanced.php:153
+msgid "Push notifications are disabled."
+msgstr "推送通知已禁用。"
+
+#: inc/api/read_enhanced.php:154 inc/api/read_enhanced.php:178
+msgid "Enable push notifications"
+msgstr "啟用推送通知"
+
+#: inc/api/read_enhanced.php:173 inc/functions/shortcodes.php:577
+#: inc/functions/shortcodes.php:1160
+msgid "Settings saved"
+msgstr "設定已保存"
+
+#: inc/api/read_enhanced.php:183
+msgid "Subscriptions"
+msgstr "訂閱內容"
+
+#: inc/api/read_enhanced.php:202 inc/functions/shortcodes.php:643
+#: inc/functions/shortcodes.php:1238
+msgid "Save"
+msgstr "保存"
+
+#: inc/common/admin-bar.php:35 inc/functions/shortcodes.php:577
+msgid "Push notification"
+msgstr "推送通知"
+
+#: inc/common/admin-bar.php:52
+msgid "My app"
+msgstr "我的應用程式"
+
+#: inc/common/cron.php:14
+msgid "Every 3 Minutes"
+msgstr "每3分鐘"
+
+#: inc/functions/banner.php:43
+msgid "In Google Play"
+msgstr "在Google Play中"
+
+#: inc/functions/check.php:264
+msgid "Allowed on your plan:"
+msgstr "在您的計劃中允許："
+
+#: inc/functions/colors.php:197
+msgid "Before the left menu"
+msgstr "左選單之前"
+
+#: inc/functions/colors.php:198
+msgid "After the left menu"
+msgstr "左側選單後"
+
+#: inc/functions/colors.php:199
+msgid "Middle of the navbar"
+msgstr "導航欄的中間"
+
+#: inc/functions/colors.php:199 inc/functions/colors.php:200
+#: inc/functions/colors.php:264 inc/functions/colors.php:266
+#: inc/functions/colors.php:268
+msgid "Toolbar"
+msgstr "工具列"
+
+#: inc/functions/colors.php:200
+msgid "Right of the navbar"
+msgstr "導航欄的右側"
+
+#: inc/functions/colors.php:204
+msgid "Before a page"
+msgstr "頁面前"
+
+#: inc/functions/colors.php:205
+msgid "After a page"
+msgstr "頁面後"
+
+#: inc/functions/colors.php:207
+msgid "Before a WooCommerce page"
+msgstr "在WooCommerce頁面之前"
+
+#: inc/functions/colors.php:208
+msgid "After a WooCommerce page"
+msgstr "在WooCommerce頁面之後"
+
+#: inc/functions/colors.php:210
+msgid "Before a BuddyPress page"
+msgstr "在BuddyPress頁面之前"
+
+#: inc/functions/colors.php:211
+msgid "After a BuddyPress page"
+msgstr "在BuddyPress頁面之後"
+
+#: inc/functions/colors.php:213
+msgid "Before other post type"
+msgstr "在其他帖子類型之前"
+
+#: inc/functions/colors.php:214
+msgid "After other post type"
+msgstr "在其他職位類型之後"
+
+#: inc/functions/colors.php:218
+msgid "Before lists"
+msgstr "之前的清單"
+
+#: inc/functions/colors.php:219
+msgid "After lists"
+msgstr "後列表"
+
+#: inc/functions/colors.php:221
+msgid "Card content on lists"
+msgstr "清單上的卡片內容"
+
+#: inc/functions/colors.php:259
+msgid "App background"
+msgstr "應用背景"
+
+#: inc/functions/colors.php:261
+msgid "Main content background"
+msgstr "主要內容背景"
+
+#: inc/functions/colors.php:264
+msgid "Status bar background"
+msgstr "狀態欄背景"
+
+#: inc/functions/colors.php:266
+msgid "Navigation bar background"
+msgstr "導航欄背景"
+
+#: inc/functions/colors.php:268
+msgid "Navigation bar icon color"
+msgstr "導航欄圖標顏色"
+
+#: inc/functions/colors.php:270
+msgid "Bottom menu background"
+msgstr "底部選單背景"
+
+#: inc/functions/colors.php:272
+msgid "Bottom menu icon color"
+msgstr "底部選單圖標顏色"
+
+#: inc/functions/colors.php:274
+msgid "Left menu background"
+msgstr "左選單背景"
+
+#: inc/functions/colors.php:275
+msgid "Left menu item background"
+msgstr "左選單項背景"
+
+#: inc/functions/colors.php:276
+msgid "Left menu icon color"
+msgstr "左選單圖標顏色"
+
+#: inc/functions/colors.php:277
+msgid "Left menu text and button color"
+msgstr "左選單文字和按鈕顏色"
+
+#: inc/functions/colors.php:278
+msgid "Left menu icon"
+msgstr "左選單圖標"
+
+#: inc/functions/colors.php:280
+msgid "Floating menu item background"
+msgstr "浮動選單項背景"
+
+#: inc/functions/colors.php:281
+msgid "Floating round menu icon color"
+msgstr "浮動圓形選單圖標顏色"
+
+#: inc/functions/colors.php:284
+msgid "Title color"
+msgstr "標題顏色"
+
+#: inc/functions/colors.php:285
+msgid "Content text color"
+msgstr "內容文字顏色"
+
+#: inc/functions/colors.php:289
+msgid "Links color"
+msgstr "鏈接顏色"
+
+#: inc/functions/colors.php:291
+msgid "Button text - border - icon color"
+msgstr "按鈕文字-邊框-圖標顏色"
+
+#: inc/functions/colors.php:293
+msgid "Badge background"
+msgstr "徽章背景"
+
+#: inc/functions/colors.php:295
+msgid "List items background"
+msgstr "列出項目背景"
+
+#: inc/functions/colors.php:298
+msgid "Loading bar color"
+msgstr "加載欄顏色"
+
+#: inc/functions/colors.php:300
+msgid "Search bar background"
+msgstr "搜尋欄背景"
+
+#: inc/functions/colors.php:302
+msgid "Base text size"
+msgstr "基本文字大小"
+
+#: inc/functions/colors.php:304
+msgid "Font family"
+msgstr "字體系列"
+
+#: inc/functions/format.php:70
+#, php-format
+msgid "%s years ago"
+msgstr "%s年前"
+
+#: inc/functions/format.php:72
+#, php-format
+msgid "%s year ago"
+msgstr "%s年前"
+
+#: inc/functions/format.php:76
+#, php-format
+msgid "%s months ago"
+msgstr "%s個月前"
+
+#: inc/functions/format.php:78
+#, php-format
+msgid "%s month ago"
+msgstr "%s一個月前"
+
+#: inc/functions/format.php:83
+#, php-format
+msgid "%s days ago"
+msgstr "%s天前"
+
+#: inc/functions/format.php:85
+#, php-format
+msgid "%s day ago"
+msgstr "%s天前"
+
+#: inc/functions/format.php:90
+#, php-format
+msgid "%s hours ago"
+msgstr "%s小時前"
+
+#: inc/functions/format.php:92
+#, php-format
+msgid "%s hour ago"
+msgstr "%s小時前"
+
+#: inc/functions/format.php:97
+#, php-format
+msgid "%s minutes ago"
+msgstr "%s分鐘前"
+
+#: inc/functions/format.php:99
+#, php-format
+msgid "%s minute ago"
+msgstr "%s分鐘前"
+
+#: inc/functions/format.php:103
+#, php-format
+msgid "%s seconds ago"
+msgstr "%s秒前"
+
+#: inc/functions/format.php:318
+msgid "Continue"
+msgstr "繼續"
+
+#: inc/functions/menu.php:194 inc/functions/menu.php:204
+#: inc/functions/shortcodes.php:1111
+msgid "Scan code"
+msgstr "掃描碼"
+
+#: inc/functions/menu.php:215
+msgid "Exit"
+msgstr "離開"
+
+#: inc/functions/sdk2019.php:13 inc/stats/render.php:13
+msgid "QRCode Scanner"
+msgstr "QRCode掃描儀"
+
+#: inc/functions/sdk2019.php:17 inc/stats/render.php:17
+msgid "Push history"
+msgstr "推送歷史"
+
+#: inc/functions/sdk2019.php:22 inc/stats/render.php:22
+msgid "Push configuration"
+msgstr "推送設定"
+
+#: inc/functions/sdk2019.php:117
+msgid "You have unread notifications"
+msgstr "您有未讀的通知"
+
+#: inc/functions/sdk2019.php:405
+msgid "Use the free preview app to test this feature"
+msgstr "使用免費的預覽應用程序測試此功能"
+
+#: inc/functions/sdk2019.php:405
+msgid "Not available in demo"
+msgstr "在演示中不可用"
+
+#: inc/functions/shortcodes.php:56
+msgid "Someone has requested a password reset for the following account:"
+msgstr "有人要求重置以下帳戶的密碼："
+
+#: inc/functions/shortcodes.php:58
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "如果這是一個錯誤，請忽略此電子郵件，將不會發生任何事情。"
+
+#: inc/functions/shortcodes.php:59
+msgid "To reset your password, visit the following address:"
+msgstr "要重置密碼，請訪問以下地址："
+
+#: inc/functions/shortcodes.php:62
+msgid "Click this link"
+msgstr "點擊此鏈接"
+
+#: inc/functions/shortcodes.php:72
+#, php-format
+msgid "[%s] Password Reset"
+msgstr "[%s]密碼重置"
+
+#: inc/functions/shortcodes.php:98
+msgid "Please enter a username."
+msgstr "請填入一個用戶名。"
+
+#: inc/functions/shortcodes.php:100
+msgid ""
+"This username is invalid because it uses illegal characters. Please enter a "
+"valid username."
+msgstr "該用戶名無效，因為它使用了非法字符。請輸入有效的用戶名。"
+
+#: inc/functions/shortcodes.php:103
+msgid "This username is already registered. Please choose another one."
+msgstr "該用戶名已經註冊。請選擇另一個。"
+
+#: inc/functions/shortcodes.php:109
+msgid "Sorry, that username is not allowed."
+msgstr "抱歉，該用戶名是不允許的。"
+
+#: inc/functions/shortcodes.php:115
+msgid "Please type your email address."
+msgstr "請輸入您的電子郵件地址。"
+
+#: inc/functions/shortcodes.php:117
+msgid "The email address isn&#8217;t correct."
+msgstr "電子郵件地址不正確。"
+
+#: inc/functions/shortcodes.php:120
+msgid "This email is already registered, please choose another one."
+msgstr "這封電子郵件已經註冊，請選擇另一封。"
+
+#: inc/functions/shortcodes.php:128
+msgid "Please type a password."
+msgstr "請輸入密碼。"
+
+#: inc/functions/shortcodes.php:130
+msgid "The password need to contain at least 8 characters."
+msgstr "密碼必須至少包含8個字符。"
+
+#: inc/functions/shortcodes.php:145
+#, php-format
+msgid ""
+"Couldn&#8217;t register you&hellip; please contact the <a href=\"mailto:%s"
+"\">webmaster</a> !"
+msgstr "無法註冊您...請與<a href=\"mailto:%s\">網站管理員</a>聯繫！"
+
+#: inc/functions/shortcodes.php:175
+msgid "Impossible to reset the password for this email."
+msgstr "無法重置此電子郵件的密碼。"
+
+#: inc/functions/shortcodes.php:175
+msgid "Error"
+msgstr "錯誤"
+
+#: inc/functions/shortcodes.php:178
+msgid "Reset link sended. Check your mailbox."
+msgstr "重置發送的鏈接。檢查您的郵箱。"
+
+#: inc/functions/shortcodes.php:178
+msgid "Reset successfull"
+msgstr "重置成功"
+
+#: inc/functions/shortcodes.php:209 inc/functions/shortcodes.php:301
+#: inc/functions/shortcodes.php:377
+msgid "Register"
+msgstr "註冊"
+
+#: inc/functions/shortcodes.php:219
+msgid "Account successfully created."
+msgstr "成功建立帳戶。"
+
+#: inc/functions/shortcodes.php:219
+msgid "You are now connected"
+msgstr "您現在已連接"
+
+#: inc/functions/shortcodes.php:316 inc/functions/shortcodes.php:366
+#: themes/wpappninja-full/comments.php:65 themes/wpappninja/comments.php:62
+msgid "Email"
+msgstr "電子郵件"
+
+#: inc/functions/shortcodes.php:320
+msgid "Send reset link"
+msgstr "發送重置鏈接"
+
+#: inc/functions/shortcodes.php:324 inc/functions/shortcodes.php:338
+#: inc/functions/shortcodes.php:383
+msgid "cancel"
+msgstr "取消"
+
+#: inc/functions/shortcodes.php:336
+msgid "Password lost?"
+msgstr "密碼遺失了嗎？"
+
+#: inc/functions/shortcodes.php:362
+msgid "Username"
+msgstr "用戶名"
+
+#: inc/functions/shortcodes.php:371
+msgid "Password"
+msgstr "密碼"
+
+#: inc/functions/shortcodes.php:399
+msgid "Logout"
+msgstr "登出"
+
+#: inc/functions/shortcodes.php:488 inc/functions/shortcodes.php:664
+msgid "Cancel"
+msgstr "取消"
+
+#: inc/functions/shortcodes.php:550
+msgid "Push settings"
+msgstr "推送設定"
+
+#: inc/functions/shortcodes.php:607
+msgid "Manage notifications"
+msgstr "管理通知"
+
+#: inc/functions/shortcodes.php:660
+msgid "Search"
+msgstr "搜尋"
+
+#: inc/functions/shortcodes.php:1014
+msgid "No information for now."
+msgstr "暫時沒有信息。"
+
+#: inc/functions/shortcodes.php:1034 themes/wpappninja-full/index.php:56
+msgid "No result"
+msgstr "沒有結果"
+
+#: inc/functions/shortcodes.php:1034 inc/functions/shortcodes.php:1042
+msgid "Scanner"
+msgstr "掃描器"
+
+#: inc/functions/shortcodes.php:1417
+msgid "Configure your app homepage"
+msgstr "設定您的應用首頁"
+
+#: inc/stats/display.php:91
+msgid "Timeline"
+msgstr "時間線"
+
+#: inc/stats/display.php:95
+msgid "Chart"
+msgstr "圖表"
+
+#: inc/stats/display.php:99
+msgid "Installations"
+msgstr "裝置"
+
+#: inc/stats/display.php:103
+msgid "Actions"
+msgstr "動作"
+
+#: inc/stats/display.php:119
+msgid "Platforms"
+msgstr "平台類"
+
+#: inc/stats/display.php:123
+msgid "Hours"
+msgstr "小時"
+
+#: inc/stats/display.php:127
+msgid "Continents"
+msgstr "大洲"
+
+#: inc/stats/display.php:131 inc/stats/display.php:511
+msgid "Country"
+msgstr "國家"
+
+#: inc/stats/display.php:230 inc/stats/display.php:352
+msgid "Action"
+msgstr "行動"
+
+#: inc/stats/display.php:258
+msgid "Push"
+msgstr "推"
+
+#: inc/stats/display.php:259
+msgid "Dispatch"
+msgstr "調度"
+
+#: inc/stats/display.php:260
+msgid "Open"
+msgstr "打開"
+
+#: inc/stats/display.php:379
+msgid "User"
+msgstr "用戶"
+
+#: inc/stats/display.php:416
+msgid "Platform"
+msgstr "平台"
+
+#: inc/stats/display.php:483
+msgid "Continent"
+msgstr "大陸"
+
+#: inc/stats/render.php:44
+msgid "(not set)"
+msgstr "（沒有設定）"
+
+#: inc/stats/render.php:52
+msgid "Deleted notification"
+msgstr "刪除通知"
+
+#: inc/stats/render.php:71 inc/stats/render.php:108
+msgid "install"
+msgstr "安裝"
+
+#: inc/stats/render.php:87
+msgid "notification"
+msgstr "通知"
+
+#: inc/stats/render.php:90
+msgid "comment"
+msgstr "評論"
+
+#: inc/stats/render.php:93
+msgid "screen"
+msgstr "屏幕"
+
+#: inc/stats/render.php:96
+msgid "category"
+msgstr "類別"
+
+#: inc/stats/render.php:99
+msgid "recent post"
+msgstr "最近貼文"
+
+#: inc/stats/render.php:102
+msgid "form"
+msgstr "表格"
+
+#: inc/stats/render.php:105
+msgid "search"
+msgstr "搜尋"
+
+#: inc/stats/render.php:111
+msgid "login"
+msgstr "登入"
+
+#: inc/stats/render.php:114
+msgid "register"
+msgstr "註冊"
+
+#: inc/stats/render.php:311
+msgid "App activity"
+msgstr "應用活動"
+
+#: inc/stats/render.php:311
+msgid "By day"
+msgstr "按天"
+
+#: themes/wpappninja-full/404.php:18
+msgid "Sorry, this page is not available offline."
+msgstr "抱歉，此頁面無法離線使用。"
+
+#: themes/wpappninja-full/404.php:20
+msgid "Check your connection."
+msgstr "檢查您的連接。"
+
+#: themes/wpappninja-full/404.php:25 themes/wpappninja/404.php:11
+msgid "Sorry, this page does not exist."
+msgstr "抱歉，該頁面不存在。"
+
+#: themes/wpappninja-full/comments.php:11 themes/wpappninja/comments.php:12
+msgid "<span class=\"badge bg-red\">0</span> reaction"
+msgstr "<span class=\"badge bg-red\">0</span>回應"
+
+#: themes/wpappninja-full/comments.php:20
+#, php-format
+msgid "<span class=\"badge bg-red\">%1$s</span> reactions"
+msgstr "<span class=\"badge bg-red\">%1$s的</span>回應"
+
+#: themes/wpappninja-full/comments.php:22
+msgid "<span class=\"badge bg-red\">1</span> reaction"
+msgstr "<span class=\"badge bg-red\">1</span>回應"
+
+#: themes/wpappninja-full/comments.php:45 themes/wpappninja/comments.php:42
+msgid "Comments are closed."
+msgstr "評論被關閉。"
+
+#: themes/wpappninja-full/comments.php:75 themes/wpappninja/comments.php:72
+msgid "Website"
+msgstr "網站"
+
+#: themes/wpappninja-full/comments.php:93
+msgid "Your reaction"
+msgstr "你的回應"
+
+#: themes/wpappninja-full/comments.php:102
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a reaction."
+msgstr "您必須先<a href=\"%s\">登入</a>才能發表回應。"
+
+#: themes/wpappninja-full/comments.php:108 themes/wpappninja/comments.php:105
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"以<a href=\"%1$s\">%2$s</a>身份登入。<a href=\"%3$s\" title=\"登出該帳戶\">登"
+"出？</a>"
+
+#: themes/wpappninja-full/comments.php:115
+msgid "Send my reaction"
+msgstr "發送我的回應"
+
+#: themes/wpappninja/comments.php:20
+#, php-format
+msgctxt "wpappninja"
+msgid "<span class=\"badge bg-red\">1</span> reaction"
+msgid_plural "<span class=\"badge bg-wpappninja\">%1$s</span> reactions"
+msgstr[0] "<span class=\"badge bg-red\">%1$s</span>回應"
+
+#: themes/wpappninja/comments.php:90
+msgid "Comment"
+msgstr "評論"
+
+#: themes/wpappninja/comments.php:99
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "您必須先<a href=\"%s\">登入</a>才能發表評論。"
+
+#: themes/wpappninja/functions.php:23
+msgid "WPMobile.App (before content)"
+msgstr "WPMobile.App（內容之前）"
+
+#: themes/wpappninja/functions.php:25
+msgid "Appears as the sidebar on top of the page"
+msgstr "在頁面頂部顯示為側邊欄"
+
+#: themes/wpappninja/functions.php:34
+msgid "WPMobile.App (after content)"
+msgstr "WPMobile.App（內容之後）"
+
+#: themes/wpappninja/functions.php:36
+msgid "Appears as the sidebar on bottom of the page"
+msgstr "在頁面底部顯示為側邊欄"
+
+#. Plugin Name of the plugin/theme
+msgid "WPMobile.App — Android and iOS Mobile Application"
+msgstr "WPMobile.App — Android和iOS移動應用程序"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://wpmobile.app/"
+msgstr "https://wpmobile.app/"
+
+#. Description of the plugin/theme
+msgid ""
+"Android and iOS mobile application for any WordPress wesbite. Easy setup, "
+"free test."
+msgstr ""
+"適用於任何WordPress wesbite的Android和iOS移動應用程序。易於設定，免費測試。"

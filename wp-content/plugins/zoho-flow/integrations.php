@@ -1,0 +1,990 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+  exit; // Exit if accessed directly.
+}
+
+$zoho_flow_services_config = array (
+  array (
+    'name' => esc_html__('WordPress.org'),
+    'gallery_app_link' => 'wordpress_org',
+    'description' => esc_html__('Connect WordPress.org to Zoho Flow to automatically post your new WordPress posts on your social media handles such as Twitter, get notifications in your team chat for new posts, and create posts for new events scheduled in your event management app.', 'zoho-flow'),
+    'icon_file' => 'wordpress.png',
+    'class_test' => 'WP_Comment',
+    'version' => 'v1',
+    'rest_apis' => array (
+      array (
+        'type' => 'list',
+        'path' => '/users',
+        'method' => 'get_users',
+        'capability' => 'read',
+        'schema_method' => 'get_user_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/posts',
+        'method' => 'get_posts',
+        'capability' => 'read',
+        'schema_method' => 'get_post_schema',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/comments',
+        'method' => 'get_comments',
+        'capability' => 'read',
+        'schema_method' => 'get_comment_schema'
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/posts/(?\'post_id\'[\\d]+)/comments/webhooks',
+        'method' => 'get_webhooks',
+        'capability' => 'read',
+      ),
+      array(
+          'type' => 'create',
+          'path' => '/posts/(?\'post_id\'[\\d]+)/comments/webhooks',
+          'method' => 'create_post_comments_webhook',
+          'capability' => 'edit_posts',
+      ),
+      array(
+          'type' => 'delete',
+          'path' => '/posts/(?\'post_id\'[\\d]+)/comments/webhooks/(?\'webhook_id\'[\\d]+)',
+          'method' => 'delete_webhook',
+          'capability' => 'delete_posts',
+      ),
+      array(
+          'type' => 'list',
+          'path' => '/(?\'post_type\'[a-zA-Z_]+)/webhooks',
+          'method' => 'get_webhooks_for_post',
+          'capability' => 'read',
+      ),
+      array(
+          'type' => 'create',
+          'path' => '/(?\'post_type\'[a-zA-Z_]+)/webhooks',
+          'method' => 'create_webhook_for_post',
+          'capability' => 'edit_posts',
+      ),
+      array(
+          'type' => 'delete',
+          'path' => '/(?\'post_type\'[a-zA-Z_]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+          'method' => 'delete_webhook',
+          'capability' => 'delete_posts',
+      ),
+      array(
+          'type' => 'list',
+          'path' => '/comments/webhooks',
+          'method' => 'get_comments_webhooks',
+          'capability' => 'read',
+      ),
+      array(
+          'type' => 'create',
+          'path' => '/comments/webhooks',
+          'method' => 'create_comments_webhooks',
+          'capability' => 'edit_posts',
+      ),
+      array(
+          'type' => 'delete',
+          'path' => '/comments/webhooks/(?\'webhook_id\'[\\d]+)',
+          'method' => 'delete_webhook',
+          'capability' => 'delete_posts',
+      ),
+      array(
+          'type' => 'create',
+          'path' => '/users',
+          'method' => 'create_user',
+          'capability' => 'create_users',
+      ),
+      array(
+          'type' => 'update',
+          'path' => '/users/(?\'user_id\'[\\d]+)',
+          'method' => 'update_user',
+          'capability' => 'edit_users',
+      ),
+      array(
+          'type' => 'create',
+          'path' => '/posts',
+          'method' => 'create_post',
+          'capability' => 'edit_posts',
+      ),
+      array(
+          'type' => 'update',
+          'path' => '/posts',
+          'method' => 'update_post',
+          'capability' => 'edit_posts',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/getuser/(?P<user_id>\d+)',
+        'method' => 'get_user_by',
+        'capability' => 'read',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/getuser/(?P<login>\S+)',
+        'method' => 'get_user_by',
+        'capability' => 'read',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/user_meta/(?\'user_id\'[\\d]+)',
+        'method' => 'get_userinfo_meta',
+        'capability' => 'read',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/post_types',
+        'method' => 'get_post_types',
+        'capability' => 'read',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/categories',
+        'method' => 'get_categories',
+        'capability' => 'read',
+      ),
+      array(
+        'type' => 'list',
+        'path' => '/tags',
+        'method' => 'get_tags',
+        'capability' => 'read',
+      )
+    ),
+    'hooks' => array (
+      array (
+        'action' => 'comment_post',
+        'method' => 'process_comment_post',
+        'args_count' => 3,
+      ),
+      array (
+        'action' => 'spammed_comment',
+        'method' => 'process_spammed_comment',
+        'args_count' => 2,
+      ),
+      array (
+        'action' => 'edit_comment',
+        'method' => 'process_edit_comment',
+        'args_count' => 2,
+      ),
+      array (
+        'action' => 'wp_set_comment_status',
+        'method' => 'process_set_comment_status',
+        'args_count' => 2,
+      ),
+      array (
+        'action' => 'register_new_user',
+        'method' => 'process_user_register',
+        'args_count' => 1,
+      ),
+      array(
+          'action' => 'profile_update',
+          'method' => 'process_profile_update',
+          'args_count' => 2
+      ),
+      array(
+          'action' => 'save_post',
+          'method' => 'process_save_post',
+          'args_count' => 3
+      ),
+      array(
+          'action' => 'wp_login',
+          'method' => 'process_wp_login',
+          'args_count' => 2,
+      ),
+    ),
+  ),
+  array (
+    'name' => esc_html__('Contact Form 7'),
+    'gallery_app_link' => 'contact-form-7',
+    'description' => esc_html__('Create forms in Contact Form 7 to collect contacts, feedback, or orders. Then integrate Contact Form 7 with other apps using Zoho Flow to store, share, and analyze your form submissions automatically.', 'zoho-flow'),
+    'icon_file' => 'contact-form-7.png',
+    'class_test' => 'WPCF7_ContactForm',
+    'version' => 'v1',
+    'rest_apis' => array (
+      array (
+        'type' => 'list',
+        'path' => '/forms',
+        'method' => 'get_forms',
+        'capability' => 'wpcf7_read_contact_forms',
+        'schema_method' => 'get_form_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+        'method' => 'get_fields',
+        'capability' => 'wpcf7_read_contact_forms',
+        'schema_method' => 'get_field_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'get_webhooks',
+        'capability' => 'wpcf7_read_contact_forms',
+        'schema_method' => 'get_form_webhook_schema',
+      ),
+      array (
+        'type' => 'create',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'create_webhook',
+        'capability' => 'wpcf7_edit_contact_form',
+      ),
+      array (
+        'type' => 'delete',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+        'method' => 'delete_webhook',
+        'capability' => 'wpcf7_delete_contact_form',
+      ),
+      array (
+        'type' => 'get',
+        'path' => '/files/(?\'filename\'.+)',
+        'method' => 'get_file',
+        'capability' => 'wpcf7_edit_contact_form',
+      ),
+    ),
+    'hooks' => array (
+      array (
+        'action' => 'wpcf7_before_send_mail',
+        'method' => 'process_form_submission',
+        'args_count' => 1,
+      ),
+    ),
+  ),
+  array (
+    'name' => esc_html__('WPForms'),
+    'gallery_app_link' => 'wpforms',
+    'description' => esc_html__('Utilize WPForms’s drag-and-drop form builder to create customizable forms for subscriptions, payments, and lead generation. Connect it to Zoho Flow to automatically add your subscriber information to your email marketing platform, add your payment data as new rows in your spreadsheet, and much more.', 'zoho-flow'),
+    'icon_file' => 'wpforms.png',
+    'class_test' => 'WPForms',
+    'version' => 'v1',
+    'rest_apis' => array (
+      array (
+        'type' => 'list',
+        'path' => '/forms',
+        'method' => 'get_forms',
+        'capability' => 'manage_options',
+        'schema_method' => 'get_form_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+        'method' => 'get_fields',
+        'capability' => 'manage_options',
+        'schema_method' => 'get_field_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'get_webhooks',
+        'capability' => 'manage_options',
+        'schema_method' => 'get_form_webhook_schema',
+      ),
+      array (
+        'type' => 'create',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'create_webhook',
+        'capability' => 'manage_options',
+      ),
+      array (
+        'type' => 'delete',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+        'method' => 'delete_webhook',
+        'capability' => 'manage_options',
+      ),
+      array (
+        'type' => 'get',
+        'path' => '/files/(?\'filename\'.+)',
+        'method' => 'get_file',
+        'capability' => 'manage_options',
+      ),
+    ),
+    'hooks' => array (
+      array (
+        'action' => 'wpforms_process_complete',
+        'method' => 'process_form_submission',
+        'args_count' => 4,
+      ),
+    ),
+  ),
+  array (
+    'name' => esc_html__('Ninja Forms'),
+    'gallery_app_link' => 'ninja-forms',
+    'description' => esc_html__('Ninja Forms is a beginner-friendly form builder plugin that also provides conditional logic, multistep forms, and file uploads. Integrate Ninja Forms with your favorite apps to get instant notifications in your team chat app, create tasks in your project management application, or add leads to your CRM for new form submissions.', 'zoho-flow'),
+    'icon_file' => 'ninja-forms.png',
+    'class_test' => 'Ninja_Forms',
+    'version' => 'v1',
+    'rest_apis' => array (
+      array (
+        'type' => 'list',
+        'path' => '/forms',
+        'method' => 'get_forms',
+        'capability' => 'manage_options',
+        'schema_method' => 'get_form_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+        'method' => 'get_fields',
+        'capability' => 'manage_options',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'get_webhooks',
+        'capability' => 'manage_options',
+        'schema_method' => 'get_form_webhook_schema',
+      ),
+      array (
+        'type' => 'create',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'create_webhook',
+        'capability' => 'manage_options',
+      ),
+      array (
+        'type' => 'delete',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+        'method' => 'delete_webhook',
+        'capability' => 'manage_options',
+      ),
+    ),
+    'hooks' => array (
+      array (
+        'action' => 'ninja_forms_after_submission',
+        'method' => 'process_form_submission',
+        'args_count' => 4,
+      ),
+    ),
+  ),
+  array (
+    'name' => esc_html__('Formidable Forms'),
+    'gallery_app_link' => 'formidable-forms',
+    'description' => esc_html__('Build a simple contact form or complex multipage form with conditional logic, calculations, file uploads, and more, using Formidable Forms. You can then integrate it with other apps to automatically upload the forms to your team’s cloud drive, send new submissions to your team’s chat channel, or add contacts to your CRM.', 'zoho-flow'),
+    'icon_file' => 'formidable-forms.png',
+    'class_test' => 'FrmSettings',
+    'version' => 'v1',
+    'rest_apis' => array (
+      array (
+        'type' => 'list',
+        'path' => '/forms',
+        'method' => 'get_forms',
+        'capability' => 'frm_view_forms',
+        'schema_method' => 'get_form_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+        'method' => 'get_fields',
+        'capability' => 'frm_view_forms',
+        'schema_method' => 'get_field_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'get_webhooks',
+        'capability' => 'frm_view_forms',
+        'schema_method' => 'get_form_webhook_schema',
+      ),
+      array (
+        'type' => 'create',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'create_webhook',
+        'capability' => 'frm_edit_forms',
+      ),
+      array (
+        'type' => 'delete',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+        'method' => 'delete_webhook',
+        'capability' => 'frm_delete_forms',
+      ),
+    ),
+    'hooks' => array (
+      array (
+        'action' => 'frm_after_create_entry',
+        'method' => 'process_form_submission',
+        'args_count' => 3,
+      ),
+    ),
+  ),
+  array (
+    'name' => esc_html__('Everest Forms'),
+    'gallery_app_link' => 'everest-forms',
+    'description' => esc_html__('Everest Forms is a drag-and-drop form builder plugin that’s lightweight, fast, and mobile responsive. Automatically create calendar events from new form submissions, add subscribers to your mailing list, create tickets for complaints received, and more, using Zoho Flow.', 'zoho-flow'),
+    'icon_file' => 'everest-forms.png',
+    'class_test' => 'EverestForms',
+    'version' => 'v1',
+    'rest_apis' => array (
+      array (
+        'type' => 'list',
+        'path' => '/forms',
+        'method' => 'get_forms',
+        'capability' => 'manage_everest_forms',
+        'schema_method' => 'get_form_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+        'method' => 'get_fields',
+        'capability' => 'manage_everest_forms',
+        'schema_method' => 'get_field_schema',
+      ),
+      array (
+        'type' => 'list',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'get_webhooks',
+        'capability' => 'manage_everest_forms',
+        'schema_method' => 'get_form_webhook_schema',
+      ),
+      array (
+        'type' => 'create',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+        'method' => 'create_webhook',
+        'capability' => 'manage_everest_forms',
+      ),
+      array (
+        'type' => 'delete',
+        'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+        'method' => 'delete_webhook',
+        'capability' => 'manage_everest_forms',
+      ),
+    ),
+    'hooks' => array (
+      array (
+        'action' => 'everest_forms_process_complete',
+        'method' => 'process_form_submission',
+        'args_count' => 4,
+      ),
+    ),
+  ),
+  array(
+        'name' => esc_html__('Elementor'),
+        'gallery_app_link' => 'elementor',
+        'description' => esc_html__('Elementor’s intuitive website builder and 100+ predesigned templates and blocks make it easy to build great websites. Integrate it with your favorite apps, and you can automatically send, store, and analyze form responses, contacts, and feedback.', 'zoho-flow'),
+        'icon_file' => 'elementor.png',
+        'class_test' => 'Elementor\Api',
+        'version' => 'v1',
+        'rest_apis' => array (
+            array (
+                'type' => 'list',
+                'path' => '/forms',
+                'method' => 'get_forms',
+                'capability' => 'manage_options',
+                'schema_method' => 'get_form_schema',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/forms/(?\'form_id\'[a-zA-Z0-9_]+)/fields',
+                'method' => 'get_fields',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/forms/(?\'form_id\'[a-zA-Z0-9_]+)/webhooks',
+                'method' => 'get_webhooks',
+                'capability' => 'manage_options',
+                'schema_method' => 'get_form_webhook_schema',
+            ),
+            array (
+                'type' => 'create',
+                'path' => '/forms/(?\'form_id\'[a-zA-Z0-9_]+)/webhooks',
+                'method' => 'create_webhook',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'delete',
+                'path' => '/forms/(?\'form_id\'[a-zA-Z0-9_]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+                'method' => 'delete_webhook',
+                'capability' => 'manage_options',
+            ),
+        ),
+        'hooks' => array (
+            array (
+                'action' => 'elementor_pro/forms/new_record',
+                'method' => 'process_form_submission',
+                'args_count' => 2,
+            ),
+        ),
+    ),
+    array(
+        'name' => esc_html__('Ultimate Member'),
+        'gallery_app_link' => 'ultimate-member',
+        'description' => esc_html__('Ultimate Member’s WordPress plugin makes it a breeze for users to sign up and become members of your website. Easily manage your forms by automating follow-ups for form submissions, contact management, cloud storage, and more, using Zoho Flow.', 'zoho-flow'),
+        'icon_file' => 'ultimate-member.png',
+        'class_test' => 'UM',
+        'version' => 'v1',
+        'rest_apis' => array (
+            array (
+                'type' => 'list',
+                'path' => '/forms',
+                'method' => 'get_forms',
+                'capability' => 'manage_options',
+                'schema_method' => 'get_form_schema',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+                'method' => 'get_fields',
+                'capability' => 'manage_options',
+                'schema_method' => 'get_field_schema',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+                'method' => 'get_webhooks',
+                'capability' => 'manage_options',
+                'schema_method' => 'get_form_webhook_schema',
+            ),
+            array (
+                'type' => 'create',
+                'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+                'method' => 'create_webhook',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'delete',
+                'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+                'method' => 'delete_webhook',
+                'capability' => 'manage_options',
+            ),
+        ),
+        'hooks' => array (
+            array (
+                'action' => 'um_after_save_registration_details',
+                'method' => 'process_form_submission',
+                'args_count' => 2,
+            ),
+            array(
+                'action' => 'um_after_user_updated',
+                'method' => 'um_user_updated',
+                'args_count' => 3,
+            ),
+        ),
+    ),
+    array(
+        'name' => esc_html__('DigiMember'),
+        'gallery_app_link' => 'digi-member',
+        'description' => esc_html__('This easy-to-use membership plugin for WordPress lets you build your own automated membership site. Let Zoho Flow automatically add new orders to your spreadsheet, notify you by chat when a new order is made, create new orders from emails received, and more.', 'zoho-flow'),
+        'icon_file' => 'digi-member.png',
+        'class_test' => 'ncore_Class',
+        'version' => 'v1',
+        'rest_apis' => array (
+            array (
+                'type' => 'list',
+                'path' => '/products',
+                'method' => 'get_all_products',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/users/(?\'user_id\'[\\d]+)/products',
+                'method' => 'get_products_of_user',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/orders/(?\'user_id\'[\\d]+)',
+                'method' => 'get_user_orders',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'create',
+                'path' => '/orders',
+                'method' => 'create_orders',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'list',
+                'path' => '/(?\'post_type\'[a-zA-Z_]+)/webhooks',
+                'method' => 'get_webhook_for_order',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'create',
+                'path' => '/(?\'post_type\'[a-zA-Z_]+)/webhooks',
+                'method' => 'create_webhook_for_order',
+                'capability' => 'manage_options',
+            ),
+            array (
+                'type' => 'delete',
+                'path' => '/(?\'post_type\'[a-zA-Z_]+)/webhooks/(?\'webhook_id\'[\\d]+)',
+                'method' => 'delete_webhook',
+                'capability' => 'manage_options',
+            ),
+        ),
+        'hooks' => array (
+            array (
+                'action' => 'digimember_purchase',
+                'method' => 'digi_purchase',
+                'args_count' => 4,
+            ),
+        ),
+      ),
+    array (
+      'name' => esc_html__('LearnDash'),
+      'gallery_app_link' => 'learndash',
+      'description' => esc_html__('LearnDash helps you better sell your online courses by providing multiple pricing models, payment gateways, and automatic renewal notifications. Use Zoho Flow to automatically add new users enrolled in your course to your CRM, send customized emails to users who’ve completed quizzes, add users to a specific group, and more.', 'zoho-flow'),
+      'icon_file' => 'learndash.png',
+      'class_test' => 'Sfwd_Lms',
+      'version' => 'v1',
+      'rest_apis' => array (
+        array (
+          'type' => 'list',
+          'path' => '/courses',
+          'method' => 'get_courses',
+          'capability' => 'manage_options',
+          'schema_method' => 'get_course_schema',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/groups',
+          'method' => 'get_groups',
+          'capability' => 'manage_options',
+          'schema_method' => 'get_group_schema',
+        ),
+        array (
+          'type' => 'create',
+          'path' => '/course/(?\'course_id\'[\\d]+)/enroll',
+          'method' => 'enroll_user_to_course',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'create',
+          'path' => '/group/(?\'group_id\'[\\d]+)/add_users',
+          'method' => 'add_users_to_group',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'update',
+          'path' => '/group/(?\'group_id\'[\\d]+)/remove_users',
+          'method' => 'remove_users_from_group',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'update',
+          'path' => '/course/(?\'course_id\'[\\d]+)/remove_user',
+          'method' => 'remove_users_from_course',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/user/(?\'user_id\'[\\d]+)/courses',
+          'method' => 'user_courses',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/course/(?\'course_id\'[\\d]+)/quizzes',
+          'method' => 'get_quizzes',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/group/(?\'group_id\'[\\d]+)/users',
+          'method' => 'group_users',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/users',
+          'method' => 'get_users',
+          'capability' => 'read',
+          'schema_method' => 'get_user_schema',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/course/(?\'course_id\'[\\d]+)',
+          'method' => 'get_courses',
+          'capability' => 'read',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/course/(?\'course_id\'[\\d]+)/lessons',
+          'method' => 'get_lessons',
+          'capability' => 'read',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/lesson/(?\'lesson_id\'[\\d]+)/topics',
+          'method' => 'get_topics',
+          'capability' => 'read',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/post_types',
+          'method' => 'list_post_types',
+          'capability' => 'read',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/questions',
+          'method' => 'get_ldquestions',
+          'capability' => 'read',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/essay_submissions',
+          'method' => 'get_essay_submissions',
+          'capability' => 'read',
+        ),
+        array (
+          'type' => 'create',
+          'path' => '/(?\'action\'.+)/(?\'form_id\'[\\d]+)/webhook',
+          'method' => 'create_webhook',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'delete',
+          'path' => '/webhook/(?\'webhook_id\'[\\d]+)',
+          'method' => 'delete_webhook',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/(?\'action\'.+)/(?\'form_id\'[\\d]+)/webhooks',
+          'method' => 'get_webhooks',
+          'capability' => 'manage_options',
+        ),
+        array (
+          'type' => 'list',
+          'path' => '/webhooks',
+          'method' => 'get_all_webhooks',
+          'capability' => 'manage_options',
+        ),
+      ),
+      'hooks' => array (
+          array (
+          'action' => 'learndash_course_completed',
+          'method' => 'process_course_completed',
+          'args_count' => 1,
+        ),
+        array(
+          'action' => 'learndash_topic_completed',
+          'method' => 'process_topic_completed',
+          'args_count' => 1
+        ),
+        array(
+          'action' => 'learndash_lesson_completed',
+          'method' => 'process_lesson_completed',
+          'args_count' => 1
+        ),
+        array(
+          'action' => 'learndash_quiz_completed',
+          'method' => 'process_quiz_completed',
+          "args_count" => 2
+        ),
+        array(
+          'action' => 'learndash_new_essay_submitted',
+          'method' => 'process_essay_submitted',
+          "args_count" => 2
+        ),
+        array(
+          'action' => 'learndash_update_course_access',
+          'method' => 'process_enrolled_into_course',
+          "args_count" => 4
+  
+        ),
+        array(
+          'action' => 'ld_added_group_access',
+          'method' => 'process_group_enrolled',
+          'args_count'=> 2
+        )
+      ),
+      ),
+      array(
+          'name' => esc_html__("PlanSo Forms"),
+          'gallery_app_link' => 'planso-forms',
+          'description' => esc_html__('PlanSo Forms’s intuitive and user-friendly interface, added with features like auto-responder emails and integrated spam protection, makes it easy to build amazing forms for your WordPress site. Manage form submissions and analyze data efficiently by automatically moving data between your apps using Zoho Flow.', 'zoho-flow'),
+          'icon_file' => 'planso-forms.png',
+          'class_test' => 'Recursive_ArrayAccess',
+          'version' => 'v1',
+          'rest_apis' => array(
+              array(
+                  'type' => 'list',
+                  'path' => '/forms',
+                  'method' => 'get_forms',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/forms/(?\'form_id\'[\\d]+)/fields',
+                  'method' => 'get_fields',
+                  'capability' => 'manage_options',
+              ),
+              array (
+                  'type' => 'list',
+                  'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+                  'method' => 'get_webhooks',
+                  'capability' => 'manage_options',
+              ),
+              array (
+                  'type' => 'create',
+                  'path' => '/forms/(?\'form_id\'[\\d]+)/webhooks',
+                  'method' => 'create_webhook',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'delete',
+                  'path' => '/webhooks/(?\'webhook_id\'[\\d]+)',
+                  'method' => 'delete_webhook',
+                  'capability' => 'delete_posts',
+              ),
+          ),
+          'hooks' => array(
+              array(
+                  'action' => 'psfb_submit_after_error_check_success',
+                  'method' => 'process_form_submission',
+                  'args_count' => 1,
+              ),
+          ),
+      ),
+      array(
+          'name' => esc_html__('Simple Membership'),
+          'gallery_app_link' => 'simple-membership',
+          'description' => esc_html__('Simple Membership Plugin is a flexible, well-supported, and easy-to-use WordPress membership plugin for offering free and premium content from your WordPress site. With various membership access levels, you can also selectively protect the articles, posts, and pages on your site.', 'zoho-flow'),
+          'icon_file' => 'simple-membership.png',
+          'class_test' => 'SimpleWpMembership',
+          'version' => 'v1',
+          'rest_apis' => array (
+              array (
+                  'type' => 'list',
+                  'path' => '/members',
+                  'method' => 'get_members',
+                  'capability' => 'manage_options',
+              ),
+              array (
+                  'type' => 'list',
+                  'path' => '/membershiplevels',
+                  'method' => 'get_membership_levels',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'create',
+                  'path' => '/create_membership_level',
+                  'method' => 'create_membership',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'update',
+                  'path' => '/update_membership_level',
+                  'method' => 'update_membership',
+                  'capability' => 'manage_options',
+              ),
+              array (
+                  'type' => 'create',
+                  'path' => '/createmember',
+                  'method' => 'create_member',
+                  'capability' => 'manage_options',
+              ),
+              array (
+                  'type' => 'update',
+                  'path' => '/updatemember',
+                  'method' => 'update_member',
+                  'capability' => 'manage_options',
+              ),
+              array (
+                  'type' => 'list',
+                  'path' => '/getmember/(?\'member_id\'[\\d]+)',
+                  'method' => 'get_member',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/getmember/(?P<login>\S+)',
+                  'method' => 'get_member',
+                  'capability' => 'read',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/(?\'type\'[a-zA-Z_]+)/webhooks',
+                  'method' => 'get_webhooks',
+                  'capability' => 'read',
+              ),
+              array(
+                  'type' => 'create',
+                  'path' => '/(?\'type\'[a-zA-Z_]+)/webhooks',
+                  'method' => 'create_webhook',
+                  'capability' => 'edit_posts',
+              ),
+              array(
+                  'type' => 'delete',
+                  'path' => '/webhooks/(?\'webhook_id\'[\\d]+)',
+                  'method' => 'delete_webhook',
+                  'capability' => 'delete_posts',
+              ),
+              array(
+                  'type' => 'update',
+                  'path' => '/updatemembershiplevel',
+                  'method' => 'update_membership_level_of_member',
+                  'capability' => 'manage_options',
+              ),
+          ),
+          'hooks' => array (
+              array(
+                  'action' => 'swpm_admin_end_registration_complete_user_data',
+                  'method' => 'process_swpm_registration_user_data',
+                  'args_count' => 1,
+              ),
+              array(
+                  'action' => 'swpm_admin_end_edit_complete_user_data',
+                  'method' => 'process_swpm_registration_user_data',
+                  'args_count' => 1,
+              ),
+          ),
+      ),
+      array(
+          'name' => esc_html__("Advanced Custom Fields"),
+          'gallery_app_link' => 'advanced-custom-fields',
+          'description' => esc_html__('Advanced Custom Fields (ACF) is a WordPress plugin that allows you to add extra content fields to your WordPress sites. Allow Zoho Flow to automatically send notifications, add lead data in your CRM, or save website form submissions when values are entered into your ACF custom fields.', 'zoho-flow'),
+          'icon_file' => 'acf.png',
+          'class_test' => 'ACF',
+          'version' => 'v1',
+          'rest_apis' => array(
+              array(
+                  'type' => 'list',
+                  'path' => '/fieldgroups',
+                  'method' => 'get_field_groups',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/allfields',
+                  'method' => 'get_all_fields',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/fieldsbygroup/(?\'post_parent\'[\\d]+)',
+                  'method' => 'get_fields_by_group',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/fieldgroup_by_id/(?\'field_group_id\'[\\d]+)',
+                  'method' => 'get_field_group_by_id',
+                  'capability' => 'manage_options',
+              ),
+              array(
+                  'type' => 'list',
+                  'path' => '/(?\'form_id\'[\\d]+)/webhooks',
+                  'method' => 'get_webhooks',
+                  'capability' => 'read',
+              ),
+              array(
+                  'type' => 'create',
+                  'path' => '/(?\'form_id\'[\\d]+)/webhooks',
+                  'method' => 'create_webhook',
+                  'capability' => 'edit_posts',
+              ),
+              array(
+                  'type' => 'delete',
+                  'path' => '/webhooks/(?\'webhook_id\'[\\d]+)',
+                  'method' => 'delete_webhook',
+                  'capability' => 'delete_posts',
+              ),
+          ),
+          'hooks' => array(
+              array(
+                  'action' => 'acf/save_post',
+                  'method' => 'process_save_post',
+                  'args_count' => 1,
+              ),
+          ),
+      ),
+);

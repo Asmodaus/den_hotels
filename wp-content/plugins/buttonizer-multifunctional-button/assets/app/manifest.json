@@ -1,0 +1,16 @@
+{
+  "index.html": {
+    "file": "index.4ec2107c.js",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_vendor.7daddede.js"
+    ],
+    "css": [
+      "index.8d4900f2.css"
+    ]
+  },
+  "_vendor.7daddede.js": {
+    "file": "vendor.7daddede.js"
+  }
+}

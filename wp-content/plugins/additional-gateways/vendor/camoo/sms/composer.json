@@ -1,0 +1,56 @@
+{
+	"name": "camoo/sms",
+	"description": "CAMOO API Packages",
+	"type": "library",
+	"require": {
+		"php": ">=7.0",
+		"vlucas/valitron": "^1.4",
+		"guzzlehttp/guzzle": "^6.3",
+		"ext-mbstring": "*",
+		"nicoswd/php-gpg": "^1.7",
+		"giggsey/libphonenumber-for-php": "^8.10"
+	},
+	"minimum-stability": "dev",
+	"homepage": "https://camoo.cm",
+	"license": "MIT",
+	"prefer-stable" : true,
+	"require-dev": {
+        "phpunit/phpunit": "^8.4"
+	},
+	"authors": [
+		{
+			"name": "CAMOO SARL",
+			"email": "sms@camoo.sarl"
+		}
+	],
+	"keywords" : [
+		"CAMOO",
+		"SMS",
+		"BULK SMS",
+		"SMS Gateway",
+		"GPG SMS encrytion",
+		"Plugin camoo sms",
+		"API-SMS"
+	],
+	"autoload": {
+		"psr-4": {
+			"Camoo\\Sms\\": "src/"
+		}
+	},
+    "autoload-dev": {
+        "psr-4": {
+            "CamooSms\\Test\\": "tests"
+        }
+    },
+    "suggest": {
+        "phpunit/phpunit": "Allows automated tests to be run without system-wide install."
+    },
+	"scripts" : {
+		"test": "phpunit --colors=always"
+	},
+	"support": {
+		"issues": "https://github.com/camoo/sms/issues",
+		"source": "https://github.com/camoo/sms",
+		"wiki": "https://github.com/camoo/sms/wiki"
+	}
+}
