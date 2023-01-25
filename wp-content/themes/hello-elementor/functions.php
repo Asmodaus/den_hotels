@@ -218,3 +218,72 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 		}
 	}
 }
+
+function my_taxonomies_cities() {
+    
+    $args = array( 
+        'hierarchical' => true,
+    );
+    register_taxonomy( 'cities', 'hotels', $args );
+}
+add_action( 'init', 'my_taxonomies_cities', 0 );
+
+function custom_post_type_hotel() {
+
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Hotels', 'Post Type General Name', 'twentytwenty' ),
+        'singular_name'       => _x( 'Hotel', 'Post Type Singular Name', 'twentytwenty' ),
+        'menu_name'           => __( 'Hotels', 'twentytwenty' ),
+        'parent_item_colon'   => __( 'Parent Hotel', 'twentytwenty' ),
+        'all_items'           => __( 'All Hotels', 'twentytwenty' ),
+        'view_item'           => __( 'View Hotel', 'twentytwenty' ),
+        'add_new_item'        => __( 'Add New  ', 'twentytwenty' ),
+        'add_new'             => __( 'Add New', 'twentytwenty' ),
+        'edit_item'           => __( 'Edit  ', 'twentytwenty' ),
+        'update_item'         => __( 'Update  ', 'twentytwenty' ),
+        'search_items'        => __( 'Search Movie', 'twentytwenty' ),
+        'not_found'           => __( 'Not Found', 'twentytwenty' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
+    );
+
+// Set other options for Custom Post Type
+
+    $args = array(
+        'label'               => __( 'hotels', 'hello-elementor' ),
+        'description'         => __( 'Hotels  ', 'twentytwenty' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'thumbnail',  'custom-fields', 'rating' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        'taxonomies'          => array( 'cities' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true, 
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+
+    );
+
+    // Registering your Custom Post Type
+    register_post_type( 'hotels', $args );
+
+}
+
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not
+* unnecessarily executed.
+*/
+
+add_action( 'init', 'custom_post_type_hotel', 0 );
