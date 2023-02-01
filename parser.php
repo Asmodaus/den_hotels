@@ -29,21 +29,20 @@ curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);// разрешаем редире
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $html = curl_exec($curl); // выполняем запрос и записываем в переменную
 curl_close($curl); // заканчиваем работу curl
- 
+  
 //подключаем PHP Simple HTML DOM Parser с сайта http://simplehtmldom.sourceforge.net
-include_once('wp-icnludes/simple_html_dom.php');
- 
+include_once('wp-includes/simple_html_dom.php');
+  
 $html = str_get_html($html);
  
 //ищем в странице некий authenticity_token и записываем его в переменную $token
 $inputs = $html->find("#login-form");
 $input = $inputs[0];
 $action = $input->action;
-echo $action;
- 
+echo $action;die();
+ sleep(2000);
 // ниже авторизуемся на сайте со значением authenticity_token в переменной $token
-$curl = curl_init(); // инициализируем cURL
-/*Дальше устанавливаем опции запроса в любом порядке*/
+$curl = curl_init(); // инициализируем cURL 
 $action=str_replace('.ru.','.'.$languageId.'.',$action,1);
 //Здесь устанавливаем URL к которому нужно обращаться
 curl_setopt($curl, CURLOPT_URL, 'https://agent.teztour.lv'.$action);
@@ -72,7 +71,7 @@ $result = curl_exec($curl); // выполняем запрос и записыв
 curl_close($curl); // заканчиваем работу curl
  
 echo $result; // Выводим на экран результат выполнения
-
+ 
 
 }
 
