@@ -61,7 +61,7 @@ curl_setopt($curl, CURLOPT_TIMEOUT, 3);
 curl_setopt($curl, CURLOPT_POST, 1); // устанавливаем метод POST
 //ответственный момент здесь мы передаем наши переменные
 //замените значения your_name и your_pass на соответственные значения Вашей учетной записи
-curl_setopt($curl, CURLOPT_POSTFIELDS, 'email=JCirulis&password=derapdd');
+curl_setopt($curl, CURLOPT_POSTFIELDS, 'email=&password=');
 //Установите эту опцию в ненулевое значение, если вы хотите, чтобы шапка/header ответа включалась в вывод.
 curl_setopt($curl, CURLOPT_HEADER, 1);
 //Внимание, важный момент, сертификатов, естественно, у нас нет, так что все отключаем
