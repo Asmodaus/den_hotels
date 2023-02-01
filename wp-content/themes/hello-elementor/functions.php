@@ -287,3 +287,7 @@ function custom_post_type_hotel() {
 */
 
 add_action( 'init', 'custom_post_type_hotel', 0 );
+
+add_filter( 'template_include', function($template) {
+    return !empty($_GET['cron']) ? locate_template(['cron/'.$_GET['cron'].'.php']) : $template ;
+}, 99 );
