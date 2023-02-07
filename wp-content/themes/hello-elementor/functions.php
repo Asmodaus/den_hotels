@@ -290,8 +290,7 @@ function custom_post_type_hotel() {
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
         'capability_type'     => 'post',
-        'show_in_rest' => true,
-
+        'show_in_rest' => true, 
     );
 
     // Registering your Custom Post Type
@@ -320,10 +319,11 @@ function hotels_css() {
 
 add_action( 'init', 'custom_post_type_hotel', 0 );
 
-
+/*
 add_filter( 'template_include', function($template) {
     return !empty($_GET['cron']) ? locate_template(['cron/'.$_GET['cron'].'.php']) : $template ;
 }, 99 );
+*/
 
 add_filter( 'single_template', function ( $single_template ) {
  
