@@ -219,6 +219,15 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 	}
 }
 
+
+
+//HOTELS
+
+add_action( 'after_switch_theme', 'bt_flush_rewrite_rules' ); 
+function bt_flush_rewrite_rules() {
+     flush_rewrite_rules();
+}
+
 function my_taxonomies_cities() {
     
     $args = array( 
@@ -310,6 +319,7 @@ function hotels_css() {
 }
 
 add_action( 'init', 'custom_post_type_hotel', 0 );
+
 
 add_filter( 'template_include', function($template) {
     return !empty($_GET['cron']) ? locate_template(['cron/'.$_GET['cron'].'.php']) : $template ;
