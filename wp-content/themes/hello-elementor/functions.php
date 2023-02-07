@@ -223,8 +223,17 @@ function my_taxonomies_cities() {
     
     $args = array( 
         'hierarchical' => true,
+		'show_in_rest' => true, 
+		'labels'                => [
+			'name'              => 'Курорты',
+			'singular_name'     => 'Курорт', 
+			
+		],
+		'public'                => true,
     );
     register_taxonomy( 'cities', 'hotels', $args );
+	register_taxonomy_for_object_type( 'cities', 'hotels');
+
 }
 add_action( 'init', 'my_taxonomies_cities', 0 );
 
@@ -254,14 +263,14 @@ function custom_post_type_hotel() {
         'description'         => __( 'Hotels  ', 'twentytwenty' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'thumbnail',  'custom-fields', 'rating' ),
+        'supports'            => array( 'title','custom-fields' , 'editor', 'category' ,  'slug', 'thumbnail',  'custom-fields', 'rating' ),
         // You can associate this CPT with a taxonomy or custom taxonomy.
         'taxonomies'          => array( 'cities' ),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
         */ 
-        'hierarchical'        => false,
+        'hierarchical'        => true,
         'public'              => true,
         'show_ui'             => true,
         'show_in_menu'        => true,
@@ -285,9 +294,36 @@ function custom_post_type_hotel() {
 * Containing our post type registration is not
 * unnecessarily executed.
 */
+add_action('wp_enqueue_scripts', 'hotels_css' );  
+function hotels_css() {
+	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/normalize.css', array(), null );
+	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/swiper-bundle.min.css', array(), null );
+	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/libs/bootstrap5/bootstrap.min.css', array(), null );
+	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/lightbox.min.css', array(), null );
+	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/style.css', array(), null );
+
+	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/js/swiper-bundle.min.js', array(), null );
+	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/libs/bootstrap5/bootstrap.min.js', array(), null );
+	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/js/lightbox.min.js', array(), null );
+	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/js/script.js', array(), null );
+ 
+}
 
 add_action( 'init', 'custom_post_type_hotel', 0 );
 
 add_filter( 'template_include', function($template) {
     return !empty($_GET['cron']) ? locate_template(['cron/'.$_GET['cron'].'.php']) : $template ;
 }, 99 );
+
+add_filter( 'single_template', function ( $single_template ) {
+ 
+    $parent     = '120'; //Здесь вставляем id категории(рубрики) для которой хотите изменить шаблон у детальной страницы записи
+    $categories = get_categories( 'child_of=' . $parent );
+    $cat_names  = wp_list_pluck( $categories, 'name' );
+  
+    if (  has_category( $cat_names ) ) {
+        $single_template = dirname( __FILE__ ) . '/template-parts/hotels_list.php'; // название файла шаблона
+    }
+    return $single_template;
+}, PHP_INT_MAX, 2 );
+ 

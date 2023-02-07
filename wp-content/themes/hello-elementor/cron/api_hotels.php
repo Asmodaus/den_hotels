@@ -1,17 +1,16 @@
 <?php 
-
-
-define('WP_DEBUG', true); 
-define( 'WP_DEBUG_LOG', false ); 
-define( 'WP_DEBUG_DISPLAY', true ); 
-@ini_set( 'display_errors', 0 );
-require_once(dirname(__FILE__) . '/wp-load.php');
-require_once(dirname(__FILE__) . '/wp-config.php'); 
-require_once(dirname(__FILE__) . '/wp-includes/class-wpdb.php'); 
-require_once(dirname(__FILE__) . '/wp-admin/includes/taxonomy.php');
-require_once(dirname(__FILE__) . '/wp-content/plugins/polylang/polylang.php'); 
+ 
+require_once(ABSPATH . '/wp-load.php');
+require_once(ABSPATH . '/wp-config.php'); 
+require_once(ABSPATH . '/wp-includes/class-wpdb.php'); 
+require_once(ABSPATH . '/wp-admin/includes/taxonomy.php');
+require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+//require ABSPATH . '/wp-content/plugins/polylang/vendor/autoload.php';
+//require_once(ABSPATH . '/wp-content/plugins/polylang/polylang.php'); 
 //require_once(dirname(__FILE__) . '/wp-content/plugins/polylang/include/api.php'); 
-
+get_header();
 
 function c_get($url)
 {
@@ -65,8 +64,10 @@ function add_post($params)
 	if (strlen($params['name'])<1) return false;
 	 
     $ppp = get_page_by_title($params['name']);
-	print_r($ppp);
-    if (isset($ppp->ID)) $post_id=$ppp->ID;
+	 
+    if (isset($ppp->ID)) wp_delete_post($ppp->ID);
+	 //$post_id=$ppp->ID;
+	if (1==2) return;
     else 
     {
 		
@@ -75,6 +76,7 @@ function add_post($params)
             $post_id = wp_create_category($params['name'],$params['category']);
         }
         else {
+			if (strlen($params['text'])<1)  $params['text']= $params['name'];
             $post_data = array(
                 'post_title' => $params['name'],
                 'post_content' => $params['text'],
@@ -82,8 +84,7 @@ function add_post($params)
                 'post_author' => 1,
 				'post_type'=>'hotels',
                 'post_category' => [$params['category']]
-            ); 
-            
+            );  
             // Вставляем запись в базу данных
             $post_id = wp_insert_post($post_data, true); 
 			
@@ -112,6 +113,8 @@ function add_post($params)
             set_post_thumbnail($post_id, $media_id);
         }
     }
+	
+	
   
     foreach ($params as $param=>$value)
         if (!in_array($param,['name','text','category','imgs','is_cat']))
@@ -125,41 +128,30 @@ foreach ($resorts['resort'] as $resort)
 {
     $params_ru = $params=['name'=>$resort['name_lv'],'is_cat'=>true,'category'=>120];
     $params_ru['name']=$resort['name_ru'];
-    $post_id = add_post($params);
+   // $post_id = add_post($params);
     $post_id_ru = add_post($params_ru);
-    $translations = [
-        'lv' => $post_id, 
-        'ru' => $post_id_ru, 
-    ] ;
-    if ($post_id && $post_id_ru)
+    
+    if (  $post_id_ru)
 	{
-		foreach ($translations as $lang=>$pid) pll_set_post_language($pid,$lang);
-		pll_save_post_translations( $translations );
-
+		 
 		//берем уже отели
 		$hotels=parse_data($resort['hotels_xml']);
+		
 		foreach ($hotels['hotel'] as $hotel)
 		{
-			$params=['name'=>$hotel['name'],'rating'=>$hotel['stars'],'post_content'=>$hotel['description_lv'],'category'=>$post_id];
+			$params=['name'=>$hotel['name'],'rating'=>$hotel['stars'],'text'=>$hotel['description_lv'],'category'=>$post_id];
 		   
-			foreach ($hotel['images'] as $img)
+			foreach ($hotel['images']['image'] as $img)
 			{
-				$params['imgs'][]=$img['image']['path_big'];
+				$params['imgs'][]=$img['path_big'];
 			}
 
 			$params_ru = $params;
-			$params_ru['post_content']=$hotel['description_ru'];
+			$params_ru['text']=$hotel['description_ru'];
 			$params_ru['category']=$post_id_ru;
-
-			$h_post_id = add_post($params);
+ 
 			$h_post_id_ru = add_post($params_ru);
-			$translations = [
-				'lv' => $h_post_id, 
-				'ru' => $h_post_id_ru, 
-			] ;
-			
-			foreach ($translations as $lang=>$pid) pll_set_post_language($pid,$lang);
-			pll_save_post_translations( $translations );
+			 
 		}
 	}
 }
