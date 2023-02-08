@@ -26,10 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'css/lightbox.min.css' ); ?>">
 	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'css/style.css' ); ?>">
 
-	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'js/swiper-bundle.min.js' ); ?>">
-	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'libs/bootstrap5/bootstrap.min.js' ); ?>">
-	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'js/lightbox.min.js' ); ?>">
-	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'js/script.js' ); ?>">
 
 </head>
 <body <?php body_class(); ?>>

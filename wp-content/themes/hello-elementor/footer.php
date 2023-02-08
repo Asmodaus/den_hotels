@@ -22,5 +22,9 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 
 <?php wp_footer(); ?>
 
+<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'js/swiper-bundle.min.js' ); ?>">
+	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'libs/bootstrap5/bootstrap.min.js' ); ?>">
+	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'js/lightbox.min.js' ); ?>">
+	<link rel="stylesheet" href="<?php echo get_theme_file_uri( 'js/script.js' ); ?>">
 </body>
 </html>
