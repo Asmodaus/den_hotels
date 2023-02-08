@@ -8,7 +8,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
- 
+
+while ( have_posts() ) :
+	the_post();
 	$Post = get_post(get_the_ID());
 	$custom = get_post_custom( get_the_ID() );
 
@@ -17,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$catname= $cd->cat_name;
 		$caturl = $cd->slug;
 	}
+    $rating=get_post_meta($Post->ID,'rating');
+    if ($rating>5) $rating=5;
 	?>
 
 <main id="content" <?php post_class( 'site-main' ); ?> role="main">
@@ -30,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							 
 								<?php the_title( '<h3>', '</h3>' ); ?>   
                                 <div class="desc-rating">
-									<?php for ($i=1;$i<get_post_meta($Post->ID,'rating');$i++):?>
+									<?php for ($i=1;$i<=$rating;$i++):?>
                                     <img src="<?= dirname( __FILE__ ) ?>/../images/star-icon.svg" alt="">
                                     <?php endfor;?>
                                 </div>
@@ -113,4 +117,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             </section>
 		</main>
 
-	   
+	  
+
+	<?php
+endwhile;
