@@ -302,7 +302,8 @@ function custom_post_type_hotel() {
 * Containing our post type registration is not
 * unnecessarily executed.
 */
-add_action('wp_enqueue_scripts', 'hotels_css' );  
+//add_action('wp_enqueue_scripts', 'hotels_css' ); 
+add_action('wp_print_styles', 'hotels_css'); 
 function hotels_css() {
 	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/normalize.css', array(), null );
 	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/swiper-bundle.min.css', array(), null );

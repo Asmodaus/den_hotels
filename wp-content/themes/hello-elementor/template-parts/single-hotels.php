@@ -22,21 +22,7 @@ while ( have_posts() ) :
 	?>
 
 <main id="content" <?php post_class( 'site-main' ); ?> role="main">
-<section class="breadcrumbs-sec">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="breadcrumbs-list">
-								<ul>
-									<li><a href="<?=$caturl?>"class="breadcrumbs-item"><?=$catname?></a></li>
-									<li><span class="divider">//</span></li>
-									<li><p class="breadcrumbs-item active"><?php the_title( ); ?>   </p></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+ 
 
 			<section class="blog-description">
                 <div class="container">
@@ -46,9 +32,9 @@ while ( have_posts() ) :
 							 
 								<?php the_title( '<h3>', '</h3>' ); ?>   
                                 <div class="desc-rating">
-									<?for ($i=1;$i<get_post_meta($Post->ID,'rating');$i++):?>
+									<?php for ($i=1;$i<get_post_meta($Post->ID,'rating');$i++):?>
                                     <img src="<?= dirname( __FILE__ ) ?>/../images/star-icon.svg" alt="">
-                                    <?endfor;?>
+                                    <?php endfor;?>
                                 </div>
                             </div>
                         </div>
@@ -60,16 +46,16 @@ while ( have_posts() ) :
                                 <div class="desc-slide">
                                     <div class="swiper mySwiper2">
                                         <div class="swiper-wrapper gallery-big">
-										<?
+										<?php 
 										$media = get_attached_media( 'image', $Post->ID );
 										foreach ($media as $img):
 										?>
                                             <div class="swiper-slide">
                                                 <a href="<?=$img->guid?>" data-lightbox="roadtrip">
-                                                    <img src="<?=$img->guid?>"/>
+                                                    <img src="<?php echo $img->guid?>"/>
                                                 </a>
                                             </div>
-                                        <?endforeach;?>
+                                        <?php endforeach;?>
                                         </div>
                                     </div>
                                     <div thumbsSlider="" class="swiper mySwiper">
@@ -77,13 +63,13 @@ while ( have_posts() ) :
                                         <div class="swiper-button-prev"><img src="images/slide-left-arrow.svg" alt=""></div>
 
                                         <div class="swiper-wrapper gallery-small">
-											<? 
+											<?php 
 											foreach ($media as $img):
 											?> 
 												<div class="swiper-slide">
-													<img src="<?=$img->guid?>"/>
+													<img src="<?php echo $img->guid?>"/>
 												</div>
-											<?endforeach;?>
+											<?php endforeach;?>
                                              
                                         </div>
                                     </div>
