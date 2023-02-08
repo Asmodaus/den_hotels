@@ -8,9 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-while ( have_posts() ) :
-	the_post();
+ 
 	$Post = get_post(get_the_ID());
 	$custom = get_post_custom( get_the_ID() );
 
@@ -115,7 +113,4 @@ while ( have_posts() ) :
             </section>
 		</main>
 
-	  
-
-	<?php
-endwhile;
+	   
