@@ -61,8 +61,8 @@ while ( have_posts() ) :
                                         </div>
                                     </div>
                                     <div thumbsSlider="" class="swiper mySwiper">
-                                        <div class="swiper-button-next"><img src="<?php echo get_theme_file_uri('images/slide-right-arrow.svg');?>" alt=""></div>
-                                        <div class="swiper-button-prev"><img src="<?php echo get_theme_file_uri('images/slide-left-arrow.svg');?>" alt=""></div>
+                                        <div style="background-image: none;" class="swiper-button-next"><img src="<?php echo get_theme_file_uri('images/slide-right-arrow.svg');?>" alt=""></div>
+                                        <div style="background-image: none;"  class="swiper-button-prev"><img src="<?php echo get_theme_file_uri('images/slide-left-arrow.svg');?>" alt=""></div>
 
                                         <div class="swiper-wrapper gallery-small">
 											<?php 
