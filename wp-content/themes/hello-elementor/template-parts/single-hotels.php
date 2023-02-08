@@ -61,8 +61,8 @@ while ( have_posts() ) :
                                         </div>
                                     </div>
                                     <div thumbsSlider="" class="swiper mySwiper">
-                                        <div class="swiper-button-next"><img src="images/slide-right-arrow.svg" alt=""></div>
-                                        <div class="swiper-button-prev"><img src="images/slide-left-arrow.svg" alt=""></div>
+                                        <div class="swiper-button-next"><img src="<?php echo get_theme_file_uri('images/slide-right-arrow.svg');?>" alt=""></div>
+                                        <div class="swiper-button-prev"><img src="<?php echo get_theme_file_uri('images/slide-left-arrow.svg');?></div>
 
                                         <div class="swiper-wrapper gallery-small">
 											<?php 
@@ -82,17 +82,17 @@ while ( have_posts() ) :
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col">
                                         <div class="desc-assets-link">
-                                            <a href="/hotels"><img src="images/otel-icon.svg" alt=""> Больше отелей</a>
+                                            <a href="/hotels"><img src="<?php echo get_theme_file_uri('images/otel-icon.svg');?>" alt=""> Больше отелей</a>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col">
                                         <div class="desc-assets-link">
-                                            <a href="#!"><img src="images/globus-icon.svg" alt=""> О стране</a>
+                                            <a href="#!"><img src="<?php echo get_theme_file_uri('images/globus-icon.svg');?>" alt=""> О стране</a>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                                         <div class="desc-assets-link">
-                                            <a href="#!"><img src="images/man-icon.svg" alt=""> Экскурсии</a>
+                                            <a href="#!"><img src="<?php echo get_theme_file_uri('images/man-icon.svg');?>" alt=""> Экскурсии</a>
                                         </div>
                                     </div>
                                 </div>
