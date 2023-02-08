@@ -21,11 +21,7 @@ $is_elementor_theme_exist = function_exists( 'elementor_theme_do_location' );
 
 if ( is_singular() ) {
 
-	if (have_posts() ) 
-	{
-		the_post();
-		$Post = get_post(get_the_ID());
-	}
+	$Post = get_post(get_the_ID());
 
 	if ($Post->post_type=='hotels') get_template_part( 'template-parts/single-hotels' );
 	elseif ( ! $is_elementor_theme_exist || ! elementor_theme_do_location( 'single' ) ) {
