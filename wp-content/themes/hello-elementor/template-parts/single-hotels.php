@@ -35,7 +35,7 @@ while ( have_posts() ) :
 								<?php the_title( '<h3>', '</h3>' ); ?>   
                                 <div class="desc-rating">
 									<?php for ($i=1;$i<=$rating;$i++):?>
-                                    <img src="<?= dirname( __FILE__ ) ?>/../images/star-icon.svg" alt="">
+                                    <img src="<?php echo get_theme_file_uri('images/star-icon.svg');?>" alt="">
                                     <?php endfor;?>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ while ( have_posts() ) :
                                     </div>
                                     <div thumbsSlider="" class="swiper mySwiper">
                                         <div class="swiper-button-next"><img src="<?php echo get_theme_file_uri('images/slide-right-arrow.svg');?>" alt=""></div>
-                                        <div class="swiper-button-prev"><img src="<?php echo get_theme_file_uri('images/slide-left-arrow.svg');?></div>
+                                        <div class="swiper-button-prev"><img src="<?php echo get_theme_file_uri('images/slide-left-arrow.svg');?>" alt=""></div>
 
                                         <div class="swiper-wrapper gallery-small">
 											<?php 
