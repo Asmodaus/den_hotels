@@ -301,23 +301,7 @@ function custom_post_type_hotel() {
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not
 * unnecessarily executed.
-*/
-//add_action('wp_enqueue_scripts', 'hotels_css' ); 
-add_action('wp_print_styles', 'hotels_css'); 
-function hotels_css() {
-	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/normalize.css', array(), null );
-	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/swiper-bundle.min.css', array(), null );
-	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/libs/bootstrap5/bootstrap.min.css', array(), null );
-	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/lightbox.min.css', array(), null );
-	wp_enqueue_style( 'my_head_style', get_stylesheet_directory_uri() .'/css/style.css', array(), null );
-
-	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/js/swiper-bundle.min.js', array(), null );
-	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/libs/bootstrap5/bootstrap.min.js', array(), null );
-	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/js/lightbox.min.js', array(), null );
-	wp_enqueue_script( 'my_head_js', get_stylesheet_directory_uri() .'/js/script.js', array(), null );
- 
-}
-
+*/  
 add_action( 'init', 'custom_post_type_hotel', 0 );
 
 /*
