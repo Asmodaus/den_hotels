@@ -52,7 +52,7 @@ while ( have_posts() ) :
 										?>
                                             <div class="swiper-slide">
                                                 <a href="<?=$img->guid?>" data-lightbox="roadtrip">
-                                                    <img src="<?php echo $img->guid?>"/>
+                                                    <img src="<?php echo $img->guid;?>"/>
                                                 </a>
                                             </div>
                                         <?php endforeach;?>
@@ -67,7 +67,7 @@ while ( have_posts() ) :
 											foreach ($media as $img):
 											?> 
 												<div class="swiper-slide">
-													<img src="<?php echo $img->guid?>"/>
+													<img src="<?php echo $img->guid;?>"/>
 												</div>
 											<?php endforeach;?>
                                              
@@ -104,7 +104,7 @@ while ( have_posts() ) :
                                 </div>
                                 <div class="desc-info">
                                     <div class="desc-info-item">
-                                        <?=$Post->post_content?>
+                                        <?php echo $Post->post_content; ?>
                                     </div>
  
                                 </div>
