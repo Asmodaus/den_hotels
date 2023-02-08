@@ -20,8 +20,9 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 }
 ?>
 
-<?php wp_footer(); ?>
+<?php wp_footer(); ?> 
 
+<script src='<?php echo get_theme_file_uri( 'js/jquery-3.3.1.min.js' ); ?>' ></script>
 <script src='<?php echo get_theme_file_uri( 'js/swiper-bundle.min.js' ); ?>' ></script>
 	<script src='<?php echo get_theme_file_uri( 'libs/bootstrap5/bootstrap.min.js' ); ?>' ></script>
 	<script src='<?php echo get_theme_file_uri( 'js/lightbox.min.js' ); ?>' ></script>
