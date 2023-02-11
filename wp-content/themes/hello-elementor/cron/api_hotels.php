@@ -63,9 +63,11 @@ function add_post($params)
     $params['name']=sanitize_text_field($params['name']);
 	if (strlen($params['name'])<1) return false;
 	 
-    $ppp = get_page_by_title($params['name']);
-	 
-    if (isset($ppp->ID)) wp_delete_post($ppp->ID);
+    $ppp = get_page_by_title($params['name'],OBJECT,'hotels');	 
+    if (isset($ppp->ID)) wp_delete_post($ppp->ID,true);
+    $ppp = get_page_by_title($params['name'],OBJECT,'city');	 
+    if (isset($ppp->ID)) wp_delete_post($ppp->ID,true);
+
 	 //$post_id=$ppp->ID;
 	if (1==2) return;
     else 
