@@ -9,6 +9,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+
+$cats = get_posts( array(
+	'numberposts' => 200,
+	'category'    => 2926,
+	'orderby'     => 'name',
+	'order'       => 'ASC', 
+	'post_type'   => 'city',
+	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+) );
+
+
+$all = get_posts( array(
+	 
+	'post_type'   => 'hotels',
+	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+) );
+
 ?>
 
 <main id="content" <?php post_class( 'site-main' ); ?> role="main">
@@ -25,70 +42,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<label class="control control--checkbox">
 										<input type="checkbox" checked="checkbox"/>
 										<div class="control__indicator"></div>
-										<span class="active">Все направления <span class="resort-number">(1567)</span></span>
+										<span class="active">Все направления <span class="resort-number">(<?php echo count($all);?>)</span></span>
 									</label>
 									<div class="all-collapse collapse show" id="collapseAll">
 										<div class="card card-body">
+										<?php foreach ($cats as $Cat):?>
 											<div class="sidebar-checks">
 												<div class="side-btn">
 													<label class="control control--checkbox">
-														<input type="checkbox"/>
+														<input type="checkbox" class="hotel_cats" OnClick="renew_hotes();" value="<?php echo $Cat->ID;?>" />
 														<div class="control__indicator"></div>
 													</label>
 													<button class="resort-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
-														<span>Турция <span class="resort-number">(145)</span></span>
+														<span><?php echo $Cat->post_title; ?> <span class="resort-number">(<?php echo count(get_pages( array( 'child_of' => $Cat->ID, 'post_type' => 'hotels'))); ?>)</span></span>
 													</button>
-												</div>
-												<div class="collapse-in collapse show" id="collapseExample">
-													<div class="card card-body">
-														<label class="control control--checkbox">
-															<input type="checkbox"/>
-															<div class="control__indicator"></div>
-															<span>Алания <span class="resort-number">(45)</span></span>
-														</label>
-														<label class="control control--checkbox">
-															<input type="checkbox"/>
-															<div class="control__indicator"></div>
-															<span>Белек <span class="resort-number">(50)</span></span>
-														</label>
-														<label class="control control--checkbox">
-															<input type="checkbox"/>
-															<div class="control__indicator"></div>
-															<span>Кемер <span class="resort-number">(50)</span></span>
-														</label>
-													</div>
-												</div>
+												</div> 
 											</div>
-											<div class="sidebar-checks">
-												<div class="side-btn">
-													<label class="control control--checkbox">
-														<input type="checkbox"/>
-														<div class="control__indicator"></div>
-													</label>
-													<button class="resort-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-														<span>Греция <span class="resort-number">(345)</span></span>
-													</button>
-												</div>
-												<div class="collapse-in collapse" id="collapseExample2">
-													<div class="card card-body">
-														<label class="control control--checkbox">
-															<input type="checkbox"/>
-															<div class="control__indicator"></div>
-															<span>Крит <span class="resort-number">(150)</span></span>
-														</label>
-														<label class="control control--checkbox">
-															<input type="checkbox"/>
-															<div class="control__indicator"></div>
-															<span>Родос <span class="resort-number">(145)</span></span>
-														</label>
-														<label class="control control--checkbox">
-															<input type="checkbox"/>
-															<div class="control__indicator"></div>
-															<span>Халкидики <span class="resort-number">(100)</span></span>
-														</label>
-													</div>
-												</div>
-											</div>
+										<?php endforeach; ?>	 
 										</div>
 									</div>
 									<button class="side-drop" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAll" aria-expanded="true" aria-controls="collapseAll">
@@ -110,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<div class="rating-stars"> 
 										<?php for ($rating=1;$rating<=5;$rating++):?>
 										<label class="control control--checkbox">
-											<input value="<?php echo $rating; ?>" type="checkbox"/>
+											<input  OnClick="renew_hotes();" class="hotel_stars" value="<?php echo $rating; ?>" type="checkbox"/>
 											<div class="control__indicator"></div>
 											<span class="star-icon">
 											<?php for ($i=1;$i<=$rating;$i++):?>
@@ -125,23 +95,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 
 						<div class="col-lg-9">
-							<div class="blog-content">
+							<div class="blog-content" >
 								<div class="blog-search">
 									<form action="#!" id="blog-search-id">
 										<input type="text" id="blog-search" name="search" placeholder="Введите название отеля...">
-										<button type="submit" class="search-btn"><img src="images/search-icon.svg" alt=""></button>
+										<button type="submit"  OnClick="renew_hotes();" class="search-btn"><img src="images/search-icon.svg" alt=""></button>
 									</form>
 								</div>
-								<?php /*
+								 
 								<div class="blog-select">
-									<select>
-										<option value="25">25</option>
+									<select name="hotel_count" >
 										<option value="10">10</option>
+										<option value="25">25</option>
 										<option value="50">50</option>
-										<option value="50">80</option>
+										<option value="100">100</option>
 									</select>
 								</div> 
-								*/?>
+								 
+
+								<div id="ajax_hotels">
 <?php
 
 
@@ -194,10 +166,10 @@ foreach( $my_posts as $Post ){
 }
 wp_reset_postdata();
 ?>
-
+								<?php /*
 								<div class="pagination">
 									<?php wp_link_pages(); ?>
-									<?php /*
+									
 									<ul>
 										<li><a href="#!" class="prev"><img src="images/pagination-icon.svg" alt=""></a></li>
 										<li><a href="#!" class="active">1</a></li>
@@ -209,13 +181,53 @@ wp_reset_postdata();
 										<li><a href="#!">10</a></li>
 										<li><a href="#!" class="next"><img src="images/pagination-icon.svg" alt=""></a></li>
 									</ul>
-									*/?>
+									
 								</div>
+								*/?>
+								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+<script>
+function renew_hotels(page=0)
+{ 
+	var div = '#ajax_hotels';
+	var search = $('#blog-search').val();
+	query='';
+	$( ".hotel_cats" ).each(function( i ) {
+		if (this.checked)
+		{
+			var id = this.value;
+			query=query+'&cats['+id+']='+i;
+		}		
+	});
+	$( ".hotel_stars" ).each(function( i ) {
+		if (this.checked)
+		{
+			var id = this.value;
+			query=query+'&stars['+id+']='+i;
+		}		
+	});
+
+		$.ajax({
+				   type: "GET",
+				   url: '/?ajax=hotels_list&page='+page+'&count='+$('$hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
+				    cache:false,
+					contentType: false,
+					processData: false,
+				   data: new FormData(form_id), // serializes the form's elements.
+				   success: function(data)
+				   {
+					    $(div).html(data);  
+				   }
+		});
+
+	
+}
+</script>
 
 <?php comments_template(); ?>
 </main>
