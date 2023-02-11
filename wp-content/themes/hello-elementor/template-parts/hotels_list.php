@@ -11,8 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 $cats = get_posts( array(
-	'numberposts' => 200,
-	'category'    => 2926,
+	'numberposts' => 200, 
 	'orderby'     => 'name',
 	'order'       => 'ASC', 
 	'post_type'   => 'city',
@@ -21,9 +20,9 @@ $cats = get_posts( array(
 
 
 $all = get_posts( array(
-	 
+	'numberposts' => -1, 
 	'post_type'   => 'hotels',
-	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+	//'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 ) );
 
 ?>
@@ -50,7 +49,7 @@ $all = get_posts( array(
 											<div class="sidebar-checks">
 												<div class="side-btn">
 													<label class="control control--checkbox">
-														<input type="checkbox" class="hotel_cats" OnClick="renew_hotes();" value="<?php echo $Cat->ID;?>" />
+														<input type="checkbox" class="hotel_cats" <?php if ($Cat->ID==$Parent->id) echo 'checked'; ?> OnClick="renew_hotels();" value="<?php echo $Cat->ID;?>" />
 														<div class="control__indicator"></div>
 													</label>
 													<button class="resort-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
@@ -80,7 +79,7 @@ $all = get_posts( array(
 									<div class="rating-stars"> 
 										<?php for ($rating=1;$rating<=5;$rating++):?>
 										<label class="control control--checkbox">
-											<input  OnClick="renew_hotes();" class="hotel_stars" value="<?php echo $rating; ?>" type="checkbox"/>
+											<input  OnClick="renew_hotels();" class="hotel_stars" value="<?php echo $rating; ?>" type="checkbox"/>
 											<div class="control__indicator"></div>
 											<span class="star-icon">
 											<?php for ($i=1;$i<=$rating;$i++):?>
@@ -99,7 +98,7 @@ $all = get_posts( array(
 								<div class="blog-search">
 									<form action="#!" id="blog-search-id">
 										<input type="text" id="blog-search" name="search" placeholder="Введите название отеля...">
-										<button type="submit"  OnClick="renew_hotes();" class="search-btn"><img src="images/search-icon.svg" alt=""></button>
+										<button type="submit"  OnClick="renew_hotels();" class="search-btn"><img src="<?php echo get_theme_file_uri('images/search-icon.svg');?>" alt=""></button>
 									</form>
 								</div>
 								 
@@ -123,7 +122,7 @@ while ( have_posts() ) {
 }
 
 $my_posts = get_posts( array(
-	'numberposts' => 50,
+	'numberposts' => 10,
 	'category'    => $Parent->id,
 	'orderby'     => 'date',
 	'order'       => 'DESC', 
@@ -214,7 +213,7 @@ function renew_hotels(page=0)
 
 		$.ajax({
 				   type: "GET",
-				   url: '/?ajax=hotels_list&page='+page+'&count='+$('$hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
+				   url: '/?ajax=hotels_list&page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
 				    cache:false,
 					contentType: false,
 					processData: false,
