@@ -39,8 +39,8 @@ if (strlen($_GET['b_search'])  )
 
 $my_posts = get_pages( $query );
 
-unset($query['page']);
-unset($query['paged']);
+unset($query['number']);
+unset($query['offset']);
 $all_posts = count(get_pages( $query ));
 
 foreach( $my_posts as $Post )

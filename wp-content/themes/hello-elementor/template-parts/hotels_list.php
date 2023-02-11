@@ -101,7 +101,7 @@ $all = get_posts( array(
 							<div class="blog-content" >
 								<div class="blog-search">
 									 
-										<input type="text" id="b_search" name="search" placeholder="Введите название отеля...">
+										<input type="text" id="b_search"  OnInput="renew_hotels();" name="search" placeholder="Введите название отеля...">
 										<button type="button"  OnClick="renew_hotels();" class="search-btn"><img src="<?php echo get_theme_file_uri('images/search-icon.svg');?>" alt=""></button>
 								 
 								</div>
