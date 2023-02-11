@@ -13,7 +13,7 @@ require_once(ABSPATH . "wp-admin" . '/includes/media.php');
 
 if (is_array($_GET['cats'])) $cats=$_GET['cats'];
 else $cats=$_GET['category'];
-$page=(int)($_GET['page'] ?? 0);
+$page=(int)($_GET['c_page'] ?? 0);
 $page_count=(int)($_GET['count'] ?? 10);
 $query=array(
 	'page' => $page_count,
@@ -37,11 +37,11 @@ if (strlen($_GET['name'])  )
     $query['s']=$_GET['name']; 
 }
 
-$my_posts = get_posts( $query );
+$my_posts = get_pages( $query );
 
 unset($query['page']);
 unset($query['paged']);
-$all_posts = count(get_posts( $query ));
+$all_posts = count(get_pages( $query ));
 
 foreach( $my_posts as $Post ){
 	  

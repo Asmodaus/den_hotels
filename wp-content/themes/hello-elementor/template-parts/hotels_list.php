@@ -121,7 +121,7 @@ $all = get_posts( array(
 
 
 
-$my_posts = get_posts( array(
+$my_posts = get_pages( array(
 	'numberposts' => 10,
 	'category'    => $Parent->ID,
 	'orderby'     => 'date',
@@ -216,7 +216,7 @@ function renew_hotels(page=0)
 
 		$.ajax({
 				   type: "GET",
-				   url: '/?ajax=hotels_list&page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
+				   url: '/?ajax=hotels_list&c_page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
 				    cache:false,
 					contentType: false,
 					processData: false, 
