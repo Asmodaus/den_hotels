@@ -73,7 +73,19 @@ function add_post($params)
 		
         if ($params['is_cat'])
         {
-            $post_id = wp_create_category($params['name'],$params['category']);
+            if (strlen($params['text'])<1)  $params['text']= $params['name'];
+            $post_data = array(
+                'post_title' => $params['name'],
+                'post_content' => $params['text'],
+                'post_status' => 'publish',
+                'post_author' => 1,
+				'post_type'=>'city',
+                'post_category' => [$params['category']]
+            );  
+            // Вставляем запись в базу данных
+            $post_id = wp_insert_post($post_data, true); 
+
+
         }
         else {
 			if (strlen($params['text'])<1)  $params['text']= $params['name'];

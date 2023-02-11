@@ -274,7 +274,7 @@ function custom_post_type_hotel() {
         // Features this CPT supports in Post Editor
         'supports'            => array( 'title','custom-fields' , 'editor', 'category' ,  'slug', 'thumbnail'  ),
         // You can associate this CPT with a taxonomy or custom taxonomy.
-        'taxonomies'          => array( 'cities' ),
+       
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
@@ -298,22 +298,73 @@ function custom_post_type_hotel() {
 
 }
 
+add_action( 'init', 'custom_post_type_hotel', 0 );
+
+function custom_post_type_city() {
+
+	// Set UI labels for Custom Post Type
+		$labels = array(
+			'name'                => _x( 'Cities', 'Post Type General Name', 'twentytwenty' ),
+			'singular_name'       => _x( 'City', 'Post Type Singular Name', 'twentytwenty' ),
+			'menu_name'           => __( 'Cities', 'twentytwenty' ),
+			'parent_item_colon'   => __( 'Parent City', 'twentytwenty' ),
+			'all_items'           => __( 'All Cities', 'twentytwenty' ),
+			'view_item'           => __( 'View City', 'twentytwenty' ),
+			'add_new_item'        => __( 'Add New  ', 'twentytwenty' ),
+			'add_new'             => __( 'Add New', 'twentytwenty' ),
+			'edit_item'           => __( 'Edit  ', 'twentytwenty' ),
+			'update_item'         => __( 'Update  ', 'twentytwenty' ),
+			'search_items'        => __( 'Search City', 'twentytwenty' ),
+			'not_found'           => __( 'Not Found', 'twentytwenty' ),
+			'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
+		);
+	
+	// Set other options for Custom Post Type
+	//stars
+		$args = array(
+			'label'               => __( 'City', 'hello-elementor' ),
+			'description'         => __( 'Cities  ', 'twentytwenty' ),
+			'labels'              => $labels,
+			// Features this CPT supports in Post Editor
+			'supports'            => array( 'title',  'category' ,  'slug', 'thumbnail'  ),
+			 
+			'hierarchical'        => true,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true, 
+			'can_export'          => true,
+			'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'post',
+			'show_in_rest' => true, 
+		);
+	
+		// Registering your Custom Post Type
+		register_post_type( 'city', $args );
+	
+	}
+
+add_action( 'init', 'custom_post_type_city', 0 );
+
 function add_your_fields_meta_box() {
 	add_meta_box(
 		'stars', // $id
 		'Rating Stars', // $title
-		'show_your_fields_meta_box', // $callback
+		'stars_box', // $callback
 		'hotels', // $screen
 		'normal', // $context
 		'high' // $priority
 	);
 	}
 	add_action( 'add_meta_boxes', 'add_your_fields_meta_box' );
-	function show_your_fields_meta_box() {
+	function stars_box() {
 		global $post;  
 			$meta = get_post_meta( $post->ID, 'stars', true ); ?>
-		
-		<input type="hidden" name="stars" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+		Число звезд: 
+		<input type="text"  name="stars" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
 		
 		<!-- All fields will go here -->
 		
@@ -343,7 +394,6 @@ function add_your_fields_meta_box() {
 * Containing our post type registration is not
 * unnecessarily executed.
 */  
-add_action( 'init', 'custom_post_type_hotel', 0 );
 
 
 add_filter( 'template_include', function($template) {
