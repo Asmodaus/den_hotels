@@ -100,14 +100,14 @@ $all = get_posts( array(
 						<div class="col-lg-9 pt-5">
 							<div class="blog-content" >
 								<div class="blog-search">
-									<form action="#!" id="blog-search-id">
+									 
 										<input type="text" id="blog-search" name="search" placeholder="Введите название отеля...">
-										<button type="submit"  OnClick="renew_hotels();" class="search-btn"><img src="<?php echo get_theme_file_uri('images/search-icon.svg');?>" alt=""></button>
-									</form>
+										<button type="button"  OnClick="renew_hotels();" class="search-btn"><img src="<?php echo get_theme_file_uri('images/search-icon.svg');?>" alt=""></button>
+								 
 								</div>
 								 
 								<div class="blog-select">
-									<select id="hotel_count"  OnChange="renew_hotels();" >
+									<select id="hotel_count"  OnClick="renew_hotels();" OnSelect="renew_hotels();"  OnChange="renew_hotels();" >
 										<option value="10">10</option>
 										<option value="25">25</option>
 										<option value="50">50</option>
@@ -122,7 +122,7 @@ $all = get_posts( array(
 
 
 $my_posts = get_pages( array(
-	'numberposts' => 10,
+	'number' => 10,
 	'category'    => $Parent->ID,
 	'orderby'     => 'date',
 	'order'       => 'DESC', 
