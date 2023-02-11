@@ -230,7 +230,7 @@ function renew_hotels(page=0)
 	
 }
 
-setTimeout(renew_hotels,1000);
+document.onload = setTimeout(renew_hotels,1000);
 </script>
 
 <?php comments_template(); ?>
