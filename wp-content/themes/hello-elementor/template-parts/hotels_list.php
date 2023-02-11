@@ -147,7 +147,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 while ( have_posts() ) :
 	the_post();
 	$Post = get_post(get_the_ID());
-	$rating=get_post_meta($Post->ID,'stars');
+	$rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
 	?>
 

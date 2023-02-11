@@ -123,7 +123,7 @@ $resorts=parse_data('https://agents.alida.lv/xml.php?what=resorts');
   
 foreach ($resorts['resort'] as $resort)
 {
-    $params_ru = $params=['name'=>$resort['name_lv'],'is_cat'=>true,'category'=>120];
+    $params_ru = $params=['name'=>$resort['name_lv'],'is_cat'=>true,'category'=>2926];
     $params_ru['name']=$resort['name_ru'];
     $post_id = add_post($params);
     $post_id_ru = add_post($params_ru);

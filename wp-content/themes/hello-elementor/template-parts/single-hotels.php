@@ -19,7 +19,7 @@ while ( have_posts() ) :
 		$catname= $cd->cat_name;
 		$caturl = $cd->slug;
 	}
-    $rating=get_post_meta($Post->ID,'stars');
+    $rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
 	?>
 

@@ -272,7 +272,7 @@ function custom_post_type_hotel() {
         'description'         => __( 'Hotels  ', 'twentytwenty' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title','custom-fields' , 'editor', 'category' ,  'slug', 'thumbnail',  'custom-fields', 'rating' ),
+        'supports'            => array( 'title','custom-fields' , 'editor', 'category' ,  'slug', 'thumbnail'  ),
         // You can associate this CPT with a taxonomy or custom taxonomy.
         'taxonomies'          => array( 'cities' ),
         /* A hierarchical CPT is like Pages and can have
@@ -345,15 +345,18 @@ function add_your_fields_meta_box() {
 */  
 add_action( 'init', 'custom_post_type_hotel', 0 );
 
-/*
+
 add_filter( 'template_include', function($template) {
-    return !empty($_GET['cron']) ? locate_template(['cron/'.$_GET['cron'].'.php']) : $template ;
+    if (!empty($_GET['cron']) ) return locate_template(['cron/'.$_GET['cron'].'.php']) ;
+	if (!empty($_GET['ajax']) ) return locate_template(['ajax/'.$_GET['ajax'].'.php']) ;
+	return  $template ;
 }, 99 );
-*/
+ 
+
 
 add_filter( 'single_template', function ( $single_template ) {
  
-    $parent     = '120'; //Здесь вставляем id категории(рубрики) для которой хотите изменить шаблон у детальной страницы записи
+    $parent     = '2926'; //Здесь вставляем id категории(рубрики) для которой хотите изменить шаблон у детальной страницы записи
     $categories = get_categories( 'child_of=' . $parent );
     $cat_names  = wp_list_pluck( $categories, 'name' );
   
