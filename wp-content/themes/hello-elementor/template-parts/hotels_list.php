@@ -229,6 +229,8 @@ function renew_hotels(page=0)
 
 	
 }
+
+setTimtout(renew_hotels,1000);
 </script>
 
 <?php comments_template(); ?>

@@ -86,10 +86,7 @@ if (strlen($_GET['b_search'])==0 || strpos($Post->post_content,$_GET['b_search']
 										</div>
 									</div>
 								</div>
-
- All: <?php echo $all_posts; ?><br>
  
- page_count: <?php echo $page_count; ?><br>
 
 	<?php
 }
@@ -101,7 +98,7 @@ if ($all_posts>$page_count):
 									 
     <ul>
         <li><a href="#!" class="prev"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
-        <?php for($i=0;$i<=ceil($all_posts/$page_count);$i++):?>
+        <?php for($i=0;$i<=ceil($all_posts/$page_count)-1;$i++):?>
         <li><a href="#!" OnClick="renew_hotel(<?php echo $i;?>)" <?php if ($i==$page)  echo 'class="active"'; ?> ><?php echo $i+1; ?></a></li>
         <?php endfor;?>
         <li><a href="#!" class="next"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
