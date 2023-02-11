@@ -214,9 +214,10 @@ function renew_hotels(page=0)
 		}		
 	});
 
+	console.log('/?ajax=hotels_list&c_page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->ID?>'+query+'&b_search='+$('#b_search').val());
 		$.ajax({
 				   type: "GET",
-				   url: '/?ajax=hotels_list&c_page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->ID?>'+query+'&name='+$('#b_search').val(),
+				   url: '/?ajax=hotels_list&c_page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->ID?>'+query+'&b_search='+$('#b_search').val(),
 				    cache:false,
 					contentType: false,
 					processData: false, 

@@ -32,9 +32,9 @@ if (is_array($_GET['stars']) && count($_GET['stars']))
 }
 
 
-if (strlen($_GET['name'])  )
+if (strlen($_GET['b_search'])  )
 {
-    $query['s']=$_GET['name']; 
+    $query['s']=$_GET['b_search']; 
 }
 
 $my_posts = get_pages( $query );
@@ -43,7 +43,9 @@ unset($query['page']);
 unset($query['paged']);
 $all_posts = count(get_pages( $query ));
 
-foreach( $my_posts as $Post ){
+foreach( $my_posts as $Post )
+if (strlen($_GET['b_search'])==0 || strpos($Post->post_content,$_GET['b_search'])!==false  || strpos($Post->post_title,$_GET['b_search'])!==false )
+{
 	  
 	$rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
