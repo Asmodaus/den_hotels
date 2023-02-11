@@ -36,7 +36,7 @@ if ( is_singular() ) {
 	foreach($categories as $category) {
 		if  ($category->cat_ID==2926) $hotels=true;
 	}
-	if ($hotels) get_template_part( 'template-parts/hotels_list' );
+	if (1==2 && $hotels) get_template_part( 'template-parts/hotels_list' );
 	elseif ( ! $is_elementor_theme_exist || ! elementor_theme_do_location( 'archive' ) ) {
 		get_template_part( 'template-parts/archive' );
 	}

@@ -274,7 +274,8 @@ function custom_post_type_hotel() {
         // Features this CPT supports in Post Editor
         'supports'            => array( 'title','custom-fields' , 'editor', 'category' ,  'slug', 'thumbnail'  ),
         // You can associate this CPT with a taxonomy or custom taxonomy.
-       
+       	
+		'taxonomies'  => array('city', 'category' ),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
@@ -327,7 +328,8 @@ function custom_post_type_city() {
 			'labels'              => $labels,
 			// Features this CPT supports in Post Editor
 			'supports'            => array( 'title',  'category' ,  'slug', 'thumbnail'  ),
-			 
+			 	
+			'taxonomies'  => array( 'category' ),
 			'hierarchical'        => true,
 			'public'              => true,
 			'show_ui'             => true,

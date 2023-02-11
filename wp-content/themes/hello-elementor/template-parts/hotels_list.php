@@ -144,7 +144,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 								*/?>
 <?php
 
-while ( have_posts() ) :
+
+while ( have_posts() ) {
+	the_post();
+	$Parent = get_post(get_the_ID());
+}
+
+$my_posts = get_posts( array(
+	'numberposts' => 50,
+	'category'    => $Parent->id,
+	'orderby'     => 'date',
+	'order'       => 'DESC', 
+	'post_type'   => 'hotels',
+	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+) );
+
+foreach( $my_posts as $post ){
+	setup_postdata( $post );
 	the_post();
 	$Post = get_post(get_the_ID());
 	$rating=get_post_meta($Post->ID,'stars',true);
@@ -158,7 +174,7 @@ while ( have_posts() ) :
 									</div>
 									<div class="blog-text">
 										<div class="blog-info">
-											<p><?php echo the_archive_title();?></p>
+											<p><?php echo $Parent->post_title;?></p>
 											<h4><?php echo  get_the_title();?></h4>
 										</div>
 										<div class="blog-btn">
@@ -177,11 +193,13 @@ while ( have_posts() ) :
  
 
 	<?php
-endwhile;?>
+}
+wp_reset_postdata();
+?>
 
 								<div class="pagination">
 									<?php wp_link_pages(); ?>
-									<?/*
+									<?php /*
 									<ul>
 										<li><a href="#!" class="prev"><img src="images/pagination-icon.svg" alt=""></a></li>
 										<li><a href="#!" class="active">1</a></li>
