@@ -127,7 +127,7 @@ $my_posts = get_posts( array(
 	'orderby'     => 'date',
 	'order'       => 'DESC', 
 	'post_type'   => 'hotels',
-	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+	//'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 ) );
 
 foreach( $my_posts as $Post ){

@@ -22,7 +22,7 @@ $query=array(
 	'orderby'     => 'date',
 	'order'       => 'DESC', 
 	'post_type'   => 'hotels',
-	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+	//'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 );
 
 if (is_array($_GET['stars']) && count($_GET['stars']))
