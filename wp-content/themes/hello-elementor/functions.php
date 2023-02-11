@@ -266,7 +266,7 @@ function custom_post_type_hotel() {
     );
 
 // Set other options for Custom Post Type
-
+//stars
     $args = array(
         'label'               => __( 'hotels', 'hello-elementor' ),
         'description'         => __( 'Hotels  ', 'twentytwenty' ),
@@ -297,6 +297,47 @@ function custom_post_type_hotel() {
     register_post_type( 'hotels', $args );
 
 }
+
+function add_your_fields_meta_box() {
+	add_meta_box(
+		'stars', // $id
+		'Rating Stars', // $title
+		'show_your_fields_meta_box', // $callback
+		'hotels', // $screen
+		'normal', // $context
+		'high' // $priority
+	);
+	}
+	add_action( 'add_meta_boxes', 'add_your_fields_meta_box' );
+	function show_your_fields_meta_box() {
+		global $post;  
+			$meta = get_post_meta( $post->ID, 'stars', true ); ?>
+		
+		<input type="hidden" name="stars" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+		
+		<!-- All fields will go here -->
+		
+		<?php }
+	function save_your_fields_meta( $post_id ) {   
+		// verify nonce
+		if ( !wp_verify_nonce( $_POST['stars'], basename(__FILE__) ) ) {
+			return $post_id; 
+		}
+		// check autosave
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return $post_id;
+		}
+		 
+		$old = get_post_meta( $post_id, 'stars', true );
+		$new = $_POST['stars'];
+		
+		if ( $new && $new !== $old ) {
+			update_post_meta( $post_id, 'stars', $new );
+		} elseif ( '' === $new && $old ) {
+			delete_post_meta( $post_id, 'stars', $old );
+		}
+		}
+		add_action( 'save_post', 'save_your_fields_meta' );
 
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not

@@ -140,7 +140,7 @@ foreach ($resorts['resort'] as $resort)
 		$hotels=parse_data($resort['hotels_xml']);
 		foreach ($hotels['hotel'] as $hotel)
 		{
-			$params=['name'=>$hotel['name'],'rating'=>$hotel['stars'],'post_content'=>$hotel['description_lv'],'category'=>$post_id];
+			$params=['name'=>$hotel['name'],'stars'=>$hotel['stars'],'post_content'=>$hotel['description_lv'],'category'=>$post_id];
 		   
 			foreach ($hotel['images'] as $img)
 			{
