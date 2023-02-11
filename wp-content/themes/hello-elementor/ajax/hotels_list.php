@@ -17,7 +17,7 @@ else $cats=$_GET['category'];
 
 if (strlen($_GET['b_search'])  )
 {
-    $page=0;
+    $c_page=0;
     $page_count=999;
     $query=array( 
         'category'    => $cats,
@@ -29,11 +29,11 @@ if (strlen($_GET['b_search'])  )
 }
 else 
 {
-    $page=(int)($_GET['c_page'] ?? 0);
+    $c_page=(int)($_GET['c_page'] ?? 0);
     $page_count=(int)($_GET['count'] ?? 10);
     $query=array(
         'number' => $page_count,
-        'offset'=>$page*$page_count,
+        'offset'=>$c_page*$page_count,
         'category'    => $cats,
         'orderby'     => 'date',
         'order'       => 'DESC', 
@@ -99,7 +99,7 @@ if ($all_posts>$page_count):
     <ul>
         <li><a href="#!" class="prev"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
         <?php for($i=0;$i<=ceil($all_posts/$page_count)-1;$i++):?>
-        <li><a href="#!" OnClick="renew_hotel(<?php echo $i;?>)" <?php if ($i==$page)  echo 'class="active"'; ?> ><?php echo $i+1; ?></a></li>
+        <li><a href="#!" OnClick="renew_hotels(<?php echo $i;?>)" <?php if ($i==$c_page)  echo 'class="active"'; ?> ><?php echo $i+1; ?></a></li>
         <?php endfor;?>
         <li><a href="#!" class="next"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
     </ul>
