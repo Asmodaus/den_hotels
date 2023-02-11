@@ -9,6 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+while ( have_posts() ) {
+	the_post();
+	$Parent = get_post(get_the_ID());
+}
 
 $cats = get_posts( array(
 	'numberposts' => 200, 
@@ -53,7 +57,7 @@ $all = get_posts( array(
 														<div class="control__indicator"></div>
 													</label>
 													<button class="resort-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
-														<span><?php echo $Cat->post_title; ?> <span class="resort-number">(<?php echo count(get_pages( array( 'child_of' => $Cat->ID, 'post_type' => 'hotels'))); ?>)</span></span>
+														<span><?php echo $Cat->post_title; ?> <span class="resort-number">(<?php echo count(get_pages( array( 'category' => $Cat->ID, 'post_type' => 'hotels'))); ?>)</span></span>
 													</button>
 												</div> 
 											</div>
@@ -116,10 +120,6 @@ $all = get_posts( array(
 <?php
 
 
-while ( have_posts() ) {
-	the_post();
-	$Parent = get_post(get_the_ID());
-}
 
 $my_posts = get_posts( array(
 	'numberposts' => 10,
@@ -134,12 +134,15 @@ foreach( $my_posts as $Post ){
 	  
 	$rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
+
+	 $media = get_attached_media( 'image', $Post->ID );
+	foreach ($media as $img) $main_img=$img->guid;
 	?>
 
 
 								<div class="blog-item">
 									<div class="blog-img">
-										<img src="<?php get_the_post_thumbnail( $Post, 'large' );?>" alt="">
+										<img src="<?php echo $main_img;?>" alt="">
 									</div>
 									<div class="blog-text">
 										<div class="blog-info">
@@ -216,8 +219,7 @@ function renew_hotels(page=0)
 				   url: '/?ajax=hotels_list&page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
 				    cache:false,
 					contentType: false,
-					processData: false,
-				   data: new FormData(form_id), // serializes the form's elements.
+					processData: false, 
 				   success: function(data)
 				   {
 					    $(div).html(data);  

@@ -47,12 +47,16 @@ foreach( $my_posts as $Post ){
 	  
 	$rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
+
+    
+	 $media = get_attached_media( 'image', $Post->ID );
+     foreach ($media as $img) $main_img=$img->guid;
 	?>
 
 
 								<div class="blog-item">
 									<div class="blog-img">
-										<img src="<?php get_the_post_thumbnail( $Post, 'large' );?>" alt="">
+                                        <img src="<?php echo $main_img;?>" alt="">
 									</div>
 									<div class="blog-text">
 										<div class="blog-info">
