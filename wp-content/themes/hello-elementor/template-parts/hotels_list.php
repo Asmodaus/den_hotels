@@ -101,7 +101,7 @@ $all = get_posts( array(
 							<div class="blog-content" >
 								<div class="blog-search">
 									 
-										<input type="text" id="blog-search" name="search" placeholder="Введите название отеля...">
+										<input type="text" id="b_search" name="search" placeholder="Введите название отеля...">
 										<button type="button"  OnClick="renew_hotels();" class="search-btn"><img src="<?php echo get_theme_file_uri('images/search-icon.svg');?>" alt=""></button>
 								 
 								</div>
@@ -197,7 +197,7 @@ wp_reset_postdata();
 function renew_hotels(page=0)
 { 
 	var div = '#ajax_hotels';
-	var search = $('#blog-search').val();
+	 
 	query='';
 	$( ".hotel_cats" ).each(function( i ) {
 		if (this.checked)
@@ -216,7 +216,7 @@ function renew_hotels(page=0)
 
 		$.ajax({
 				   type: "GET",
-				   url: '/?ajax=hotels_list&c_page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->id?>'+query+'&name='+search,
+				   url: '/?ajax=hotels_list&c_page='+page+'&count='+$('#hotel_count').val()+'&category=<?=$Parent->ID?>'+query+'&name='+$('#b_search').val(),
 				    cache:false,
 					contentType: false,
 					processData: false, 
