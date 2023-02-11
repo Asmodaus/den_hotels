@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 while ( have_posts() ) {
-	the_post();
-	$Parent = get_post(get_the_ID());
+	the_post(); 
 }
+$Parent = get_post(get_the_ID());
 
 $cats = get_posts( array(
 	'numberposts' => 200, 
@@ -33,7 +33,7 @@ $all = get_posts( array(
 
 <main id="content" <?php post_class( 'site-main' ); ?> role="main">
 
-<section class="travel-catalog">
+<section class="travel-catalog pt-5">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3">
@@ -53,7 +53,7 @@ $all = get_posts( array(
 											<div class="sidebar-checks">
 												<div class="side-btn">
 													<label class="control control--checkbox">
-														<input type="checkbox" class="hotel_cats" <?php if ($Cat->ID==$Parent->id) echo 'checked'; ?> OnClick="renew_hotels();" value="<?php echo $Cat->ID;?>" />
+														<input type="checkbox" class="hotel_cats" <?php if ($Cat->ID==$Parent->ID) echo 'checked'; ?> OnClick="renew_hotels();" value="<?php echo $Cat->ID;?>" />
 														<div class="control__indicator"></div>
 													</label>
 													<button class="resort-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
@@ -97,7 +97,7 @@ $all = get_posts( array(
 							</div>
 						</div>
 
-						<div class="col-lg-9">
+						<div class="col-lg-9 pt-5">
 							<div class="blog-content" >
 								<div class="blog-search">
 									<form action="#!" id="blog-search-id">
@@ -107,7 +107,7 @@ $all = get_posts( array(
 								</div>
 								 
 								<div class="blog-select">
-									<select name="hotel_count" >
+									<select id="hotel_count"  OnChange="renew_hotels();" >
 										<option value="10">10</option>
 										<option value="25">25</option>
 										<option value="50">50</option>
@@ -123,7 +123,7 @@ $all = get_posts( array(
 
 $my_posts = get_posts( array(
 	'numberposts' => 10,
-	'category'    => $Parent->id,
+	'category'    => $Parent->ID,
 	'orderby'     => 'date',
 	'order'       => 'DESC', 
 	'post_type'   => 'hotels',
@@ -203,14 +203,14 @@ function renew_hotels(page=0)
 		if (this.checked)
 		{
 			var id = this.value;
-			query=query+'&cats['+id+']='+i;
+			query=query+'&cats['+id+']='+id;
 		}		
 	});
 	$( ".hotel_stars" ).each(function( i ) {
 		if (this.checked)
 		{
 			var id = this.value;
-			query=query+'&stars['+id+']='+i;
+			query=query+'&stars['+id+']='+id;
 		}		
 	});
 

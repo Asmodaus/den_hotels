@@ -153,7 +153,7 @@ foreach ($resorts['resort'] as $resort)
 		
 		foreach ($hotels['hotel'] as $hotel)
 		{
-			$params=['name'=>$hotel['name'],'rating'=>$hotel['stars'],'text'=>$hotel['description_lv'],'category'=>$post_id];
+			$params=['name'=>$hotel['name'],'stars'=>(int)$hotel['stars'],'text'=>$hotel['description_lv'],'category'=>$post_id];
 		   
 			foreach ($hotel['images']['image'] as $img)
 			{
