@@ -132,7 +132,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<button type="submit" class="search-btn"><img src="images/search-icon.svg" alt=""></button>
 									</form>
 								</div>
-								<?/*
+								<?php /*
 								<div class="blog-select">
 									<select>
 										<option value="25">25</option>
@@ -160,8 +160,7 @@ $my_posts = get_posts( array(
 ) );
 
 foreach( $my_posts as $Post ){
-	 
-	$Post = get_post(get_the_ID());
+	  
 	$rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
 	?>
