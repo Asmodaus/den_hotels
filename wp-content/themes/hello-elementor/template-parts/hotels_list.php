@@ -178,12 +178,13 @@ if ($all_posts>$page_count):
 <div class="pagination">
 									 
     <ul>
-        <li><a href="#!" class="prev"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
-        <?php for($i=0;$i<=ceil($all_posts/$page_count)-1;$i++):?>
+         <?php for($i=0;$i<=ceil($all_posts/$page_count)-1;$i++):?>
         <li><a href="#!" OnClick="renew_hotels(<?php echo $i;?>)" <?php if ($i==$c_page)  echo 'class="active"'; ?> ><?php echo $i+1; ?></a></li>
         <?php endfor;?>
+		 
         <li><a href="#!" OnClick="renew_hotels(1)"  class="next"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
-    </ul>
+	 
+	</ul>
     
 </div>
 <?php endif;?>
