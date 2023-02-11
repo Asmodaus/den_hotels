@@ -13,32 +13,41 @@ require_once(ABSPATH . "wp-admin" . '/includes/media.php');
 
 if (is_array($_GET['cats'])) $cats=$_GET['cats'];
 else $cats=$_GET['category'];
-$page=(int)($_GET['c_page'] ?? 0);
-$page_count=(int)($_GET['count'] ?? 10);
-$query=array(
-	'number' => $page_count,
-    'offset'=>$page*$page_count,
-	'category'    => $cats,
-	'orderby'     => 'date',
-	'order'       => 'DESC', 
-	'post_type'   => 'hotels',
-	//'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-);
+
+
+if (strlen($_GET['b_search'])  )
+{
+    $page=0;
+    $page_count=999;
+    $query=array( 
+        'category'    => $cats,
+        'orderby'     => 'date',
+        'order'       => 'DESC', 
+        'post_type'   => 'hotels',
+        //'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+    );
+}
+else 
+{
+    $page=(int)($_GET['c_page'] ?? 0);
+    $page_count=(int)($_GET['count'] ?? 10);
+    $query=array(
+        'number' => $page_count,
+        'offset'=>$page*$page_count,
+        'category'    => $cats,
+        'orderby'     => 'date',
+        'order'       => 'DESC', 
+        'post_type'   => 'hotels',
+        //'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+    );
+}
 
 if (is_array($_GET['stars']) && count($_GET['stars']))
 {
     $query['meta_key']='stars';
     $query['meta_value']=$_GET['stars'];
-}
-
-
-if (strlen($_GET['b_search'])  )
-{
-    $query['s']=$_GET['b_search']; 
-}
-
+} 
 $my_posts = get_pages( $query );
-
 unset($query['number']);
 unset($query['offset']);
 $all_posts = count(get_pages( $query ));
@@ -78,7 +87,9 @@ if (strlen($_GET['b_search'])==0 || strpos($Post->post_content,$_GET['b_search']
 									</div>
 								</div>
 
+ All: <?php echo $all_posts; ?><br>
  
+ page_count: <?php echo $page_count; ?><br>
 
 	<?php
 }
