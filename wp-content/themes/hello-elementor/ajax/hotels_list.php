@@ -82,13 +82,13 @@ foreach( $my_posts as $Post ){
 }
 wp_reset_postdata();
 
-if ($all>$page_count):
+if ($all_posts>$page_count):
 ?>
 <div class="pagination">
 									 
     <ul>
         <li><a href="#!" class="prev"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
-        <?php for($i=0;$i<=ceil($all/$page_count);$i++):?>
+        <?php for($i=0;$i<=ceil($all_posts/$page_count);$i++):?>
         <li><a href="#!" OnClick="renew_hotel(<?php echo $i;?>)" <?php if ($i==$page)  echo 'class="active"'; ?> ><?php echo $i+1; ?></a></li>
         <?php endfor;?>
         <li><a href="#!" class="next"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
