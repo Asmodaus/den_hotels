@@ -159,9 +159,8 @@ $my_posts = get_posts( array(
 	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 ) );
 
-foreach( $my_posts as $post ){
-	setup_postdata( $post );
-	the_post();
+foreach( $my_posts as $Post ){
+	 
 	$Post = get_post(get_the_ID());
 	$rating=get_post_meta($Post->ID,'stars',true);
     if ($rating>5) $rating=5;
@@ -175,7 +174,7 @@ foreach( $my_posts as $post ){
 									<div class="blog-text">
 										<div class="blog-info">
 											<p><?php echo $Parent->post_title;?></p>
-											<h4><?php echo  get_the_title();?></h4>
+											<h4><?php echo  $Post->post_title;?></h4>
 										</div>
 										<div class="blog-btn">
 											<div class="blog-stars">
@@ -184,7 +183,7 @@ foreach( $my_posts as $post ){
 											<?php endfor;?>
 											</div>
 											<div class="blog-link">
-												<a href="<?php echo get_permalink();?>">смотреть</a>
+												<a href="<?php echo get_permalink($Post);?>">смотреть</a>
 											</div>
 										</div>
 									</div>
