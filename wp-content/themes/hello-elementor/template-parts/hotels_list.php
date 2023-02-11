@@ -130,6 +130,11 @@ $my_posts = get_pages( array(
 	//'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 ) );
 
+$all_posts= count(get_pages( array( 
+	'category'    => $Parent->ID, 
+	'post_type'   => 'hotels', 
+) ));
+
 foreach( $my_posts as $Post ){
 	  
 	$rating=get_post_meta($Post->ID,'stars',true);
@@ -167,25 +172,21 @@ foreach( $my_posts as $Post ){
 	<?php
 }
 wp_reset_postdata();
+$page_count=10;
+if ($all_posts>$page_count):
 ?>
-								<?php /*
-								<div class="pagination">
-									<?php wp_link_pages(); ?>
-									
-									<ul>
-										<li><a href="#!" class="prev"><img src="images/pagination-icon.svg" alt=""></a></li>
-										<li><a href="#!" class="active">1</a></li>
-										<li><a href="#!">2</a></li>
-										<li><a href="#!">3</a></li>
-										<li><a href="#!">4</a></li>
-										<li><a href="#!">5</a></li>
-										<li><a href="#!">...</a></li>
-										<li><a href="#!">10</a></li>
-										<li><a href="#!" class="next"><img src="images/pagination-icon.svg" alt=""></a></li>
-									</ul>
-									
-								</div>
-								*/?>
+<div class="pagination">
+									 
+    <ul>
+        <li><a href="#!" class="prev"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
+        <?php for($i=0;$i<=ceil($all_posts/$page_count)-1;$i++):?>
+        <li><a href="#!" OnClick="renew_hotels(<?php echo $i;?>)" <?php if ($i==$c_page)  echo 'class="active"'; ?> ><?php echo $i+1; ?></a></li>
+        <?php endfor;?>
+        <li><a href="#!" class="next"><img src="<?php echo get_theme_file_uri('images/pagination-icon.svg');?>" alt=""></a></li>
+    </ul>
+    
+</div>
+<?php endif;?>
 								</div>
 
 							</div>
@@ -228,9 +229,7 @@ function renew_hotels(page=0)
 		});
 
 	
-}
-
-document.onload = setTimeout(renew_hotels,1000);
+} 
 </script>
 
 <?php comments_template(); ?>
