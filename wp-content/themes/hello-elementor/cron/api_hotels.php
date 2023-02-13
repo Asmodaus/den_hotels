@@ -136,36 +136,60 @@ function add_post($params)
 	
     return $post_id;
 }
-$resorts=parse_data('https://agents.alida.lv/xml.php?what=resorts');
-  
-foreach ($resorts['resort'] as $resort)
-{
-    $params_ru = $params=['name'=>$resort['name_lv'],'is_cat'=>true,'category'=>2926];
-    $params_ru['name']=$resort['name_ru'];
-   // $post_id = add_post($params);
-    $post_id_ru = add_post($params_ru);
-    
-    if (  $post_id_ru)
-	{
-		 
-		//берем уже отели
-		$hotels=parse_data($resort['hotels_xml']);
-		
-		foreach ($hotels['hotel'] as $hotel)
-		{
-			$params=['name'=>$hotel['name'],'stars'=>(int)$hotel['stars'],'text'=>$hotel['description_lv'],'category'=>$post_id];
-		   
-			foreach ($hotel['images']['image'] as $img)
-			{
-				$params['imgs'][]=$img['path_big'];
-			}
 
-			$params_ru = $params;
-			$params_ru['text']=$hotel['description_ru'];
-			$params_ru['category']=$post_id_ru;
- 
-			$h_post_id_ru = add_post($params_ru);
-			 
-		}
-	}
+function parse_celojumubode()
+{
+    for ($i=1;$i=15;$i++)
+    {
+        $html = c_get('https://www.celojumubode.lv/ru/celojumi');
+        echo '<br>Длина: '.strlen($html);
+        sleep(100+rand($i,500));
+    }
+   
+
+
+} 
+
+
+parse_celojumubode();
+
+
+
+function parse_alida()
+{
+    $resorts=parse_data('https://agents.alida.lv/xml.php?what=resorts');
+    
+    foreach ($resorts['resort'] as $resort)
+    {
+        $params_ru = $params=['name'=>$resort['name_lv'],'is_cat'=>true,'category'=>2926];
+        $params_ru['name']=$resort['name_ru'];
+    // $post_id = add_post($params);
+        $post_id_ru = add_post($params_ru);
+        
+        if (  $post_id_ru)
+        {
+            
+            //берем уже отели
+            $hotels=parse_data($resort['hotels_xml']);
+            
+            foreach ($hotels['hotel'] as $hotel)
+            {
+                if ($hotel['stars']<1) $hotel['stars']=1;
+                if ($hotel['stars']>5) $hotel['stars']=5;
+                $params=['name'=>$hotel['name'],'stars'=>(int)$hotel['stars'],'text'=>$hotel['description_lv'],'category'=>$post_id];
+            
+                foreach ($hotel['images']['image'] as $img)
+                {
+                    $params['imgs'][]=$img['path_big'];
+                }
+
+                $params_ru = $params;
+                $params_ru['text']=$hotel['description_ru'];
+                $params_ru['category']=$post_id_ru;
+    
+                $h_post_id_ru = add_post($params_ru);
+                
+            }
+        }
+    }
 }

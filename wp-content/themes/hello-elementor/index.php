@@ -25,6 +25,7 @@ if ( is_singular() ) {
 
 	if ($Post->post_type=='hotels') get_template_part( 'template-parts/single-hotels' );
 	elseif ($Post->post_type=='city') get_template_part( 'template-parts/hotels_list' );
+	elseif ($Post->ID==2926) get_template_part( 'template-parts/hotels_list' );
 	elseif ( ! $is_elementor_theme_exist || ! elementor_theme_do_location( 'single' ) ) {
 		get_template_part( 'template-parts/single' );
 	}
