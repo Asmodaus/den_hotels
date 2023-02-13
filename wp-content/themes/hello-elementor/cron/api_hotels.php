@@ -139,7 +139,7 @@ function add_post($params)
 
 function parse_celojumubode()
 {
-    for ($i=1;$i=15;$i++)
+    for ($i=1;$i=2;$i++)
     {
         $html = c_get('https://www.celojumubode.lv/ru/celojumi');
         echo '<br>Длина: '.strlen($html);
