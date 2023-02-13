@@ -139,13 +139,13 @@ function add_post($params)
 
 function parse_celojumubode()
 {
-    for ($i=1;$i=2;$i++)
-    {
+     
         $html = c_get('https://www.celojumubode.lv/ru/celojumi');
         echo '<br>Длина: '.strlen($html);
-        usleep(100+rand($i,500));
-    }
-   
+        usleep(100+rand(1,500));
+    
+        $html = c_get('https://www.celojumubode.lv/ru/celojumi');
+        echo '<br>Длина: '.strlen($html);
 
 
 } 
