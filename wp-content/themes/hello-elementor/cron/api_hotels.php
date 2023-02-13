@@ -143,7 +143,7 @@ function parse_celojumubode()
     {
         $html = c_get('https://www.celojumubode.lv/ru/celojumi');
         echo '<br>Длина: '.strlen($html);
-        sleep(100+rand($i,500));
+        usleep(100+rand($i,500));
     }
    
 
