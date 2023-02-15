@@ -12,7 +12,7 @@ require_once(ABSPATH . "wp-admin" . '/includes/media.php');
 //require_once(dirname(__FILE__) . '/wp-content/plugins/polylang/include/api.php'); 
 get_header();
 
-function c_get($url)
+function c_get($url,$header=[])
 {
     
 $curl = curl_init(); // инициализируем cURL
@@ -29,6 +29,7 @@ curl_setopt($curl, CURLOPT_TIMEOUT, 3);
 //ответственный момент здесь мы передаем наши переменные 
 //Установите эту опцию в ненулевое значение, если вы хотите, чтобы шапка/header ответа включалась в вывод.
 curl_setopt($curl, CURLOPT_HEADER, 1);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
 //Внимание, важный момент, сертификатов, естественно, у нас нет, так что все отключаем
 curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, 0);// не проверять SSL сертификат
 curl_setopt ($curl, CURLOPT_SSL_VERIFYHOST, 0);// не проверять Host SSL сертификата
@@ -139,10 +140,7 @@ function add_post($params)
 
 function parse_celojumubode()
 {
-     
-        $html = c_get('https://www.celojumubode.lv/ru/celojumi');
-        echo '<br>Длина: '.strlen($html);
-        usleep(100+rand(1,500));
+    
     
         $html = c_get('https://www.celojumubode.lv/ru/celojumi');
         echo '<br>Длина: '.strlen($html);
@@ -151,7 +149,48 @@ function parse_celojumubode()
 } 
 
 
-parse_celojumubode();
+function parse_tez()
+{
+    $api='https://api.test.tezhub.com'; //https://api.tezhub.com
+    $header=array(
+        'Accept: application/json',
+        'Api-Key: aa75dccd467123213e419abf1f40968b8213',
+    );
+     
+    $html = c_get($api.'agent/v2/references/countries',$header);
+    $json = json_decode($html,true);
+    foreach ($json as $country)
+    if ($country['name']['ru'])
+    {
+        $params=['name'=>$country['name']['ru'],'is_cat'=>true,'category'=>2926];
+        print_r($params); 
+        $post_id = add_post($params);
+
+        $hotels = json_decode(c_get($api.'agent/v2/tours/list?countryId='.$country['id'],$header),true);
+        print_r($hotels); 
+        foreach ($hotels['hotels'] as $hotel)
+        { 
+            $info = json_decode(c_get($api.'agent/v2/tours/content?locale=ru&hotelId='.$hotel['id'],$header),true);
+            print_r($info);die();
+            if (count($info))
+            {
+                $params=['name'=>$hotel['name'],'stars'=>(int)$info['stars'],'text'=>$info['description_lv'],'category'=>$post_id];
+        
+                foreach ($hotel['images']['image'] as $img)
+                {
+                    $params['imgs'][]=$img['path_big'];
+                } 
+    
+                $pp_id = add_post($params);
+            }
+            
+        }
+    }
+
+} 
+
+
+parse_tez();
 
 
 
