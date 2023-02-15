@@ -151,13 +151,14 @@ function parse_celojumubode()
 
 function parse_tez()
 {
-    $api='https://api.test.tezhub.com'; //https://api.tezhub.com
+    $api='https://api.tezhub.com'; //https://api.tezhub.com
     $header=array(
         'Accept: application/json',
-        'Api-Key: aa75dccd467123213e419abf1f40968b8213',
+        'Api-Key: 1ff3b843fb2fd8911e70c47db782f01b',
     );
      
     $html = c_get($api.'agent/v2/references/countries',$header);
+    print_r($html);
     $json = json_decode($html,true);
     foreach ($json as $country)
     if ($country['name']['ru'])
